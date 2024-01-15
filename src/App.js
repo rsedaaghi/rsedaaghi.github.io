@@ -9,6 +9,7 @@ function App() {
     <main className="App">
       <Container fixed>
         <ResponsiveAppBar />
+        <Header />
       </Container>
     </main>
   );
