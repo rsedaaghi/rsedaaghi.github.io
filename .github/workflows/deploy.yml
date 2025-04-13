@@ -30,9 +30,5 @@ jobs:
               run: npm run build
 
             # Step 5: Deploy to GitHub Pages
-
-            - name: Debug Environment
-              run: env
-
             - name: Deploy to GitHub Pages
               run: npx gh-pages -d dist --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/rsedaaghi/rsedaaghi.github.io.git
