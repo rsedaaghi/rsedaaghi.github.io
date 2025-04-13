@@ -35,6 +35,4 @@ jobs:
               run: env
 
             - name: Deploy to GitHub Pages
-              run: npx gh-pages -d dist
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+              run: npx gh-pages -d dist --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/rsedaaghi/rsedaaghi.github.io.git
