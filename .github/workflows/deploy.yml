@@ -30,6 +30,4 @@ jobs:
 
             # Step 5: Deploy to GitHub Pages
             - name: Deploy to GitHub Pages
-              run: npm run deploy
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: gh-pages -d dist --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/rsedaaghi/rsedaaghi.github.io.git
