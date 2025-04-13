@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Personal Portfolio",
+        "description": "A responsive portfolio showcasing my skills and projects.",
+        "url": "https://example.com/personal-portfolio",
+        "images": [
+            {
+                "src": "/assets/images/portfolio1.jpg",
+                "caption": "Homepage of my portfolio"
+            },
+            {
+                "src": "/assets/images/portfolio2.jpg",
+                "caption": "Skills section of my portfolio"
+            }
+        ]
+    },
+    {
+        "title": "E-commerce Website",
+        "description": "An online store built with React and Node.js.",
+        "images": [
+            {
+                "src": "/assets/images/ecommerce1.jpg",
+                "caption": "Product listing page"
+            },
+            {
+                "src": "/assets/images/ecommerce2.jpg",
+                "caption": "Shopping cart functionality"
+            }
+        ]
+    }
+]

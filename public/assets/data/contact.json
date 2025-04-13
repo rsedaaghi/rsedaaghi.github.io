@@ -1,0 +1,20 @@
+[
+    {
+        "iconUrl": "https://example.com/icons/email.png",
+        "name": "Email",
+        "label": "Contact via Email",
+        "url": "mailto:example@example.com"
+    },
+    {
+        "iconUrl": "https://example.com/icons/linkedin.png",
+        "name": "LinkedIn",
+        "label": "Connect on LinkedIn",
+        "url": "https://linkedin.com/in/example"
+    },
+    {
+        "iconUrl": "https://example.com/icons/github.png",
+        "name": "GitHub",
+        "label": "View GitHub Profile",
+        "url": "https://github.com/example"
+    }
+]

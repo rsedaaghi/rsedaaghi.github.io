@@ -1,0 +1,8 @@
+{
+    "description": "Welcome to my portfolio website!",
+    "contactButton": {
+        "isOn": true,
+        "url": "https://example.com/contact"
+    },
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/TrumpPortrait.jpg/800px-TrumpPortrait.jpg"
+}
