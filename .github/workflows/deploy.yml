@@ -1,3 +1,9 @@
+name: Deploy to GitHub Pages
+
+on:
+    push:
+        branches:
+            - main # Trigger the workflow only on pushes to the main branch
 jobs:
     deploy:
         runs-on: ubuntu-latest
