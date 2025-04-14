@@ -1,8 +1,13 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Handle __dirname in ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Path to the package.json file
-const packageJsonPath = path.resolve(__dirname, "package.json");
+const packageJsonPath = path.resolve(__dirname, "../package.json");
 
 // Read the package.json file
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
@@ -16,8 +21,8 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
     day: "numeric",
 }).format(currentDateTime);
 
-// Update the `last_update` field without the ordinal suffix
-packageJson.last_update = `${formattedDate}`;
+// Update the `last_update` field in package.json
+packageJson.last_update = `Last updated: ${formattedDate}`;
 
 // Write the updated package.json file back
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
