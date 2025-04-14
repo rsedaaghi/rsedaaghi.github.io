@@ -6,11 +6,11 @@ import Home from "./components/home";
 import packageJson from "../package.json";
 import {
 	Box,
-	Card,
 	createTheme,
 	ThemeProvider,
 	Paper,
 	Container,
+	Divider,
 } from "@mui/material";
 
 const tabs = [
@@ -27,7 +27,6 @@ const App = () => {
 	const [lastUpdated, setLastUpdated] = useState("");
 
 	useEffect(() => {
-		// Fetch `last updated` from `package.json`
 		const lastModified = packageJson.last_update;
 		setLastUpdated(lastModified);
 	}, []);
@@ -35,11 +34,11 @@ const App = () => {
 	const theme = createTheme({
 		palette: {
 			mode: darkMode ? "dark" : "light",
-			primary: { main: "#1976d2" },
-			secondary: { main: "#ff9800" },
+			primary: { main: "#3f51b5" },
+			secondary: { main: "#f50057" },
 		},
 		typography: {
-			fontFamily: `'Roboto', sans-serif`,
+			fontFamily: "'Roboto', sans-serif",
 		},
 	});
 
@@ -47,7 +46,7 @@ const App = () => {
 		setDarkMode((prevMode) => !prevMode);
 	};
 
-	const handleTabChange = (event, newValue) => {
+	const handleTabChange = (newValue) => {
 		setActiveTab(newValue);
 	};
 
@@ -55,11 +54,13 @@ const App = () => {
 		<ThemeProvider theme={theme}>
 			<Container maxWidth="md" sx={{ py: 4 }}>
 				<Paper
-					elevation={3}
+					elevation={4}
 					sx={{
-						borderRadius: 2,
-						p: 2,
-						overflow: "hidden",
+						borderRadius: 4,
+						p: 3,
+						boxShadow: darkMode
+							? "0px 4px 10px rgba(0,0,0,0.8)"
+							: "0px 4px 10px rgba(0,0,0,0.2)",
 					}}
 				>
 					<Header
@@ -69,6 +70,7 @@ const App = () => {
 						onTabChange={handleTabChange}
 						onThemeToggle={handleThemeToggle}
 					/>
+					<Divider sx={{ my: 3 }} />
 					{activeTab === "home" ? (
 						<Home />
 					) : (
@@ -76,13 +78,9 @@ const App = () => {
 							tab={tabs.find((tab) => tab.name === activeTab)}
 						/>
 					)}
-					<Footer />
-					<Box sx={{ mt: 2 }}>
-						<Card variant="outlined">
-							<p>Last Updated: {lastUpdated || "N/A"}</p>
-						</Card>
-					</Box>
 				</Paper>
+				{/* Footer with Last Updated */}
+				<Footer lastUpdated={lastUpdated} darkMode={darkMode} />
 			</Container>
 		</ThemeProvider>
 	);
