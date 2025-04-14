@@ -5,13 +5,14 @@ import {
 	ListItemAvatar,
 	Avatar,
 	ListItemText,
+	ListItemButton,
 } from "@mui/material";
 
 const Footer = () => {
 	const [socialLinks, setSocialLinks] = useState([]);
 
 	useEffect(() => {
-		fetch("/assets/contact.json")
+		fetch("assets/data/contact.json")
 			.then((response) => response.json())
 			.then((data) => setSocialLinks(data))
 			.catch((error) =>
@@ -23,11 +24,13 @@ const Footer = () => {
 		<footer>
 			<List>
 				{socialLinks.map((link, index) => (
-					<ListItem button component="a" href={link.url} key={index}>
-						<ListItemAvatar>
-							<Avatar src={link.iconUrl} alt={link.name} />
-						</ListItemAvatar>
-						<ListItemText primary={link.label} />
+					<ListItem key={index} component="div">
+						<ListItemButton component="a" href={link.url}>
+							<ListItemAvatar>
+								<Avatar src={link.iconUrl} alt={link.name} />
+							</ListItemAvatar>
+							<ListItemText primary={link.label} />
+						</ListItemButton>
 					</ListItem>
 				))}
 			</List>

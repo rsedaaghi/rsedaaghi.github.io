@@ -43,8 +43,6 @@ const App = () => {
 		},
 	});
 
-	console.log(lastUpdated);
-
 	const handleThemeToggle = () => {
 		setDarkMode((prevMode) => !prevMode);
 	};

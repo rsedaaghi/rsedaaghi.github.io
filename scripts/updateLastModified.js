@@ -22,7 +22,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
 }).format(currentDateTime);
 
 // Update the `last_update` field in package.json
-packageJson.last_update = `Last updated: ${formattedDate}`;
+packageJson.last_update = `${formattedDate}`;
 
 // Write the updated package.json file back
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));

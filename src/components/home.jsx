@@ -16,7 +16,7 @@ const Home = () => {
 
 	return (
 		<Grid container spacing={2} alignItems="center">
-			<Grid item xs={12} md={6}>
+			<Grid size={{ xs: 12, md: 6 }}>
 				<Typography variant="body1">{homeData.description}</Typography>
 				{homeData.contactButton?.isOn && (
 					<Button
@@ -27,7 +27,7 @@ const Home = () => {
 					</Button>
 				)}
 			</Grid>
-			<Grid item xs={12} md={6} container justifyContent="center">
+			<Grid size={{ xs: 12, md: 6 }} container justifyContent="center">
 				<img
 					src={homeData.image}
 					alt="Profile"
