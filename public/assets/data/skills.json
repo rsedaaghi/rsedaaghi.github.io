@@ -1,18 +1,10 @@
 [
-    {
-        "name": "React",
-        "level": "Advanced"
-    },
-    {
-        "name": "JavaScript",
-        "level": "Expert"
-    },
-    {
-        "name": "Material-UI",
-        "level": "Intermediate"
-    },
-    {
-        "name": "CSS",
-        "level": "Advanced"
-    }
+    "Node.js",
+    "React",
+    "Docker",
+    "CI/CD",
+    "PostgreSQL",
+    "RabbitMQ",
+    "Python",
+    "jQuery"
 ]

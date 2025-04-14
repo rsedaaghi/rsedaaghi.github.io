@@ -3,20 +3,24 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import TabContent from "./components/tabContent";
 import Home from "./components/home";
+import Experience from "./components/experience";
+import Education from "./components/education";
 import packageJson from "../package.json";
 import {
 	Box,
-	Card,
 	createTheme,
 	ThemeProvider,
 	Paper,
 	Container,
+	Divider,
 } from "@mui/material";
 
 const tabs = [
 	{ label: "Home", name: "home", component: <Home /> },
 	{ label: "About", name: "about", jsonFile: "about.json" },
 	{ label: "Skills", name: "skills", jsonFile: "skills.json" },
+	// { label: "Experience", name: "experience", component: <Experience /> },
+	// { label: "Education", name: "education", component: <Education /> },
 	{ label: "Works", name: "works", jsonFile: "works.json" },
 	{ label: "Contact", name: "contact", jsonFile: "contact.json" },
 ];
@@ -27,7 +31,6 @@ const App = () => {
 	const [lastUpdated, setLastUpdated] = useState("");
 
 	useEffect(() => {
-		// Fetch `last updated` from `package.json`
 		const lastModified = packageJson.last_update;
 		setLastUpdated(lastModified);
 	}, []);
@@ -35,21 +38,19 @@ const App = () => {
 	const theme = createTheme({
 		palette: {
 			mode: darkMode ? "dark" : "light",
-			primary: { main: "#1976d2" },
-			secondary: { main: "#ff9800" },
+			primary: { main: "#3f51b5" },
+			secondary: { main: "#f50057" },
 		},
 		typography: {
-			fontFamily: `'Roboto', sans-serif`,
+			fontFamily: "'Roboto', sans-serif",
 		},
 	});
-
-	console.log(lastUpdated);
 
 	const handleThemeToggle = () => {
 		setDarkMode((prevMode) => !prevMode);
 	};
 
-	const handleTabChange = (event, newValue) => {
+	const handleTabChange = (newValue) => {
 		setActiveTab(newValue);
 	};
 
@@ -57,11 +58,13 @@ const App = () => {
 		<ThemeProvider theme={theme}>
 			<Container maxWidth="md" sx={{ py: 4 }}>
 				<Paper
-					elevation={3}
+					elevation={4}
 					sx={{
-						borderRadius: 2,
-						p: 2,
-						overflow: "hidden",
+						borderRadius: 4,
+						p: 3,
+						boxShadow: darkMode
+							? "0px 4px 10px rgba(0,0,0,0.8)"
+							: "0px 4px 10px rgba(0,0,0,0.2)",
 					}}
 				>
 					<Header
@@ -71,6 +74,7 @@ const App = () => {
 						onTabChange={handleTabChange}
 						onThemeToggle={handleThemeToggle}
 					/>
+					<Divider sx={{ my: 3 }} />
 					{activeTab === "home" ? (
 						<Home />
 					) : (
@@ -78,13 +82,9 @@ const App = () => {
 							tab={tabs.find((tab) => tab.name === activeTab)}
 						/>
 					)}
-					<Footer />
-					<Box sx={{ mt: 2 }}>
-						<Card variant="outlined">
-							<p>Last Updated: {lastUpdated || "N/A"}</p>
-						</Card>
-					</Box>
 				</Paper>
+				{/* Footer with Last Updated */}
+				<Footer lastUpdated={lastUpdated} darkMode={darkMode} />
 			</Container>
 		</ThemeProvider>
 	);

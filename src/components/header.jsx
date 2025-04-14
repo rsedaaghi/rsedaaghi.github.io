@@ -1,11 +1,10 @@
 import {
 	AppBar,
-	Button,
-	IconButton,
 	Toolbar,
 	Typography,
 	Tabs,
 	Tab,
+	IconButton,
 	useMediaQuery,
 	useTheme as useMuiTheme,
 } from "@mui/material";
@@ -17,33 +16,39 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 
 	return (
 		<AppBar
-			position="static"
-			sx={{ backgroundColor: "transparent", boxShadow: "none" }}
+			position="sticky"
+			sx={{
+				backgroundColor: darkMode ? "#212121" : "#ffffff",
+				color: darkMode ? "#ffffff" : "#000000",
+				boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+				zIndex: 10,
+			}}
 		>
-			<Toolbar>
-				<Typography variant="h6" sx={{ flexGrow: 1, color: "#333" }}>
+			<Toolbar
+				sx={{
+					display: "flex",
+					justifyContent: "space-between",
+				}}
+			>
+				<Typography
+					variant="h6"
+					sx={{
+						fontWeight: "bold",
+						color: darkMode ? "#90caf9" : "#1976d2",
+					}}
+				>
 					My Portfolio
 				</Typography>
-				{isMobile ? (
-					// Render a hamburger menu that opens a Drawer on mobile devices.
-					<MobileMenu
-						tabs={tabs}
-						onTabChange={onTabChange}
-						activeTab={activeTab}
-					/>
-				) : (
+				{!isMobile && (
 					<Tabs
 						value={activeTab}
-						onChange={onTabChange}
-						indicatorColor="primary"
-						textColor="primary"
-						sx={{
-							"& .MuiTabs-indicator": {
-								backgroundColor: "#1976d2",
-							},
-							"& .MuiTab-root": {
-								color: "#1976d2",
-								"&.Mui-selected": { fontWeight: "bold" },
+						onChange={(e, newValue) => onTabChange(newValue)}
+						textColor="inherit"
+						TabIndicatorProps={{
+							style: {
+								backgroundColor: darkMode
+									? "#90caf9"
+									: "#1976d2",
 							},
 						}}
 					>
@@ -52,11 +57,20 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 								key={tab.name}
 								label={tab.label}
 								value={tab.name}
+								sx={{
+									textTransform: "capitalize",
+									fontWeight: "bold",
+								}}
 							/>
 						))}
 					</Tabs>
 				)}
-				<IconButton onClick={onThemeToggle} sx={{ ml: 1 }}>
+				<IconButton
+					onClick={onThemeToggle}
+					sx={{
+						color: darkMode ? "#fbc02d" : "#ffa000",
+					}}
+				>
 					{darkMode ? <Brightness7 /> : <Brightness4 />}
 				</IconButton>
 			</Toolbar>
