@@ -5,79 +5,58 @@ const Home = () => {
 	const [homeData, setHomeData] = useState({});
 	useEffect(() => {
 		fetch("/assets/data/home.json")
-			.then((response) => {
-				if (!response.ok)
-					throw new Error(`HTTP error! status: ${response.status}`);
-				return response.json();
-			})
+			.then((response) => response.json())
 			.then((data) => setHomeData(data))
 			.catch((error) => console.error("Error loading home data:", error));
 	}, []);
 
 	return (
 		<Paper
-			elevation={3}
 			sx={{
 				p: 4,
-				borderRadius: 2,
+				borderRadius: 4,
 				backgroundColor: "#f9f9f9",
-				boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+				boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
 			}}
 		>
 			<Grid container spacing={4} alignItems="center">
-				{/* Text Section */}
 				<Grid item xs={12} md={6}>
-					<Box sx={{ textAlign: "left" }}>
-						<Typography
-							variant="h4"
-							gutterBottom
+					<Typography variant="h3" sx={{ fontWeight: "bold", mb: 3 }}>
+						Welcome to My Portfolio
+					</Typography>
+					<Typography
+						variant="body1"
+						sx={{ mb: 3, color: "#455a64" }}
+					>
+						{homeData.description}
+					</Typography>
+					{homeData.contactButton?.isOn && (
+						<Button
+							variant="contained"
+							href={homeData.contactButton.url}
 							sx={{
-								color: "#1976d2",
-								fontWeight: "bold",
+								backgroundColor: "#1976d2",
+								color: "#fff",
+								borderRadius: 2,
+								px: 4,
+								py: 1,
+								"&:hover": { backgroundColor: "#1565c0" },
 							}}
 						>
-							Welcome
-						</Typography>
-						<Typography
-							variant="body1"
-							sx={{
-								mb: 2,
-								lineHeight: 1.7,
-								color: "#455a64",
-							}}
-						>
-							{homeData.description}
-						</Typography>
-						{homeData.contactButton?.isOn && (
-							<Button
-								variant="contained"
-								href={homeData.contactButton.url}
-								sx={{
-									backgroundColor: "#1976d2",
-									color: "#fff",
-									"&:hover": { backgroundColor: "#1565c0" },
-									borderRadius: 1,
-									px: 4,
-									py: 1,
-								}}
-							>
-								Contact Me
-							</Button>
-						)}
-					</Box>
+							Contact Me
+						</Button>
+					)}
 				</Grid>
-
-				{/* Image Section */}
-				<Grid item xs={12} md={6} container justifyContent="center">
+				<Grid item xs={12} md={6}>
 					<Box
 						component="img"
 						src={homeData.image}
 						alt="Profile"
 						sx={{
-							width: "85%",
-							objectFit: "cover",
-							borderRadius: "10px",
-							boxShadow: "0px 4px 10px rgba(0,0,0,0.2)",
+							width: "100%",
+							maxWidth: "500px",
+							borderRadius: 4,
+							boxShadow: "0px 4px 12px rgba(0,0,0,0.2)",
 						}}
 					/>
 				</Grid>

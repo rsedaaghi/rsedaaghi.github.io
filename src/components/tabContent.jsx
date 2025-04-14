@@ -44,73 +44,64 @@ const TabContent = ({ tab }) => {
 	};
 
 	return (
-		<Box sx={{ p: 2 }}>
+		<Box>
 			<Typography
 				variant="h4"
-				gutterBottom
 				sx={{
-					textAlign: "center",
 					fontWeight: "bold",
+					textAlign: "center",
+					mb: 4,
 					color: "#1976d2",
-					mb: 3,
 				}}
 			>
 				{tab.label}
 			</Typography>
 			{Array.isArray(content) ? (
-				<Grid container spacing={3}>
+				<Grid container spacing={4}>
 					{content.map((item, index) => (
 						<Grid item xs={12} md={6} key={index}>
 							<Card
 								sx={{
-									boxShadow: "0px 4px 8px rgba(0,0,0,0.1)",
-									borderRadius: 2,
+									boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
+									transition: "transform 0.3s",
+									borderRadius: 4,
+									"&:hover": {
+										transform: "scale(1.05)",
+										boxShadow:
+											"0px 6px 16px rgba(0,0,0,0.15)",
+									},
 								}}
 							>
 								<CardContent>
 									<Typography
 										variant="h6"
-										sx={{
-											fontWeight: "bold",
-											color: "#455a64",
-											mb: 1,
-										}}
+										sx={{ fontWeight: "bold", mb: 2 }}
 									>
 										{item.title}
 									</Typography>
 									<Typography
 										variant="body2"
-										sx={{
-											mb: 2,
-											color: "#757575",
-											lineHeight: 1.6,
-										}}
+										sx={{ mb: 3, color: "#757575" }}
 									>
 										{item.description}
 									</Typography>
-									<Box
-										sx={{
-											display: "flex",
-											gap: 1,
-											flexWrap: "wrap",
-										}}
-									>
+									<Box sx={{ display: "flex", gap: 2 }}>
 										{item.url && (
 											<Button
 												variant="outlined"
 												href={item.url}
-												target="_blank"
-												rel="noopener noreferrer"
 												sx={{
 													textTransform: "capitalize",
 													borderRadius: 1,
-													color: "#1976d2",
 													borderColor: "#1976d2",
+													color: "#1976d2",
 													"&:hover": {
 														backgroundColor:
 															"#e3f2fd",
 													},
 												}}
+												target="_blank"
+												rel="noopener noreferrer"
 											>
 												Visit Project
 											</Button>
@@ -123,9 +114,9 @@ const TabContent = ({ tab }) => {
 												}
 												sx={{
 													textTransform: "capitalize",
-													borderRadius: 1,
 													backgroundColor: "#1976d2",
 													color: "#fff",
+													borderRadius: 1,
 													"&:hover": {
 														backgroundColor:
 															"#1565c0",
