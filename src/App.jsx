@@ -28,9 +28,7 @@ const App = () => {
 
 	useEffect(() => {
 		// Fetch `last updated` from `package.json`
-		const lastModified = new Date(
-			packageJson._lastModified
-		).toLocaleString();
+		const lastModified = packageJson.last_update;
 		setLastUpdated(lastModified);
 	}, []);
 
