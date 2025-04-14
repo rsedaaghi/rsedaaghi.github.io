@@ -3,6 +3,8 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import TabContent from "./components/tabContent";
 import Home from "./components/home";
+import Experience from "./components/experience";
+import Education from "./components/education";
 import packageJson from "../package.json";
 import {
 	Box,
@@ -17,6 +19,8 @@ const tabs = [
 	{ label: "Home", name: "home", component: <Home /> },
 	{ label: "About", name: "about", jsonFile: "about.json" },
 	{ label: "Skills", name: "skills", jsonFile: "skills.json" },
+	// { label: "Experience", name: "experience", component: <Experience /> },
+	// { label: "Education", name: "education", component: <Education /> },
 	{ label: "Works", name: "works", jsonFile: "works.json" },
 	{ label: "Contact", name: "contact", jsonFile: "contact.json" },
 ];

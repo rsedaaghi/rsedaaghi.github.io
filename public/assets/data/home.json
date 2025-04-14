@@ -1,8 +1,8 @@
 {
-    "description": "Welcome to my portfolio website!",
+    "description": "Hi, I'm Reza Sedaaghi, a Software Developer specializing in Node.js, React, and CI/CD pipelines. Passionate about creating scalable, efficient, and modern solutions.",
     "contactButton": {
         "isOn": true,
-        "url": "https://example.com/contact"
+        "url": "mailto:your-email@example.com"
     },
     "image": "/assets/images/profile.jpg"
 }

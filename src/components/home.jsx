@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Grid, Typography, Button, Box, Paper } from "@mui/material";
+import { Grid, Typography, Button, Box, Paper, Container } from "@mui/material";
 
 const Home = () => {
 	const [homeData, setHomeData] = useState({});
+
 	useEffect(() => {
 		fetch("/assets/data/home.json")
 			.then((response) => response.json())
@@ -11,22 +12,44 @@ const Home = () => {
 	}, []);
 
 	return (
-		<Paper
+		<Container
+			maxWidth="lg"
 			sx={{
-				p: 4,
+				py: 6,
+				px: { xs: 2, md: 6 },
+				backgroundColor: "#f5f5f5",
 				borderRadius: 4,
-				backgroundColor: "#f9f9f9",
-				boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
+				boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)",
 			}}
 		>
-			<Grid container spacing={4} alignItems="center">
+			<Grid
+				container
+				spacing={6}
+				alignItems="center"
+				justifyContent="center"
+				sx={{ textAlign: { xs: "center", md: "left" } }}
+			>
+				{/* Left Section: Text Content */}
 				<Grid item xs={12} md={6}>
-					<Typography variant="h3" sx={{ fontWeight: "bold", mb: 3 }}>
+					<Typography
+						variant="h2"
+						sx={{
+							fontWeight: "bold",
+							mb: 3,
+							color: "#1976d2",
+							fontSize: { xs: "2.5rem", md: "3rem" },
+						}}
+					>
 						Welcome to My Portfolio
 					</Typography>
 					<Typography
 						variant="body1"
-						sx={{ mb: 3, color: "#455a64" }}
+						sx={{
+							mb: 4,
+							color: "#455a64",
+							lineHeight: 1.8,
+							fontSize: { xs: "1rem", md: "1.25rem" },
+						}}
 					>
 						{homeData.description}
 					</Typography>
@@ -38,8 +61,10 @@ const Home = () => {
 								backgroundColor: "#1976d2",
 								color: "#fff",
 								borderRadius: 2,
-								px: 4,
-								py: 1,
+								px: 5,
+								py: 1.5,
+								fontSize: { xs: "0.9rem", md: "1rem" },
+								boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
 								"&:hover": { backgroundColor: "#1565c0" },
 							}}
 						>
@@ -47,21 +72,24 @@ const Home = () => {
 						</Button>
 					)}
 				</Grid>
+
+				{/* Right Section: Image with Modern Style */}
 				<Grid item xs={12} md={6}>
 					<Box
 						component="img"
 						src={homeData.image}
-						alt="Profile"
+						alt="Portfolio Profile"
 						sx={{
 							width: "100%",
-							maxWidth: "500px",
-							borderRadius: 4,
-							boxShadow: "0px 4px 12px rgba(0,0,0,0.2)",
+							maxWidth: "400px",
+							borderRadius: "50%",
+							boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+							mx: { xs: "auto", md: 0 },
 						}}
 					/>
 				</Grid>
 			</Grid>
-		</Paper>
+		</Container>
 	);
 };
 
