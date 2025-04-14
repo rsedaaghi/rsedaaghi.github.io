@@ -3,7 +3,14 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import TabContent from "./components/tabContent";
 import Home from "./components/home";
-import { Box, Card, createTheme, ThemeProvider } from "@mui/material";
+import {
+	Box,
+	Card,
+	createTheme,
+	ThemeProvider,
+	Paper,
+	Container,
+} from "@mui/material";
 
 const tabs = [
 	{ label: "Home", name: "home", component: <Home /> },
@@ -14,11 +21,17 @@ const tabs = [
 ];
 
 const App = () => {
+	const [activeTab, setActiveTab] = useState("home"); // Default value matches 'home'
 	const [darkMode, setDarkMode] = useState(false);
 
 	const theme = createTheme({
 		palette: {
 			mode: darkMode ? "dark" : "light",
+			primary: { main: "#1976d2" },
+			secondary: { main: "#ff9800" },
+		},
+		typography: {
+			fontFamily: `'Roboto', sans-serif`,
 		},
 	});
 
@@ -26,42 +39,27 @@ const App = () => {
 		setDarkMode((prevMode) => !prevMode);
 	};
 
-	const [activeTab, setActiveTab] = useState("home"); // Default value matches 'home'
-
 	const handleTabChange = (event, newValue) => {
-		setActiveTab(newValue); // Updates to the 'name' field of the selected tab
+		setActiveTab(newValue);
 	};
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Box
-				sx={{
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					height: "calc(100vh - 1rem)",
-					backgroundColor: "#f5f5f5",
-					padding: "0 1rem",
-					boxSizing: "border-box",
-				}}
-			>
-				<Card
+			<Container maxWidth="md" sx={{ py: 4 }}>
+				<Paper
+					elevation={3}
 					sx={{
-						borderRadius: 4, // Rounded corners
-						boxShadow: 3, // Shadow
-						padding: 3, // Internal spacing
-						maxWidth: 800, // Set max width for the card
-						width: "100%", // Responsive width
-						height: "500px", // Fixed height
-						backgroundColor: "#fff", // White card background
+						borderRadius: 2,
+						p: 2,
+						overflow: "hidden",
 					}}
 				>
 					<Header
 						tabs={tabs}
+						activeTab={activeTab}
+						darkMode={darkMode}
 						onTabChange={handleTabChange}
-						activeTab={activeTab} // Pass the correct activeTab
-						onThemeToggle={handleThemeToggle} // Pass theme toggle function
-            darkMode={darkMode}
+						onThemeToggle={handleThemeToggle}
 					/>
 					{activeTab === "home" ? (
 						<Home />
@@ -71,8 +69,8 @@ const App = () => {
 						/>
 					)}
 					<Footer />
-				</Card>
-			</Box>
+				</Paper>
+			</Container>
 		</ThemeProvider>
 	);
 };
