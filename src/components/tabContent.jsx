@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PhotoAlbumModal from "./photoAlbumModal";
-import { Button } from "@mui/material";
+import { Card, CardContent, Typography, Button, Grid } from "@mui/material";
 
 const TabContent = ({ tab }) => {
 	const [content, setContent] = useState([]);
@@ -35,39 +35,47 @@ const TabContent = ({ tab }) => {
 
 	return (
 		<div>
-			<h2>{tab.label}</h2>
+			<Typography variant="h4" gutterBottom>
+				{tab.label}
+			</Typography>
 			{Array.isArray(content) ? (
-				<ul>
+				<Grid container spacing={2}>
 					{content.map((item, index) => (
-						<li key={index}>
-							<h3>{item.title}</h3>
-							<p>{item.description}</p>
-							{item.url && (
-								<a
-									href={item.url}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Visit Project
-								</a>
-							)}
-							{item.images && (
-								<Button
-									variant="contained"
-									color="primary"
-									onClick={() => handleOpenModal(item.images)}
-									sx={{
-										marginTop: "8px", // Adds spacing above the button
-									}}
-								>
-									View Photo Album
-								</Button>
-							)}
-						</li>
+						<Grid item xs={12} md={6} key={index}>
+							<Card>
+								<CardContent>
+									<Typography variant="h6">
+										{item.title}
+									</Typography>
+									<Typography variant="body2">
+										{item.description}
+									</Typography>
+									{item.url && (
+										<Button
+											href={item.url}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											Visit Project
+										</Button>
+									)}
+									{item.images && (
+										<Button
+											variant="contained"
+											onClick={() =>
+												handleOpenModal(item.images)
+											}
+										>
+											View Photo Album
+										</Button>
+									)}
+								</CardContent>
+							</Card>
+						</Grid>
 					))}
-				</ul>
+				</Grid>
 			) : (
-				<p>{content.description}</p>
+				<Typography variant="body1">{content.description}</Typography>
 			)}
 			<PhotoAlbumModal
 				open={modalOpen}

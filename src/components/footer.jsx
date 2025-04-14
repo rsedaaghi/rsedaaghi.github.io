@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from "react";
+import {
+	List,
+	ListItem,
+	ListItemAvatar,
+	Avatar,
+	ListItemText,
+} from "@mui/material";
 
 const Footer = () => {
 	const [socialLinks, setSocialLinks] = useState([]);
@@ -14,16 +21,16 @@ const Footer = () => {
 
 	return (
 		<footer>
-			<ul>
+			<List>
 				{socialLinks.map((link, index) => (
-					<li key={index}>
-						<a href={link.url}>
-							<img src={link.iconUrl} alt={link.name} />
-							{link.label}
-						</a>
-					</li>
+					<ListItem button component="a" href={link.url} key={index}>
+						<ListItemAvatar>
+							<Avatar src={link.iconUrl} alt={link.name} />
+						</ListItemAvatar>
+						<ListItemText primary={link.label} />
+					</ListItem>
 				))}
-			</ul>
+			</List>
 		</footer>
 	);
 };

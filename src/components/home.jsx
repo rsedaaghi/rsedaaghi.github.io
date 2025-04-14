@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Grid, Typography, Button } from "@mui/material";
 
 const Home = () => {
 	const [homeData, setHomeData] = useState({});
-
 	useEffect(() => {
 		fetch("/assets/data/home.json")
 			.then((response) => {
-				if (!response.ok) {
+				if (!response.ok)
 					throw new Error(`HTTP error! status: ${response.status}`);
-				}
 				return response.json();
 			})
 			.then((data) => setHomeData(data))
@@ -16,32 +15,30 @@ const Home = () => {
 	}, []);
 
 	return (
-		<div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
-			<div style={{ flex: 1 }}>
-				<p>{homeData.description}</p>
+		<Grid container spacing={2} alignItems="center">
+			<Grid item xs={12} md={6}>
+				<Typography variant="body1">{homeData.description}</Typography>
 				{homeData.contactButton?.isOn && (
-					<a href={homeData.contactButton.url}>Contact Me</a>
+					<Button
+						variant="contained"
+						href={homeData.contactButton.url}
+					>
+						Contact Me
+					</Button>
 				)}
-			</div>
-			<div
-				style={{
-					flex: 1,
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-				}}
-			>
+			</Grid>
+			<Grid item xs={12} md={6} container justifyContent="center">
 				<img
 					src={homeData.image}
 					alt="Profile"
 					style={{
-						width: "85%", // Makes image responsive
-						objectFit: "cover", // Ensures aspect ratio is preserved
-						borderRadius: "10px", // Optional: Adds rounded corners for styling
+						width: "85%",
+						objectFit: "cover",
+						borderRadius: "10px",
 					}}
 				/>
-			</div>
-		</div>
+			</Grid>
+		</Grid>
 	);
 };
 

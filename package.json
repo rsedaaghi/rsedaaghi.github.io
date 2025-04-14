@@ -1,11 +1,13 @@
 {
   "name": "my-website",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.4",
+  "last_update": "",
   "type": "module",
   "author": "Reza Sedaaghi",
   "homepage": "https://rsedaaghi.github.io/",
   "scripts": {
+    "update-last-modified": "node updateLastModified.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
