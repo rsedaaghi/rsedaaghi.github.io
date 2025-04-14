@@ -1,19 +1,22 @@
 [
     {
-        "iconUrl": "https://example.com/icons/email.png",
         "name": "Email",
         "label": "Contact via Email",
         "url": "mailto:example@example.com"
     },
     {
-        "iconUrl": "https://example.com/icons/linkedin.png",
         "name": "LinkedIn",
         "label": "Connect on LinkedIn",
         "url": "https://linkedin.com/in/example"
     },
     {
+        "name": "X (Twitter)",
+        "label": "Connect on X",
+        "url": "https://x.com/in/example"
+    },
+    {
         "iconUrl": "https://example.com/icons/github.png",
-        "name": "GitHub",
+        "name": "NewMedia",
         "label": "View GitHub Profile",
         "url": "https://github.com/example"
     }

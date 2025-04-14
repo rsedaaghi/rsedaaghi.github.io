@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Software Developer",
+        "company": "Arya Teb Firouz",
+        "employmentType": "Full-time",
+        "startDate": "2022-06-01",
+        "endDate": null,
+        "description": "• NodeJS and React expert.\n• CI/CD pipeline implementation using Docker.\n• Contributed to scalable product development."
+    },
+    {
+        "title": "Software Developer",
+        "company": "Pars Smartware Solution",
+        "employmentType": "Full-time",
+        "startDate": "2020-11-01",
+        "endDate": "2022-06-01",
+        "description": "• Developed software with Python and jQuery.\n• Delivered solutions for complex software challenges."
+    }
+]
