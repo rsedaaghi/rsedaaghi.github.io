@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import TabContent from "./components/tabContent";
 import Home from "./components/home";
+import packageJson from "../package.json";
 import {
 	Box,
 	Card,
@@ -21,8 +22,17 @@ const tabs = [
 ];
 
 const App = () => {
-	const [activeTab, setActiveTab] = useState("home"); // Default value matches 'home'
+	const [activeTab, setActiveTab] = useState("home");
 	const [darkMode, setDarkMode] = useState(false);
+	const [lastUpdated, setLastUpdated] = useState("");
+
+	useEffect(() => {
+		// Fetch `last updated` from `package.json`
+		const lastModified = new Date(
+			packageJson._lastModified
+		).toLocaleString();
+		setLastUpdated(lastModified);
+	}, []);
 
 	const theme = createTheme({
 		palette: {
@@ -34,6 +44,8 @@ const App = () => {
 			fontFamily: `'Roboto', sans-serif`,
 		},
 	});
+
+	console.log(lastUpdated);
 
 	const handleThemeToggle = () => {
 		setDarkMode((prevMode) => !prevMode);
@@ -69,6 +81,11 @@ const App = () => {
 						/>
 					)}
 					<Footer />
+					<Box sx={{ mt: 2 }}>
+						<Card variant="outlined">
+							<p>Last Updated: {lastUpdated || "N/A"}</p>
+						</Card>
+					</Box>
 				</Paper>
 			</Container>
 		</ThemeProvider>
