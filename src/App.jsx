@@ -44,6 +44,15 @@ const App = () => {
 		typography: {
 			fontFamily: "'Roboto', sans-serif",
 		},
+		components: {
+			MuiPaper: {
+				styleOverrides: {
+					root: {
+						transition: "all 0.3s ease-in-out",
+					},
+				},
+			},
+		},
 	});
 
 	const handleThemeToggle = () => {
@@ -56,15 +65,27 @@ const App = () => {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Container maxWidth="md" sx={{ py: 4 }}>
+			<Container
+				maxWidth="md"
+				sx={{
+					py: 6,
+					minHeight: "100vh",
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					justifyContent: "center",
+				}}
+			>
 				<Paper
-					elevation={4}
+					elevation={darkMode ? 10 : 4}
 					sx={{
 						borderRadius: 4,
-						p: 3,
+						p: 4,
+						width: "100%",
 						boxShadow: darkMode
-							? "0px 4px 10px rgba(0,0,0,0.8)"
-							: "0px 4px 10px rgba(0,0,0,0.2)",
+							? "0px 8px 16px rgba(0,0,0,0.8)"
+							: "0px 8px 16px rgba(0,0,0,0.2)",
+						backgroundColor: darkMode ? "#424242" : "#fff",
 					}}
 				>
 					<Header
@@ -83,7 +104,6 @@ const App = () => {
 						/>
 					)}
 				</Paper>
-				{/* Footer with Last Updated */}
 				<Footer lastUpdated={lastUpdated} darkMode={darkMode} />
 			</Container>
 		</ThemeProvider>
