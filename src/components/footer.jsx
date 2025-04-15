@@ -35,8 +35,6 @@ const Footer = ({ lastUpdated }) => {
 			sx={{
 				mt: 4,
 				py: 2,
-				backgroundColor: "#f9f9f9",
-				boxShadow: "0px -4px 8px rgba(0,0,0,0.1)",
 				textAlign: "center",
 			}}
 		>
