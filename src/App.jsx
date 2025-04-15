@@ -3,10 +3,9 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import TabContent from "./components/tabContent";
 import Home from "./components/home";
-import Experience from "./components/experience";
-import Education from "./components/education";
 import packageJson from "../package.json";
 import {
+	CssBaseline,
 	Box,
 	createTheme,
 	ThemeProvider,
@@ -42,7 +41,7 @@ const App = () => {
 			secondary: { main: "#f50057" },
 		},
 		typography: {
-			fontFamily: "'Roboto', sans-serif",
+			fontFamily: "'Nunito','Roboto', sans-serif",
 		},
 		components: {
 			MuiPaper: {
@@ -65,6 +64,7 @@ const App = () => {
 
 	return (
 		<ThemeProvider theme={theme}>
+			<CssBaseline />
 			<Container
 				maxWidth="md"
 				sx={{
@@ -76,7 +76,7 @@ const App = () => {
 					justifyContent: "center",
 				}}
 			>
-				<Paper
+				{/* <Paper
 					elevation={darkMode ? 10 : 4}
 					sx={{
 						borderRadius: 4,
@@ -87,15 +87,25 @@ const App = () => {
 							: "0px 8px 16px rgba(0,0,0,0.2)",
 						backgroundColor: darkMode ? "#424242" : "#fff",
 					}}
+				> */}
+				<Header
+					tabs={tabs}
+					activeTab={activeTab}
+					darkMode={darkMode}
+					onTabChange={handleTabChange}
+					onThemeToggle={handleThemeToggle}
+				/>
+				<Container
+					maxWidth="lg"
+					sx={{
+						py: 8,
+						background: "linear-gradient(135deg, #ece9e6, #ffffff)",
+						borderRadius: 3,
+						boxShadow: 3,
+						mt: 4,
+					}}
 				>
-					<Header
-						tabs={tabs}
-						activeTab={activeTab}
-						darkMode={darkMode}
-						onTabChange={handleTabChange}
-						onThemeToggle={handleThemeToggle}
-					/>
-					<Divider sx={{ my: 3 }} />
+					{/* <Divider sx={{ my: 3 }} /> */}
 					{activeTab === "home" ? (
 						<Home />
 					) : (
@@ -103,7 +113,8 @@ const App = () => {
 							tab={tabs.find((tab) => tab.name === activeTab)}
 						/>
 					)}
-				</Paper>
+					{/* </Paper> */}
+				</Container>
 				<Footer lastUpdated={lastUpdated} darkMode={darkMode} />
 			</Container>
 		</ThemeProvider>
