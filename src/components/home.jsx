@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import { Grid, Typography, Button, Box, Paper, Container } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Grid, Typography, Button, Box } from "@mui/material";
+import maskUrl from "../assets/masks/mask.svg?url";
 
 const Home = () => {
 	const [homeData, setHomeData] = useState({});
@@ -15,23 +16,16 @@ const Home = () => {
 		<Grid
 			container
 			spacing={6}
-			alignItems="center"
-			justifyContent="center"
 			sx={{ textAlign: { xs: "center", md: "left" } }}
 		>
 			{/* Left Section: Text Content */}
-			<Grid item xs={12} md={6}>
+			<Grid size={{ xs: 12, md: 6 }}>
 				<Typography
 					variant="h3"
-					sx={{
-						fontWeight: "700",
-						mb: 2,
-						color: "primary.main",
-					}}
+					sx={{ fontWeight: "700", mb: 2, color: "primary.main" }}
 				>
 					Welcome to My Portfolio
 				</Typography>
-
 				<Typography
 					variant="body1"
 					sx={{
@@ -42,7 +36,6 @@ const Home = () => {
 				>
 					{homeData.description}
 				</Typography>
-
 				{homeData.contactButton?.isOn && (
 					<Button
 						variant="contained"
@@ -63,20 +56,34 @@ const Home = () => {
 				)}
 			</Grid>
 
-			{/* Right Section: Image with Modern Style */}
-			<Grid item xs={12} md={6}>
+			{/* Right Section: Image with Mask */}
+			<Grid size={{ xs: 12, md: 6 }}>
 				<Box
-					component="img"
-					src={homeData.image}
-					alt="Portfolio Profile"
 					sx={{
 						width: "100%",
 						maxWidth: "400px",
-						borderRadius: "8px", // Changed from 50% to a softer rounding
-						boxShadow: 4,
 						mx: "auto",
+						maskImage: `url(${maskUrl})`,
+						WebkitMaskImage: `url(${maskUrl})`,
+						maskRepeat: "no-repeat",
+						WebkitMaskRepeat: "no-repeat",
+						maskPosition: "center",
+						WebkitMaskPosition: "center",
+						maskSize: "cover",
+						WebkitMaskSize: "cover",
+						backgroundColor: "transparent",
 					}}
-				/>
+				>
+					<Box
+						component="img"
+						src={homeData.image}
+						alt="Portfolio Profile"
+						sx={{
+							width: "100%",
+							display: "block",
+						}}
+					/>
+				</Box>
 			</Grid>
 		</Grid>
 	);

@@ -9,9 +9,7 @@ import {
 	Box,
 	createTheme,
 	ThemeProvider,
-	Paper,
 	Container,
-	Divider,
 } from "@mui/material";
 
 const tabs = [
@@ -28,6 +26,17 @@ const App = () => {
 	const [activeTab, setActiveTab] = useState("home");
 	const [darkMode, setDarkMode] = useState(false);
 	const [lastUpdated, setLastUpdated] = useState("");
+
+	// On mount, if there's a URL hash and it matches a tab name, set it as active.
+	useEffect(() => {
+		const hash = window.location.hash;
+		if (hash) {
+			const tabName = hash.substring(1); // remove '#' from '#skills'
+			if (tabs.some((tab) => tab.name === tabName)) {
+				setActiveTab(tabName);
+			}
+		}
+	}, []);
 
 	useEffect(() => {
 		const lastModified = packageJson.last_update;
@@ -54,12 +63,14 @@ const App = () => {
 		},
 	});
 
-	const handleThemeToggle = () => {
-		setDarkMode((prevMode) => !prevMode);
-	};
-
+	// When a tab is changed, update activeTab and set the URL hash.
 	const handleTabChange = (newValue) => {
 		setActiveTab(newValue);
+		window.history.pushState(null, "", `#${newValue}`);
+	};
+
+	const handleThemeToggle = () => {
+		setDarkMode((prevMode) => !prevMode);
 	};
 
 	return (
@@ -76,18 +87,6 @@ const App = () => {
 					justifyContent: "center",
 				}}
 			>
-				{/* <Paper
-					elevation={darkMode ? 10 : 4}
-					sx={{
-						borderRadius: 4,
-						p: 4,
-						width: "100%",
-						boxShadow: darkMode
-							? "0px 8px 16px rgba(0,0,0,0.8)"
-							: "0px 8px 16px rgba(0,0,0,0.2)",
-						backgroundColor: darkMode ? "#424242" : "#fff",
-					}}
-				> */}
 				<Header
 					tabs={tabs}
 					activeTab={activeTab}
@@ -105,7 +104,6 @@ const App = () => {
 						mt: 4,
 					}}
 				>
-					{/* <Divider sx={{ my: 3 }} /> */}
 					{activeTab === "home" ? (
 						<Home />
 					) : (
@@ -113,7 +111,6 @@ const App = () => {
 							tab={tabs.find((tab) => tab.name === activeTab)}
 						/>
 					)}
-					{/* </Paper> */}
 				</Container>
 				<Footer lastUpdated={lastUpdated} darkMode={darkMode} />
 			</Container>

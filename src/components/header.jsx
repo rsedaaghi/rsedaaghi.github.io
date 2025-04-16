@@ -12,7 +12,9 @@ import {
 	List,
 	ListItem,
 	ListItemText,
-	Box, // Import Box component for styling
+	ListItemButton,
+	Box,
+	Button,
 } from "@mui/material";
 import { Brightness4, Brightness7, Menu } from "@mui/icons-material";
 import packageJSON from "../../package.json";
@@ -26,18 +28,23 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 		setDrawerOpen(open);
 	};
 
+	const handleAuthorClick = () => {
+		onTabChange("home");
+		window.history.pushState(null, "", "#home");
+	};
+
 	const drawerContent = (
 		<List>
 			{tabs.map((tab) => (
-				<ListItem
-					button
-					key={tab.name}
-					onClick={() => {
-						onTabChange(tab.name);
-						setDrawerOpen(false);
-					}}
-				>
-					<ListItemText primary={tab.label} />
+				<ListItem key={tab.name} disablePadding>
+					<ListItemButton
+						onClick={() => {
+							onTabChange(tab.name);
+							setDrawerOpen(false);
+						}}
+					>
+						<ListItemText primary={tab.label} />
+					</ListItemButton>
 				</ListItem>
 			))}
 		</List>
@@ -52,7 +59,7 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 					color: darkMode ? "#ffffff" : "#000000",
 					boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
 					zIndex: 10,
-					borderRadius: "0 0 8px 8px", // Add rounded corners to the bottom
+					borderRadius: "0 0 8px 8px", // Rounded bottom corners
 				}}
 			>
 				<Toolbar
@@ -61,15 +68,21 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 						justifyContent: "space-between",
 					}}
 				>
-					<Typography
-						variant="h6"
-						sx={{
-							fontWeight: "bold",
-							color: darkMode ? "#90caf9" : "#1976d2",
-						}}
+					<Button
+						onClick={handleAuthorClick}
+						sx={{ textTransform: "none", p: 0 }}
 					>
-						{packageJSON.author}
-					</Typography>
+						<Typography
+							variant="h6"
+							sx={{
+								fontWeight: "bold",
+								color: darkMode ? "#90caf9" : "#1976d2",
+							}}
+						>
+							{packageJSON.author}
+						</Typography>
+					</Button>
+
 					{isMobile ? (
 						<IconButton
 							onClick={toggleDrawer(true)}
@@ -112,13 +125,13 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 				onClose={toggleDrawer(false)}
 				sx={{
 					"& .MuiDrawer-paper": {
-						borderRadius: "8px 0 0 8px", // Add rounded corners to the drawer
+						borderRadius: "8px 0 0 8px",
 					},
 				}}
 			>
 				<Box
 					sx={{
-						padding: 2, // Optional: add some padding
+						padding: 2,
 					}}
 				>
 					{drawerContent}

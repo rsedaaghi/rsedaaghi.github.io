@@ -5,11 +5,11 @@
         "url": "https://example.com/personal-portfolio",
         "images": [
             {
-                "src": "/assets/images/portfolio1.jpg",
+                "src": "https://dkstatics-public.digikala.com/digikala-products/266008.jpg",
                 "caption": "Homepage of my portfolio"
             },
             {
-                "src": "/assets/images/portfolio2.jpg",
+                "src": "https://dkstatics-public.digikala.com/digikala-products/266008.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90",
                 "caption": "Skills section of my portfolio"
             }
         ]
