@@ -12,6 +12,7 @@ import {
 	List,
 	ListItem,
 	ListItemText,
+	ListItemButton,
 	Box, // Import Box component for styling
 } from "@mui/material";
 import { Brightness4, Brightness7, Menu } from "@mui/icons-material";
@@ -29,15 +30,15 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 	const drawerContent = (
 		<List>
 			{tabs.map((tab) => (
-				<ListItem
-					button
-					key={tab.name}
-					onClick={() => {
-						onTabChange(tab.name);
-						setDrawerOpen(false);
-					}}
-				>
-					<ListItemText primary={tab.label} />
+				<ListItem key={tab.name} disablePadding>
+					<ListItemButton
+						onClick={() => {
+							onTabChange(tab.name);
+							setDrawerOpen(false);
+						}}
+					>
+						<ListItemText primary={tab.label} />
+					</ListItemButton>
 				</ListItem>
 			))}
 		</List>
@@ -52,7 +53,7 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 					color: darkMode ? "#ffffff" : "#000000",
 					boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
 					zIndex: 10,
-					borderRadius: "0 0 8px 8px", // Add rounded corners to the bottom
+					borderRadius: "0 0 8px 8px", // Rounded bottom corners
 				}}
 			>
 				<Toolbar
@@ -112,7 +113,7 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 				onClose={toggleDrawer(false)}
 				sx={{
 					"& .MuiDrawer-paper": {
-						borderRadius: "8px 0 0 8px", // Add rounded corners to the drawer
+						borderRadius: "8px 0 0 8px", // Rounded corners for the drawer
 					},
 				}}
 			>

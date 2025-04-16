@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
-import { Grid, Typography, Button, Box, Paper, Container } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Grid, Typography, Button, Box } from "@mui/material";
+// Import the mask from your src folder
+import mask from "../assets/masks/mask.svg";
 
 const Home = () => {
 	const [homeData, setHomeData] = useState({});
@@ -31,7 +33,6 @@ const Home = () => {
 				>
 					Welcome to My Portfolio
 				</Typography>
-
 				<Typography
 					variant="body1"
 					sx={{
@@ -42,7 +43,6 @@ const Home = () => {
 				>
 					{homeData.description}
 				</Typography>
-
 				{homeData.contactButton?.isOn && (
 					<Button
 						variant="contained"
@@ -63,20 +63,35 @@ const Home = () => {
 				)}
 			</Grid>
 
-			{/* Right Section: Image with Modern Style */}
+			{/* Right Section: Image with Mask */}
 			<Grid item xs={12} md={6}>
 				<Box
-					component="img"
-					src={homeData.image}
-					alt="Portfolio Profile"
 					sx={{
 						width: "100%",
 						maxWidth: "400px",
-						borderRadius: "8px", // Changed from 50% to a softer rounding
-						boxShadow: 4,
 						mx: "auto",
+						// Apply the imported mask using CSS mask properties
+						maskImage: `url(${mask})`,
+						WebkitMaskImage: `url(${mask})`,
+						maskSize: "cover", // or "contain" based on the desired effect
+						WebkitMaskSize: "cover",
+						maskRepeat: "no-repeat",
+						WebkitMaskRepeat: "no-repeat",
+						maskPosition: "center",
+						WebkitMaskPosition: "center",
+						backgroundColor: "#fff",
 					}}
-				/>
+				>
+					<Box
+						component="img"
+						src={homeData.image}
+						alt="Portfolio Profile"
+						sx={{
+							width: "100%",
+							borderRadius: "8px",
+						}}
+					/>
+				</Box>
 			</Grid>
 		</Grid>
 	);
