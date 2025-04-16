@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Grid, Typography, Button, Box } from "@mui/material";
-// Import the mask from your src folder
-import mask from "../assets/masks/mask.svg";
+import maskUrl from "../assets/masks/mask.svg?url";
 
 const Home = () => {
 	const [homeData, setHomeData] = useState({});
@@ -17,19 +16,13 @@ const Home = () => {
 		<Grid
 			container
 			spacing={6}
-			alignItems="center"
-			justifyContent="center"
 			sx={{ textAlign: { xs: "center", md: "left" } }}
 		>
 			{/* Left Section: Text Content */}
-			<Grid item xs={12} md={6}>
+			<Grid size={{ xs: 12, md: 6 }}>
 				<Typography
 					variant="h3"
-					sx={{
-						fontWeight: "700",
-						mb: 2,
-						color: "primary.main",
-					}}
+					sx={{ fontWeight: "700", mb: 2, color: "primary.main" }}
 				>
 					Welcome to My Portfolio
 				</Typography>
@@ -64,22 +57,21 @@ const Home = () => {
 			</Grid>
 
 			{/* Right Section: Image with Mask */}
-			<Grid item xs={12} md={6}>
+			<Grid size={{ xs: 12, md: 6 }}>
 				<Box
 					sx={{
 						width: "100%",
 						maxWidth: "400px",
 						mx: "auto",
-						// Apply the imported mask using CSS mask properties
-						maskImage: `url(${mask})`,
-						WebkitMaskImage: `url(${mask})`,
-						maskSize: "cover", // or "contain" based on the desired effect
-						WebkitMaskSize: "cover",
+						maskImage: `url(${maskUrl})`,
+						WebkitMaskImage: `url(${maskUrl})`,
 						maskRepeat: "no-repeat",
 						WebkitMaskRepeat: "no-repeat",
 						maskPosition: "center",
 						WebkitMaskPosition: "center",
-						backgroundColor: "#fff",
+						maskSize: "cover",
+						WebkitMaskSize: "cover",
+						backgroundColor: "transparent",
 					}}
 				>
 					<Box
@@ -88,7 +80,7 @@ const Home = () => {
 						alt="Portfolio Profile"
 						sx={{
 							width: "100%",
-							borderRadius: "8px",
+							display: "block",
 						}}
 					/>
 				</Box>
