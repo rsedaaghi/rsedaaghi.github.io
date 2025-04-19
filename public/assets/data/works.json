@@ -2,34 +2,9 @@
     {
         "title": "Personal Portfolio",
         "date": "2025-04-14",
-        "description": "A responsive portfolio showcasing my skills and projects.",
-        "url": "https://example.com/personal-portfolio",
+        "description": "Details for Personal Portfolio are currently being updated. Please check back soon.",
+        "url": "",
         "images": [],
-        "technologies": [
-            "React",
-            "Node.js",
-            "Vite",
-            "Material-UI"
-        ]
-    },
-    {
-        "title": "E-commerce Website",
-        "description": "An online store built with React and Node.js.",
-        "images": [
-            {
-                "src": "/assets/images/ecommerce1.jpg",
-                "caption": "Product listing page"
-            },
-            {
-                "src": "/assets/images/ecommerce2.jpg",
-                "caption": "Shopping cart functionality"
-            }
-        ],
-        "technologies": [
-            "React",
-            "Node.js",
-            "MongoDB",
-            "Express"
-        ]
+        "technologies": []
     }
 ]
