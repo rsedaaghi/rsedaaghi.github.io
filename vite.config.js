@@ -30,6 +30,11 @@ export default defineConfig({
             type: 'image/png',
           },
         ],
+        registerType: 'autoUpdate',
+        workbox: {
+          // Increase allowed precache file size to 5 MB (5 * 1024 * 1024)
+          maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        },
       },
     }),
   ],
