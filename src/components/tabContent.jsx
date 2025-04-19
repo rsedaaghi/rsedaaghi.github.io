@@ -7,6 +7,7 @@ import {
   Card,
   CardContent,
   Button,
+  Chip
 } from "@mui/material";
 import { getDynamicIcon } from "../utils/helpers"; // Import the helper function
 
@@ -36,10 +37,9 @@ const TabContent = ({ tab }) => {
         : [];
     }
     if (tabName === "skills") {
+      // For skills, we expect an array of strings; convert them into objects with a title property.
       return Array.isArray(data)
-        ? data.map((skill) =>
-            typeof skill === "string" ? { title: skill } : skill
-          )
+        ? data.map((skill) => (typeof skill === "string" ? { title: skill } : skill))
         : [];
     }
     if (tabName === "works") {
@@ -109,14 +109,62 @@ const TabContent = ({ tab }) => {
   // For About and Works, each card should cover a full row.
   const isFullRowTab = tab.name === "about" || tab.name === "works";
   // For full-row tabs, make the grid item occupy the full width.
-  // For other tabs, use a multi-column layout by specifying multiple breakpoints.
+  // For other tabs, use a multi-column layout.
   const gridItemProps = isFullRowTab
     ? { size: 12 }
     : { size: { xs: 12, sm: 6, md: 4 } };
 
-  // Set a modest fixed height for multi-column (skills & contact)
+  // Set a modest fixed height for multi-column layout (skills & contact)
   const cardMinHeight = isFullRowTab ? "auto" : 150;
 
+  // Special layout for Skills tab: use Chips to showcase each skill.
+  if (tab.name === "skills") {
+    return (
+      <Box>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: "bold",
+            textAlign: "center",
+            mb: 4,
+            color: "#1976d2",
+          }}
+        >
+          {tab.label}
+        </Typography>
+        {content.length > 0 ? (
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              gap: 2,
+              px: 2,
+            }}
+          >
+            {content.map((skill, index) => (
+              <Chip
+                key={index}
+                label={skill.title}
+                color="primary"
+                variant="outlined"
+                sx={{ fontSize: "1rem", padding: "0.5rem" }}
+              />
+            ))}
+          </Box>
+        ) : (
+          <Typography
+            variant="body1"
+            sx={{ textAlign: "center", color: "#455a64", mt: 2 }}
+          >
+            No skills available.
+          </Typography>
+        )}
+      </Box>
+    );
+  }
+
+  // Standard layout for other tabs
   return (
     <Box>
       <Typography
@@ -159,15 +207,11 @@ const TabContent = ({ tab }) => {
                     },
                   }}
                 >
-                  {/**
-                    * Instead of manually checking for an image, use the helper to render an icon.
-                    * This will try to use a MUI icon or iconUrl based on the JSON.
-                    */}
                   {getDynamicIcon(item)}
                   {item.label || item.name}
                 </Button>
               ) : (
-                // Standard Grid Layout for Skills, About, and Works
+                // Standard Card Layout for About and Works
                 <Card
                   sx={{
                     width: "100%",
@@ -183,12 +227,18 @@ const TabContent = ({ tab }) => {
                       {item.title}
                     </Typography>
                     {item.date && (
-                      <Typography variant="body2" sx={{ mb: 1, color: "#757575" }}>
+                      <Typography
+                        variant="body2"
+                        sx={{ mb: 1, color: "#757575" }}
+                      >
                         📅 {new Date(item.date).toLocaleDateString()}
                       </Typography>
                     )}
                     {item.description && (
-                      <Typography variant="body2" sx={{ mb: 3, color: "#757575" }}>
+                      <Typography
+                        variant="body2"
+                        sx={{ mb: 3, color: "#757575" }}
+                      >
                         {item.description}
                       </Typography>
                     )}
