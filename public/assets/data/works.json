@@ -13,6 +13,12 @@
                 "src": "https://dkstatics-public.digikala.com/digikala-products/266008.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90",
                 "caption": "Skills section of my portfolio"
             }
+        ],
+        "technologies": [
+            "React",
+            "Node.js",
+            "Vite",
+            "Material-UI"
         ]
     },
     {
@@ -27,6 +33,12 @@
                 "src": "/assets/images/ecommerce2.jpg",
                 "caption": "Shopping cart functionality"
             }
+        ],
+        "technologies": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Express"
         ]
     }
 ]
