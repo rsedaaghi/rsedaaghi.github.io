@@ -2,22 +2,19 @@
     {
         "name": "Email",
         "label": "Contact via Email",
-        "url": "mailto:example@example.com"
+        "url": "mailto:rsedaaghi@gmail.com",
+        "muiIcon": "Email"
     },
     {
         "name": "LinkedIn",
         "label": "Connect on LinkedIn",
-        "url": "https://linkedin.com/in/example"
+        "url": "https://www.linkedin.com/in/reza-sedaaghi/",
+        "muiIcon": "LinkedIn"
     },
     {
-        "name": "X (Twitter)",
-        "label": "Connect on X",
-        "url": "https://x.com/in/example"
-    },
-    {
-        "iconUrl": "https://example.com/icons/github.png",
-        "name": "NewMedia",
+        "name": "GitHub",
         "label": "View GitHub Profile",
-        "url": "https://github.com/example"
+        "url": "https://github.com/rsedaaghi",
+        "muiIcon": "GitHub"
     }
 ]
