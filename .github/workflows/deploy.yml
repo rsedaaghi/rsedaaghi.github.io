@@ -41,6 +41,9 @@ jobs:
             - name: Update Last Modified Timestamp
               run: node scripts/updateLastModified.js
 
+            - name: Generate Sitemap
+              run: npm run generate-sitemap
+
             # Step 6: Build the project
             - name: Build the project
               run: npm run build
