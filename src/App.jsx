@@ -3,6 +3,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import TabContent from "./components/tabContent";
 import Home from "./components/home";
+import GalleryTab from "./components/gallery"; // Import the new GalleryTab component
 import packageJson from "../package.json";
 import {
 	CssBaseline,
@@ -16,8 +17,7 @@ const tabs = [
 	{ label: "Home", name: "home", component: <Home /> },
 	{ label: "About", name: "about", jsonFile: "about.json" },
 	{ label: "Skills", name: "skills", jsonFile: "skills.json" },
-	// { label: "Experience", name: "experience", component: <Experience /> },
-	// { label: "Education", name: "education", component: <Education /> },
+	{ label: "Gallery", name: "gallery", component: <GalleryTab /> }, // New Gallery tab
 	{ label: "Works", name: "works", jsonFile: "works.json" },
 	{ label: "Contact", name: "contact", jsonFile: "contact.json" },
 ];
@@ -73,6 +73,9 @@ const App = () => {
 		setDarkMode((prevMode) => !prevMode);
 	};
 
+	// Determine the active tab data for rendering.
+	const activeTabData = tabs.find((tab) => tab.name === activeTab);
+
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
@@ -104,12 +107,10 @@ const App = () => {
 						mt: 4,
 					}}
 				>
-					{activeTab === "home" ? (
-						<Home />
+					{activeTabData.component ? (
+						activeTabData.component
 					) : (
-						<TabContent
-							tab={tabs.find((tab) => tab.name === activeTab)}
-						/>
+						<TabContent tab={activeTabData} />
 					)}
 				</Container>
 				<Footer lastUpdated={lastUpdated} darkMode={darkMode} />
