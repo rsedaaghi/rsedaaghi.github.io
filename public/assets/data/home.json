@@ -2,7 +2,7 @@
     "description": "Hi, I'm Reza Sedaaghi, a Software Developer specializing in Node.js, React, and CI/CD pipelines. Passionate about creating scalable, efficient, and modern solutions.",
     "contactButton": {
         "isOn": true,
-        "url": "mailto:your-email@example.com"
+        "url": "mailto:rsedaaghi@gmail.com"
     },
     "image": "/assets/images/profile.jpg"
 }
