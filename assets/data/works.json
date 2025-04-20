@@ -133,10 +133,11 @@
         "title": "Digital Systems and Data Mining Laboratory Website – Amir Kabir University",
         "date": "2023",
         "description": "Developed an academic showcase website for the Digital Systems and Data Mining Laboratory at Amir Kabir University's Electrical Engineering Department. The site features research group profiles and allows admin-controlled updates and management.",
-        "url": "",
+        "url": "https://ssail.aut.ac.ir/",
         "images": [],
         "technologies": [
             "PHP",
+            "Wordpress",
             "Linux",
             "Bootstrap",
             "JQuery"
