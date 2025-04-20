@@ -1,10 +1,296 @@
 [
     {
-        "title": "Personal Portfolio",
-        "date": "2025-04-14",
-        "description": "Details for Personal Portfolio are currently being updated. Please check back soon.",
+        "title": "Personal Portfolio Website",
+        "date": "2025",
+        "description": "Developed a portfolio website using React to showcase my work, skills, and contact information. The project was bootstrapped with Vite, incorporates Material-UI as the UI library, and supports PWA functionality.",
+        "url": "https://rsedaaghi.github.io/",
+        "images": [],
+        "technologies": [
+            "React",
+            "Vite",
+            "Material-UI",
+            "PWA"
+        ]
+    },
+    {
+        "title": "Backend Enhancement for the Educaite Website",
+        "date": "2025",
+        "description": "Continued developing the backend for the Educaite website. This phase included fixing the password reset process, enabling question creation and updates with custom notes, refining logic for delivering personalized content based on quiz scores, and completing support for user notes. Unfinished quizzes were cleaned up by removing outdated book entries. Support was added for the book reader module and panel APIs for chapter management. Other updates included correcting models for messages and report questions, finalizing user note functionalities, and improving overall panel APIs.",
+        "url": "https://educaite.org/",
+        "images": [
+            {
+                "src": "/assets/images/works/educaite_backend_github.png",
+                "caption": "GitHub / educaite-core"
+            }
+        ],
+        "technologies": [
+            "Node.js",
+            "PostgreSQL",
+            "Docker"
+        ]
+    },
+    {
+        "title": "Implementation and Configuration of the Monitoring System for Rayehe Sepehr Salam Co. Dialysis Centers",
+        "date": "2024",
+        "description": "Hospital Information System (HIS) at Aria Teb Firouz. HIS is a comprehensive, integrated information system consisting of modules for managing patient appointments, medical, administrative, financial, and inventory services.",
+        "url": "",
+        "images": [
+            {
+                "src": "/assets/images/works/monitoring_zabbix_1.png",
+                "caption": "Admin panel in Zabbix showing the status of centers as operational and their network topology"
+            },
+            {
+                "src": "/assets/images/works/monitoring_zabbix_2.png",
+                "caption": "Timeline view of network activity for each dialysis center"
+            },
+            {
+                "src": "/assets/images/works/monitoring_zabbix_3.png",
+                "caption": "Docker containers running Zabbix agents for each center"
+            }
+        ],
+        "technologies": [
+            "Node.js",
+            "Redis",
+            "PostgreSQL",
+            "Docker"
+        ]
+    },
+    {
+        "title": "Technical Support and Backend Development for the Electronic Data Collection (EDC) System",
+        "date": "2023",
+        "description": "Provided technical support and backend development for the EDC system at Aria Teb Firouz. The system simplifies the electronic collection, review, and processing of clinical trial data.",
         "url": "",
         "images": [],
-        "technologies": []
+        "technologies": [
+            "Service-oriented architecture",
+            "Node.js",
+            "Redis",
+            "gRPC",
+            "PostgreSQL",
+            "Docker"
+        ]
+    },
+    {
+        "title": "Development of an Ore Image Processing System",
+        "date": "2023",
+        "description": "Developed a system that analyzes uploaded images to determine mineral sizes, with implementation on Raspberry Pi as well.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Node.js",
+            "Docker",
+            "Linux",
+            "React",
+            "Python"
+        ]
+    },
+    {
+        "title": "Development of the Admin Panel for the Educaite Website",
+        "date": "2023",
+        "description": "Continued developing the administrative panel and mobile application for Educaite, enabling educators to upload course content and automatically generate test questions using AI, thereby enhancing functionality and user experience.",
+        "url": "https://educaite.org/",
+        "images": [],
+        "technologies": [
+            "React"
+        ]
+    },
+    {
+        "title": "Development of Data Display Code for Automated Waste Collection Vehicles",
+        "date": "2023",
+        "description": "Implemented code to display data from sensor and camera systems installed on waste collection vehicles.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "C++",
+            "Python",
+            "Bootstrap"
+        ]
+    },
+    {
+        "title": "Smart Waste Collection System",
+        "date": "2023",
+        "description": "Designed a system where sensor and camera data from waste collection trucks are transmitted via Bluetooth and Wi-Fi to a tablet, then sent to a server. The project was executed by Bahar Afaq Shahr, a subsidiary of Bahar Rood Tehran, specializing in industrial trailers and urban service vehicles.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "C++",
+            "Flutter"
+        ]
+    },
+    {
+        "title": "Development of a React-based PWA for Vehicle Tracking",
+        "date": "2023",
+        "description": "Created a progressive web application (PWA) using React for vehicle tracking and real-time location monitoring.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Node.js",
+            "React",
+            "PWA"
+        ]
+    },
+    {
+        "title": "Digital Systems and Data Mining Laboratory Website – Amir Kabir University",
+        "date": "2023",
+        "description": "Developed an academic showcase website for the Digital Systems and Data Mining Laboratory at Amir Kabir University's Electrical Engineering Department. The site features research group profiles and allows admin-controlled updates and management.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "PHP",
+            "Linux",
+            "Bootstrap",
+            "JQuery"
+        ]
+    },
+    {
+        "title": "Development of the Collective Reporting Module for the Hospital Information System (HIS)",
+        "date": "2023",
+        "description": "Implemented a comprehensive reporting module within Aria Teb Firouz's HIS, covering patient scheduling, medical, administrative, financial, and inventory management functionalities.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Node.js",
+            "SQL Query",
+            "PostgreSQL",
+            "Docker"
+        ]
+    },
+    {
+        "title": "Front-end Development for the Electronic Data Collection (EDC) System Panel",
+        "date": "2022",
+        "description": "Developed the front-end interface of the EDC system panel using React and Material-UI.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "React",
+            "Material-UI"
+        ]
+    },
+    {
+        "title": "Technical Support and Backend Development for the Hospital Information System (HIS)",
+        "date": "2022",
+        "description": "Provided technical support and backend development for Aria Teb Firouz's integrated HIS.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Node.js",
+            "Redis",
+            "PostgreSQL",
+            "Docker"
+        ]
+    },
+    {
+        "title": "Technical Support, Supervision, and Monitoring of HIS Software",
+        "date": "2022",
+        "description": "Monitored and maintained HIS software across dialysis centers and supported the launch of HIS in new centers at Rayehe Sepehr Salam Co., a healthcare services company.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Docker",
+            "Linux",
+            "Zabbix"
+        ]
+    },
+    {
+        "title": "Development of a Fare Estimation System for International Freight Shipping",
+        "date": "2021",
+        "description": "Built a web-based system providing freight information, consultation, price estimates, and online bidding for international cargo transportation.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Bootstrap",
+            "JQuery",
+            "PHP"
+        ]
+    },
+    {
+        "title": "Development of an Intelligent Valve Manifold Monitoring System at Qazvin Gas Company",
+        "date": "2021",
+        "description": "Developed a management panel with user roles, access controls, log storage, mapping of organizations and installation sites, and real-time alerts via email/SMS for theft detection.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Python",
+            "WebSocket",
+            "Leaflet",
+            "JQuery",
+            "SCSS",
+            "Bootstrap"
+        ]
+    },
+    {
+        "title": "Object-Oriented Neural Network Training and Performance Reporting Code",
+        "date": "2020",
+        "description": "Implemented an object-oriented approach to train a multilayer neural network and report its performance after testing.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Python"
+        ]
+    },
+    {
+        "title": "Development of the Methane Detector (MDet) Software",
+        "date": "2020",
+        "description": "Created a GUI application to display methane leak levels on a map and track drone movement, with color-coded severity indicators, as part of a joint project with Qazvin Gas Company.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Python",
+            "Leaflet"
+        ]
+    },
+    {
+        "title": "GUI Software for Price Difference Detection between Nobitex and Binance",
+        "date": "2020",
+        "description": "Developed a desktop application to detect and notify discrepancies in cryptocurrency prices between Nobitex and Binance exchanges.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Python"
+        ]
+    },
+    {
+        "title": "Graduate Coursework Projects (Console and GUI Based)",
+        "date": "2014",
+        "description": "A series of academic projects conducted during postgraduate studies, utilizing both console-based and GUI-based approaches.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "C++",
+            "Matlab"
+        ]
+    },
+    {
+        "title": "Number Guessing Game and Tasbih Counter Application",
+        "date": "2012",
+        "description": "Developed a simple number guessing game and an electronic Tasbih (prayer counter) application.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Java",
+            "Android"
+        ]
+    },
+    {
+        "title": "Academic Coursework Projects (Console-Based)",
+        "date": "2009",
+        "description": "Completed various console-based projects as part of academic coursework.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "C",
+            "Fortran"
+        ]
+    },
+    {
+        "title": "Design and Development of Static Pages and Themes for Blogfa and MihanBlog",
+        "date": "2005",
+        "description": "Designed and developed static pages and themes for Blogfa and MihanBlog; activity continued until 1390 (Jalali calendar).",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "HTML",
+            "CSS"
+        ]
     }
 ]
