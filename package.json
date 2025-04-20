@@ -9,12 +9,11 @@
   "scripts": {
     "update-last-modified": "node updateLastModified.js",
     "dev": "vite",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "generate-sitemap": "node scripts/generateSitemap.js",
-    "build": "vite build && npm run generate-sitemap"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
