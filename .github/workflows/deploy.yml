@@ -1,50 +1,58 @@
 name: Deploy to GitHub Pages
 
 on:
-    push:
-        branches:
-            - main # Trigger the workflow only on pushes to the main branch
+  push:
+    branches:
+      - main # Trigger the workflow only on pushes to the main branch
 
 permissions:
-    contents: write # Allows the workflow to write to the repository
+  contents: write # Allows the workflow to write to the repository
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-            # Step 1: Checkout the repository
-            - name: Checkout code
-              uses: actions/checkout@v3
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-            # Step 2: Set up Git user identity
-            - name: Configure Git
-              run: |
-                  git config --global user.email "your_email@example.com"
-                  git config --global user.name "Your Name"
+      # Step 2: Set up Git user identity
+      - name: Configure Git
+        run: |
+          git config --global user.email "your_email@example.com"
+          git config --global user.name "Your Name"
 
-            # Step 3: Set up Node.js
-            - name: Set up Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: "22.14.0"
+      # Step 3: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22.14.0"
 
-            # Step 4: Install dependencies
-            - name: Install dependencies
-              run: npm install
+      # Step 4: Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-            # Optional: Compress images using imagemin-cli
-            # - name: Optimize Images
-            # run: npx imagemin "public/assets/images/**/*.{jpg,png,jpeg}" --out-dir="public/assets/images"
+      # Optional: Compress images using imagemin-cli
+      # - name: Optimize Images
+      # run: npx imagemin "public/assets/images/**/*.{jpg,png,jpeg}" --out-dir="public/assets/images"
 
-            # Step 5: Update the 'last_update' field in package.json
-            - name: Update Last Modified Timestamp
-              run: node scripts/updateLastModified.js
+      # Step 5: Update the 'last_update' field in package.json
+      - name: Update Last Modified Timestamp
+        run: node scripts/updateLastModified.js
 
-            # Step 6: Build the project
-            - name: Build the project
-              run: npm run build
+      # Step 6: Build the project (must run before generating sitemap)
+      - name: Build the project
+        run: npm run build
 
-            # Step 7: Deploy to GitHub Pages
-            - name: Deploy to GitHub Pages
-              run: npx gh-pages -d dist --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/rsedaaghi/rsedaaghi.github.io.git
+      # Step 7: Generate the sitemap (must happen after the build)
+      - name: Generate Sitemap
+        run: node scripts/generateSitemap.js
+
+      # Step 8: Ensure the sitemap is included in the dist folder before deployment
+      - name: Verify Sitemap Exists
+        run: ls -l dist/sitemap.xml || echo "Warning: Sitemap file missing"
+
+      # Step 9: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        run: npx gh-pages -d dist --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/rsedaaghi/rsedaaghi.github.io.git
