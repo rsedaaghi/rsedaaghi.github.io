@@ -34,8 +34,8 @@ jobs:
               run: npm install
 
             # Optional: Compress images using imagemin-cli
-            - name: Optimize Images
-              run: npx imagemin "public/assets/images/**/*.{jpg,png,jpeg}" --out-dir="public/assets/images"
+            # - name: Optimize Images
+            # run: npx imagemin "public/assets/images/**/*.{jpg,png,jpeg}" --out-dir="public/assets/images"
 
             # Step 5: Update the 'last_update' field in package.json
             - name: Update Last Modified Timestamp
