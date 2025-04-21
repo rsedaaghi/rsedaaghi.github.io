@@ -102,7 +102,7 @@ const TabContent = ({ tab }) => {
 			</Typography>
 		);
 
-	const gridItemProps = { xs: 12 };
+	const gridItemProps = { size: { xs: 12 } };
 
 	if (tab.name === "skills") {
 		return (
@@ -174,32 +174,33 @@ const TabContent = ({ tab }) => {
 					{content.map((item, index) => (
 						<Grid
 							key={index}
-							item
 							{...gridItemProps}
 							sx={{ display: "flex" }}
 						>
 							{tab.name === "contact" ? (
 								// Contact Tab Layout
-								<Button
-									variant="outlined"
-									href={item.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									sx={{
-										width: "100%",
-										display: "flex",
-										alignItems: "center",
-										gap: 2,
-										borderColor: "#1976d2",
-										color: "#1976d2",
-										"&:hover": {
-											backgroundColor: "#e3f2fd",
-										},
-									}}
-								>
-									{getDynamicIcon(item)}
-									{item.label || item.name}
-								</Button>
+								item.url ? (
+									<Button
+										variant="outlined"
+										href={item.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										sx={{
+											width: "100%",
+											display: "flex",
+											alignItems: "center",
+											gap: 2,
+											borderColor: "#1976d2",
+											color: "#1976d2",
+											"&:hover": {
+												backgroundColor: "#e3f2fd",
+											},
+										}}
+									>
+										{getDynamicIcon(item)}
+										{item.label || item.name}
+									</Button>
+								) : null
 							) : tab.name === "works" ? (
 								// Beautified Works Tab Layout with left-aligned/justified description
 								<Card

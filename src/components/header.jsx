@@ -16,7 +16,7 @@ import {
 	Box,
 	Button,
 } from "@mui/material";
-import { Brightness4, Brightness7, Menu } from "@mui/icons-material";
+import { Menu } from "@mui/icons-material";
 import packageJSON from "../../package.json";
 
 const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
@@ -53,20 +53,18 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 	return (
 		<>
 			<AppBar
-				position="sticky"
+				position={isMobile ? "fixed" : "sticky"}
 				sx={{
+					top: 0,
 					backgroundColor: darkMode ? "#212121" : "#ffffff",
 					color: darkMode ? "#ffffff" : "#000000",
 					boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
 					zIndex: 10,
-					borderRadius: "0 0 8px 8px", // Rounded bottom corners
+					borderRadius: isMobile ? "0" : "0 0 8px 8px",
 				}}
 			>
 				<Toolbar
-					sx={{
-						display: "flex",
-						justifyContent: "space-between",
-					}}
+					sx={{ display: "flex", justifyContent: "space-between" }}
 				>
 					<Button
 						onClick={handleAuthorClick}
@@ -82,7 +80,6 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 							{packageJSON.author}
 						</Typography>
 					</Button>
-
 					{isMobile ? (
 						<IconButton
 							onClick={toggleDrawer(true)}
@@ -95,11 +92,13 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 							value={activeTab}
 							onChange={(e, newValue) => onTabChange(newValue)}
 							textColor="inherit"
-							TabIndicatorProps={{
-								style: {
-									backgroundColor: darkMode
-										? "#90caf9"
-										: "#1976d2",
+							slotProps={{
+								indicator: {
+									sx: {
+										backgroundColor: darkMode
+											? "#90caf9"
+											: "#1976d2",
+									},
 								},
 							}}
 						>
@@ -129,13 +128,7 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 					},
 				}}
 			>
-				<Box
-					sx={{
-						padding: 2,
-					}}
-				>
-					{drawerContent}
-				</Box>
+				<Box sx={{ padding: 2 }}>{drawerContent}</Box>
 			</Drawer>
 		</>
 	);
