@@ -19,7 +19,7 @@
         "url": "https://educaite.org/",
         "images": [
             {
-                "src": "/assets/images/works/educaite_backend_github.png",
+                "src": "/assets/images/works/educaite/educaite_backend_github.png",
                 "caption": "GitHub / educaite-core"
             }
         ],
@@ -36,15 +36,15 @@
         "url": "",
         "images": [
             {
-                "src": "/assets/images/works/monitoring_zabbix_1.png",
+                "src": "/assets/images/works/monitoring/monitoring_zabbix_1.png",
                 "caption": "Admin panel in Zabbix showing the status of centers as operational and their network topology"
             },
             {
-                "src": "/assets/images/works/monitoring_zabbix_2.png",
+                "src": "/assets/images/works/monitoring/monitoring_zabbix_2.png",
                 "caption": "Timeline view of network activity for each dialysis center"
             },
             {
-                "src": "/assets/images/works/monitoring_zabbix_3.png",
+                "src": "/assets/images/works/monitoring/monitoring_zabbix_3.png",
                 "caption": "Docker containers running Zabbix agents for each center"
             }
         ],
@@ -262,20 +262,10 @@
         ]
     },
     {
-        "title": "Number Guessing Game and Tasbih Counter Application",
-        "date": "2012",
-        "description": "Developed a simple number guessing game and an electronic Tasbih (prayer counter) application.",
-        "url": "",
-        "images": [],
-        "technologies": [
-            "Java",
-            "Android"
-        ]
-    },
-    {
-        "title": "Academic Coursework Projects (Console-Based)",
-        "date": "2009",
-        "description": "Completed various console-based projects as part of academic coursework.",
+        "title": "Console-Based Course Projects",
+        "startDate": "2009",
+        "endDate": "2014",
+        "description": "Developed console-based projects as part of coursework related to a Bachelor’s degree in Mechanical Engineering at Tabriz University of Technology from 2009 to 2013. Activities continued until 2014. Programming languages used included C and Fortran.",
         "url": "",
         "images": [],
         "technologies": [
@@ -284,9 +274,54 @@
         ]
     },
     {
-        "title": "Design and Development of Static Pages and Themes for Blogfa and MihanBlog",
-        "date": "2005",
-        "description": "Designed and developed static pages and themes for Blogfa and MihanBlog; activity continued until 1390 (Jalali calendar).",
+        "title": "Android Application Development: Mini Projects",
+        "date": "2010",
+        "description": "During the summers of my Bachelor’s degree in Mechanical Engineering at Tabriz University of Technology, I explored Android development and created two mini projects: a 'Guess the Number' game and a Salavat Counter application. This experience allowed me to delve into mobile programming using Java and Android, showcasing my eagerness to learn and innovate during my academic years.",
+        "url": "",
+        "images": [
+            {
+                "src": "/assets/images/works/android/android_guess_game1.png",
+                "caption": "'Guess the Number' game welcome screen"
+            },
+            {
+                "src": "/assets/images/works/android/android_guess_game2.png",
+                "caption": "'Guess the Number' gameplay showing user interactions"
+            },
+            {
+                "src": "/assets/images/works/android/android_guess_game3.png",
+                "caption": "'Guess the Number' gameplay showing user interactions"
+            },
+            {
+                "src": "/assets/images/works/android/android_guess_game4.png",
+                "caption": "'Guess the Number' result display after user input"
+            },
+            {
+                "src": "/assets/images/works/android/android_counter1.png",
+                "caption": "Salavat Counter app showing user-friendly interface"
+            },
+            {
+                "src": "/assets/images/works/android/android_counter2.png",
+                "caption": "Salavat Counter app tracking counts in real time"
+            },
+            {
+                "src": "/assets/images/works/android/android_calc1.png",
+                "caption": "Calculator application interface during early testing"
+            },
+            {
+                "src": "/assets/images/works/android/android_calc2.png",
+                "caption": "Calculator application interface during early testing"
+            }
+        ],
+        "technologies": [
+            "Java",
+            "Android"
+        ]
+    },
+    {
+        "title": "Design and Development of Static Web Pages",
+        "startDate": "2005",
+        "endDate": "2011",
+        "description": "Designed and developed static pages and themes for Blogfa and MihanBlog; activity continued until 2011. Blogfa and MihanBlog are popular Persian blogging platforms that allow users to create and manage blogs easily.",
         "url": "",
         "images": [],
         "technologies": [

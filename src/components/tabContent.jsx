@@ -227,7 +227,27 @@ const TabContent = ({ tab }) => {
 										>
 											{item.title}
 										</Typography>
-										{item.date && (
+										{item.startDate ? (
+											<Typography
+												variant="body2"
+												sx={{
+													mb: 1,
+													color: "#757575",
+													textAlign: "left",
+												}}
+											>
+												📅{" "}
+												{item.endDate
+													? `${new Date(
+															item.startDate
+													  ).getFullYear()} - ${new Date(
+															item.endDate
+													  ).getFullYear()}`
+													: new Date(
+															item.startDate
+													  ).getFullYear()}
+											</Typography>
+										) : item.date ? (
 											<Typography
 												variant="body2"
 												sx={{
@@ -239,9 +259,10 @@ const TabContent = ({ tab }) => {
 												📅{" "}
 												{new Date(
 													item.date
-												).toLocaleDateString()}
+												).getFullYear()}
 											</Typography>
-										)}
+										) : null}
+
 										{item.description && (
 											<Typography
 												variant="body2"
