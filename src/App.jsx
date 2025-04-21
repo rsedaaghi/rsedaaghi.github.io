@@ -3,7 +3,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import TabContent from "./components/tabContent";
 import Home from "./components/home";
-import GalleryTab from "./components/gallery"; // Import the new GalleryTab component
+import GalleryTab from "./components/gallery";
 import packageJson from "../package.json";
 import {
 	CssBaseline,
@@ -15,11 +15,11 @@ import {
 
 const tabs = [
 	{ label: "Home", name: "home", component: <Home /> },
-	{ label: "About", name: "about", jsonFile: "about.json" },
-	{ label: "Skills", name: "skills", jsonFile: "skills.json" },
+	{ label: "About", name: "about", jsonFile: "about.json?url" },
+	{ label: "Skills", name: "skills", jsonFile: "skills.json?url" },
 	{ label: "Gallery", name: "gallery", component: <GalleryTab /> }, // New Gallery tab
-	{ label: "Works", name: "works", jsonFile: "works.json" },
-	{ label: "Contact", name: "contact", jsonFile: "contact.json" },
+	{ label: "Works", name: "works", jsonFile: "works.json?url" },
+	{ label: "Contact", name: "contact", jsonFile: "contact.json?url" },
 ];
 
 const App = () => {
@@ -27,11 +27,11 @@ const App = () => {
 	const [darkMode, setDarkMode] = useState(false);
 	const [lastUpdated, setLastUpdated] = useState("");
 
-	// On mount, if there's a URL hash and it matches a tab name, set it as active.
+	// On mount, check for a URL hash to set an active tab.
 	useEffect(() => {
 		const hash = window.location.hash;
 		if (hash) {
-			const tabName = hash.substring(1); // remove '#' from '#skills'
+			const tabName = hash.substring(1); // remove '#' (e.g., from '#skills')
 			if (tabs.some((tab) => tab.name === tabName)) {
 				setActiveTab(tabName);
 			}
@@ -55,15 +55,12 @@ const App = () => {
 		components: {
 			MuiPaper: {
 				styleOverrides: {
-					root: {
-						transition: "all 0.3s ease-in-out",
-					},
+					root: { transition: "all 0.3s ease-in-out" },
 				},
 			},
 		},
 	});
 
-	// When a tab is changed, update activeTab and set the URL hash.
 	const handleTabChange = (newValue) => {
 		setActiveTab(newValue);
 		window.history.pushState(null, "", `#${newValue}`);
@@ -73,7 +70,6 @@ const App = () => {
 		setDarkMode((prevMode) => !prevMode);
 	};
 
-	// Determine the active tab data for rendering.
 	const activeTabData = tabs.find((tab) => tab.name === activeTab);
 
 	return (
@@ -82,12 +78,14 @@ const App = () => {
 			<Container
 				maxWidth="md"
 				sx={{
-					py: 6,
+					// Provide extra top padding on mobile to compensate for the fixed header.
+					pt: { xs: "70px", md: 6 },
+					pb: { xs: 2, md: 6 },
 					minHeight: "100vh",
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "center",
-					justifyContent: "center",
+					justifyContent: { xs: "flex-start", md: "center" },
 				}}
 			>
 				<Header
@@ -100,11 +98,11 @@ const App = () => {
 				<Container
 					maxWidth="lg"
 					sx={{
-						py: 8,
+						py: { xs: 4, md: 8 },
 						background: "linear-gradient(135deg, #ece9e6, #ffffff)",
 						borderRadius: 3,
 						boxShadow: 3,
-						mt: 4,
+						mt: { xs: 2, md: 4 },
 					}}
 				>
 					{activeTabData.component ? (
