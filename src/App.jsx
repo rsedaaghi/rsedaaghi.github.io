@@ -15,11 +15,11 @@ import {
 
 const tabs = [
 	{ label: "Home", name: "home", component: <Home /> },
-	{ label: "About", name: "about", jsonFile: "about.json?url" },
-	{ label: "Skills", name: "skills", jsonFile: "skills.json?url" },
+	{ label: "About", name: "about", jsonFile: "about.json" },
+	{ label: "Skills", name: "skills", jsonFile: "skills.json" },
 	{ label: "Gallery", name: "gallery", component: <GalleryTab /> }, // New Gallery tab
-	{ label: "Works", name: "works", jsonFile: "works.json?url" },
-	{ label: "Contact", name: "contact", jsonFile: "contact.json?url" },
+	{ label: "Works", name: "works", jsonFile: "works.json" },
+	{ label: "Contact", name: "contact", jsonFile: "contact.json" },
 ];
 
 const App = () => {
