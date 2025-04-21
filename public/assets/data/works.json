@@ -280,8 +280,12 @@
         "url": "",
         "images": [
             {
+                "src": "/assets/images/works/android/android_icons.png",
+                "caption": "Android device showcasing the icons of 'Guess the Number' and Salavat Counter applications (email updated to rsedaaghi@gmail.com)."
+            },
+            {
                 "src": "/assets/images/works/android/android_guess_game1.png",
-                "caption": "'Guess the Number' game welcome screen (email updated to rsedaaghi@gmail.com for contact purposes)."
+                "caption": "'Guess the Number' game welcome screen (email updated to rsedaaghi@gmail.com)."
             },
             {
                 "src": "/assets/images/works/android/android_guess_game2.png",

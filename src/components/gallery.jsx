@@ -13,6 +13,8 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const GalleryTab = ({ onTabChange }) => {
 	const [worksData, setWorksData] = useState([]);
+	const [magnifyModalOpen, setMagnifyModalOpen] = useState(false);
+	const [selectedWork, setSelectedWork] = useState(null);
 
 	useEffect(() => {
 		fetch("/assets/data/works.json") // Fetch instead of importing
@@ -32,6 +34,16 @@ const GalleryTab = ({ onTabChange }) => {
 	const sortedWorks = worksWithImages.sort(
 		(a, b) => new Date(b.date) - new Date(a.date)
 	);
+
+	const handleCardClick = (item) => {
+		setSelectedWork(item);
+		setMagnifyModalOpen(true);
+	};
+
+	const handleCloseModal = () => {
+		setMagnifyModalOpen(false);
+		setSelectedWork(null);
+	};
 
 	return (
 		<Box sx={{ width: "100%", px: 2, py: 4 }}>
@@ -70,9 +82,7 @@ const GalleryTab = ({ onTabChange }) => {
 							backgroundColor: "#fafafa",
 						}}
 					>
-						<CardActionArea
-							onClick={() => console.log("Clicked", item)}
-						>
+						<CardActionArea onClick={() => handleCardClick(item)}>
 							<CardMedia
 								component="img"
 								image={item.images[0].src}
@@ -99,6 +109,60 @@ const GalleryTab = ({ onTabChange }) => {
 					</Card>
 				))}
 			</Masonry>
+			{/* Magnified Image Modal */}
+			<Modal open={magnifyModalOpen} onClose={handleCloseModal}>
+				<Box
+					sx={{
+						position: "fixed",
+						top: 0,
+						left: 0,
+						width: "100vw",
+						height: "100vh",
+						bgcolor: "rgba(0,0,0,0.7)",
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+						justifyContent: "center",
+						p: 2,
+					}}
+				>
+					<IconButton
+						onClick={handleCloseModal}
+						sx={{
+							position: "absolute",
+							top: 16,
+							right: 16,
+							color: "#fff",
+						}}
+					>
+						<CloseIcon />
+					</IconButton>
+					{selectedWork && (
+						<>
+							<img
+								src={selectedWork.images[0].src}
+								alt={selectedWork.title}
+								style={{
+									maxWidth: "90vw",
+									maxHeight: "80vh",
+									objectFit: "contain",
+									borderRadius: 8,
+								}}
+							/>
+							<Typography
+								variant="h6"
+								sx={{
+									mt: 2,
+									color: "#fff",
+									textAlign: "center",
+								}}
+							>
+								{selectedWork.title}
+							</Typography>
+						</>
+					)}
+				</Box>
+			</Modal>
 		</Box>
 	);
 };
