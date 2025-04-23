@@ -15,10 +15,10 @@ import {
 
 const tabs = [
 	{ label: "Home", name: "home", component: <Home /> },
-	{ label: "About", name: "about", jsonFile: "about.json" },
+	// { label: "About", name: "about", jsonFile: "about.json" },
 	{ label: "Skills", name: "skills", jsonFile: "skills.json" },
-	{ label: "Gallery", name: "gallery", component: <GalleryTab /> }, // New Gallery tab
 	{ label: "Works", name: "works", jsonFile: "works.json" },
+	{ label: "Gallery", name: "gallery", component: <GalleryTab /> }, // New Gallery tab
 	{ label: "Contact", name: "contact", jsonFile: "contact.json" },
 ];
 
