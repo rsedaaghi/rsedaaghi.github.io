@@ -8,9 +8,16 @@ import {
 	CardContent,
 	Button,
 	Chip,
+	FormControl,
+	InputLabel,
+	Select,
+	MenuItem,
+	TextField,
+	InputAdornment,
 } from "@mui/material";
 import { getDynamicIcon } from "../utils/helpers";
 import LaunchIcon from "@mui/icons-material/Launch";
+import SearchIcon from "@mui/icons-material/Search";
 import PhotoAlbumIcon from "@mui/icons-material/PhotoAlbum";
 
 const TabContent = ({ tab }) => {
@@ -22,6 +29,10 @@ const TabContent = ({ tab }) => {
 	const [modalTitle, setModalTitle] = useState("Photo Album");
 	// Cache for storing fetched JSON data
 	const [cache, setCache] = useState({});
+
+	// New filter states for the "works" tab
+	const [selectedTechnology, setSelectedTechnology] = useState("All"); // default is "All"
+	const [searchQuery, setSearchQuery] = useState("");
 
 	// Normalize raw JSON data for each tab into a common shape
 	const normalizeData = (tabName, data) => {
@@ -102,6 +113,42 @@ const TabContent = ({ tab }) => {
 			</Typography>
 		);
 
+	let availableTechnologies = [];
+	let filteredContent = [];
+	if (tab.name === "works") {
+		availableTechnologies = Array.from(
+			new Set(content.flatMap((item) => item.technologies || []))
+		).sort();
+
+		filteredContent = content.filter((item) => {
+			let valid = true;
+			// Only filter by technology if a specific technology is selected
+			if (selectedTechnology && selectedTechnology !== "All") {
+				valid =
+					item.technologies &&
+					item.technologies.some(
+						(tech) =>
+							tech.toLowerCase() ===
+							selectedTechnology.toLowerCase()
+					);
+			}
+			// Then apply search filtering (title and description)
+			if (valid && searchQuery) {
+				const searchLower = searchQuery.toLowerCase();
+				valid =
+					(item.title &&
+						item.title.toLowerCase().includes(searchLower)) ||
+					(item.description &&
+						item.description.toLowerCase().includes(searchLower));
+			}
+			return valid;
+		});
+	}
+
+	// For tabs other than "works", use all content; otherwise, use the filtered content.
+	const displayedContent = tab.name === "works" ? filteredContent : content;
+
+	// Define common Grid item properties.
 	const gridItemProps = { size: { xs: 12 } };
 
 	if (tab.name === "skills") {
@@ -163,7 +210,77 @@ const TabContent = ({ tab }) => {
 			>
 				{tab.label}
 			</Typography>
-			{content && content.length > 0 ? (
+
+			{tab.name === "works" && (
+				<>
+					<Typography
+						variant="body2"
+						color="textSecondary"
+						sx={{ mb: 2 }}
+					>
+						<strong>Filter</strong> the projects by selecting a
+						technology below, or employ the{" "}
+						<strong>search box</strong> to locate projects
+						containing a specific keyword or phrase.
+					</Typography>
+					<Box
+						sx={{
+							display: "flex",
+							flexDirection: { xs: "column", md: "row" }, // splits vertically on small screens
+							gap: 2,
+							mb: 3,
+							p: 2,
+							borderRadius: 2,
+							backgroundColor: (theme) =>
+								theme.palette.mode === "dark"
+									? "#424242"
+									: "#f5f5f5",
+							alignItems: "center",
+							justifyContent: "center",
+						}}
+					>
+						<FormControl variant="outlined" size="small" fullWidth>
+							<InputLabel id="tech-filter-label" shrink>
+								Technology
+							</InputLabel>
+							<Select
+								labelId="tech-filter-label"
+								value={selectedTechnology}
+								onChange={(e) =>
+									setSelectedTechnology(e.target.value)
+								}
+								label="Technology"
+							>
+								<MenuItem value="All">
+									<em>All</em>
+								</MenuItem>
+								{availableTechnologies.map((tech, index) => (
+									<MenuItem key={index} value={tech}>
+										{tech}
+									</MenuItem>
+								))}
+							</Select>
+						</FormControl>
+						<TextField
+							fullWidth
+							variant="outlined"
+							size="small"
+							label="Search"
+							value={searchQuery}
+							onChange={(e) => setSearchQuery(e.target.value)}
+							InputProps={{
+								startAdornment: (
+									<InputAdornment position="start">
+										<SearchIcon />
+									</InputAdornment>
+								),
+							}}
+						/>
+					</Box>
+				</>
+			)}
+
+			{displayedContent && displayedContent.length > 0 ? (
 				<Grid
 					container
 					spacing={4}
@@ -171,14 +288,13 @@ const TabContent = ({ tab }) => {
 					alignItems="stretch"
 					sx={{ width: "100%" }}
 				>
-					{content.map((item, index) => (
+					{displayedContent.map((item, index) => (
 						<Grid
 							key={index}
 							{...gridItemProps}
 							sx={{ display: "flex" }}
 						>
 							{tab.name === "contact" ? (
-								// Contact Tab Layout
 								item.url ? (
 									<Button
 										variant="outlined"
@@ -202,18 +318,17 @@ const TabContent = ({ tab }) => {
 									</Button>
 								) : null
 							) : tab.name === "works" ? (
-								// Beautified Works Tab Layout with left-aligned/justified description
 								<Card
 									sx={{
 										width: "100%",
 										display: "flex",
 										flexDirection: "column",
 										justifyContent: "center",
-										alignItems: "flex-start", // Align content to the left
+										alignItems: "flex-start",
 										p: 3,
 										boxShadow: 3,
 										borderRadius: 2,
-										backgroundColor: "#fafafa", // subtle background for better contrast
+										backgroundColor: "#fafafa",
 									}}
 								>
 									<CardContent sx={{ width: "100%" }}>
@@ -303,7 +418,6 @@ const TabContent = ({ tab }) => {
 												)}
 											</Typography>
 										)}
-										{/* Smaller Buttons for Visit and Album */}
 										<Box
 											sx={{
 												mt: 2,
@@ -394,7 +508,6 @@ const TabContent = ({ tab }) => {
 									</CardContent>
 								</Card>
 							) : tab.name === "about" ? (
-								// About Tab Layout remains as before.
 								<Card
 									sx={{
 										width: "100%",
@@ -432,7 +545,6 @@ const TabContent = ({ tab }) => {
 									</CardContent>
 								</Card>
 							) : (
-								// Default Layout for any other tab.
 								<Card sx={{ width: "100%", p: 2 }}>
 									<CardContent sx={{ textAlign: "center" }}>
 										<Typography

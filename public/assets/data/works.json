@@ -252,20 +252,21 @@
     },
     {
         "title": "Graduate Coursework Projects (Console and GUI Based)",
-        "date": "2014",
-        "description": "A series of academic projects conducted during postgraduate studies, utilizing both console-based and GUI-based approaches.",
+        "startDate": "2014",
+        "endDate": "2016",
+        "description": "Conducted a series of academic projects during postgraduate studies at Sharif University of Technology, widely regarded as the leading technological university in Iran. These projects, carried out between 2014 and 2016, utilized both console-based and GUI-based approaches, demonstrating proficiency in programming languages such as C++ and MATLAB.",
         "url": "",
         "images": [],
         "technologies": [
             "C++",
-            "Matlab"
+            "MATLAB"
         ]
     },
     {
         "title": "Console-Based Course Projects",
         "startDate": "2009",
         "endDate": "2014",
-        "description": "Developed console-based projects as part of coursework related to a Bachelor’s degree in Mechanical Engineering at Tabriz University of Technology from 2009 to 2013. Activities continued until 2014. Programming languages used included C and Fortran.",
+        "description": "Developed console-based projects as part of coursework during a Bachelor’s degree in Mechanical Engineering at Tabriz University of Technology from 2009 to 2013, with activities continuing until 2014. During this time, I built a strong foundation in programming algorithms through a dedicated programming course and further enhanced my skills by completing Harvard University's renowned CS50 course, led by David J. Malan, on the edX platform.",
         "url": "",
         "images": [],
         "technologies": [
