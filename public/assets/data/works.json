@@ -159,7 +159,7 @@
     {
         "title": "Front-end Development for the Electronic Data Capture (EDC) System Panel",
         "date": "2022",
-        "description": "Designed and developed the front-end interface of the EDC system panel using React and Material-UI, ensuring a responsive and intuitive user experience. Implemented Redux for efficient state management and integrated MUI Kit for a modern, consistent UI design. Supported English and Farsi language options to enhance accessibility and usability. The EDC system was developed to facilitate data collection for medical trials related to dialysis. It provided users with the ability to design custom forms and define study-specific steps. For each participant, relevant questions were displayed, responses were captured, and comprehensive reports were generated, improving the efficiency and accuracy of clinical data management.",
+        "description": "Designed and developed the front-end interface of the EDC system panel using React and Material-UI, ensuring a responsive and intuitive user experience. Implemented Redux for efficient state management and integrated MUI Kit for a modern, consistent UI design. Supported English and Farsi language options to enhance accessibility and usability. The EDC system was developed to facilitate data collection for medical trials related to dialysis. It provided users with the ability to design custom forms, define study-specific steps, and manage structured participant data. Users could create input fields, customize field types, and apply validation rules for structured data entry. The system also supported conditional questions to guide participants through personalized data collection flows. Workflow and process management functionalities allowed users to define and track data collection steps efficiently. Additionally, administrative tools enabled role management with permissions settings, and participant management allowed users to add and organize individuals within the system. Advanced reporting features provided structured analytics with customizable filters, ensuring comprehensive insights into collected data.",
         "url": "",
         "images": [
             {
@@ -173,6 +173,42 @@
             {
                 "src": "/assets/images/works/edc/edc_people.png",
                 "caption": "Participant management panel of the EDC system displayed, showing a list of participants (represented as people). Overlays highlight options for creating new participants or adding people to the system."
+            },
+            {
+                "src": "/assets/images/works/edc/edc_create_input_field.png",
+                "caption": "Interface for creating input fields displayed."
+            },
+            {
+                "src": "/assets/images/works/edc/edc_form_input_field_edit.png",
+                "caption": "Editing section of the form input fields displayed, allowing users to modify existing fields and define validation rules for structured data entry."
+            },
+            {
+                "src": "/assets/images/works/edc/edc_conditional_questions.png",
+                "caption": "Conditional question setup for the EDC system displayed, allowing users to define dependencies between questions based on participant responses."
+            },
+            {
+                "src": "/assets/images/works/edc/edc_input_field_types.png",
+                "caption": "List of available input field types in the EDC system displayed, showcasing customization options for structured data collection."
+            },
+            {
+                "src": "/assets/images/works/edc/edc_processes.png",
+                "caption": "Workflow and process management panel displayed, enabling users to define and monitor various steps involved in data collection and processing."
+            },
+            {
+                "src": "/assets/images/works/edc/edc_case_study.png",
+                "caption": "Case study section of the EDC system displayed, providing structured data collection for medical research. Users can define studies, configure data fields, and track participant responses."
+            },
+            {
+                "src": "/assets/images/works/edc/edc_case_study_questions.png",
+                "caption": "Case study question management section displayed. Overlays highlight the ability to create, edit, and organize study-specific questions for better data collection."
+            },
+            {
+                "src": "/assets/images/works/edc/edc_report.png",
+                "caption": "Report generation interface displayed."
+            },
+            {
+                "src": "/assets/images/works/edc/edc_farsi.png",
+                "caption": "Localized interface of the EDC system displayed in Farsi, demonstrating multilingual support to enhance accessibility and usability."
             }
         ],
         "technologies": [
