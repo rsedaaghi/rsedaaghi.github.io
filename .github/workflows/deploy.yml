@@ -42,6 +42,9 @@ jobs:
               run: |
                   ls -l dist/sitemap.xml || echo "Warning: Sitemap file missing"
 
+            - name: Generate HTML from JSON
+              run: node scripts/generateHtmlFromJson.js
+
             - name: Deploy to GitHub Pages
               run: |
                   npx gh-pages -d dist --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/rsedaaghi/rsedaaghi.github.io.git
