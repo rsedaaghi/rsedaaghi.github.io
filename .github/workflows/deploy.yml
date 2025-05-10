@@ -35,8 +35,8 @@ jobs:
             - name: Build the project
               run: npm run build
 
-            - name: Generate Sitemap
-              run: node scripts/generateSitemap.js
+            # - name: Generate Sitemap
+            #   run: node scripts/generateSitemap.js
 
             - name: Verify Sitemap Exists
               run: |
