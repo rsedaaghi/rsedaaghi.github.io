@@ -56,7 +56,7 @@
         ]
     },
     {
-        "title": "Technical Support and Backend Development for the Electronic Data Collection (EDC) System",
+        "title": "Technical Support and Backend Development for the Electronic data capture (EDC) System",
         "date": "2023",
         "description": "Provided technical support and backend development for the EDC system at Aria Teb Firouz. The system simplifies the electronic collection, review, and processing of clinical trial data.",
         "url": "",
@@ -157,11 +157,20 @@
         ]
     },
     {
-        "title": "Front-end Development for the Electronic Data Collection (EDC) System Panel",
+        "title": "Front-end Development for the Electronic Data Capture (EDC) System Panel",
         "date": "2022",
-        "description": "Developed the front-end interface of the EDC system panel using React and Material-UI.",
+        "description": "Designed and developed the front-end interface of the EDC system panel using React and Material-UI, ensuring a responsive and intuitive user experience. Implemented Redux for efficient state management and integrated MUI Kit for a modern, consistent UI design. Supported English and Farsi language options to enhance accessibility and usability. The EDC system was developed to facilitate data collection for medical trials related to dialysis. It provided users with the ability to design custom forms and define study-specific steps. For each participant, relevant questions were displayed, responses were captured, and comprehensive reports were generated, improving the efficiency and accuracy of clinical data management.",
         "url": "",
-        "images": [],
+        "images": [
+            {
+                "src": "/assets/images/works/edc/edc_dashboard.png",
+                "caption": "Main dashboard of the EDC system displayed with the collapsed main menu. Overlays highlight a shrunk view of the login page, expanded profile menu, expanded language menu, and expanded main menu for better visualization of key navigation elements."
+            },
+            {
+                "src": "/assets/images/works/edc/edc_admins.png",
+                "caption": "Administrative panel of the EDC system displayed with overlays showcasing role management functionalities, including creating roles, editing roles, listing roles, modifying permissions, and viewing detailed permission settings assigned to administrators."
+            }
+        ],
         "technologies": [
             "React",
             "Material-UI"
