@@ -169,6 +169,10 @@
             {
                 "src": "/assets/images/works/edc/edc_admins.png",
                 "caption": "Administrative panel of the EDC system displayed with overlays showcasing role management functionalities, including creating roles, editing roles, listing roles, modifying permissions, and viewing detailed permission settings assigned to administrators."
+            },
+            {
+                "src": "/assets/images/works/edc/edc_people.png",
+                "caption": "Participant management panel of the EDC system displayed, showing a list of participants (represented as people). Overlays highlight options for creating new participants or adding people to the system."
             }
         ],
         "technologies": [
