@@ -26,3 +26,9 @@ async function generateSitemap() {
 }
 
 generateSitemap().catch(console.error);
+
+// const jsonFiles = fs.readdirSync(path.resolve("public/generated"))
+//     .filter(file => file.endsWith(".html"))
+//     .map(file => ({ url: `/generated/${file}`, changefreq: "weekly", priority: 0.7 }));
+
+// links.push(...jsonFiles);

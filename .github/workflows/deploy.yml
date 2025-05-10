@@ -35,12 +35,15 @@ jobs:
             - name: Build the project
               run: npm run build
 
-            - name: Generate Sitemap
-              run: node scripts/generateSitemap.js
+            # - name: Generate Sitemap
+            #   run: node scripts/generateSitemap.js
 
             - name: Verify Sitemap Exists
               run: |
                   ls -l dist/sitemap.xml || echo "Warning: Sitemap file missing"
+
+            - name: Generate HTML from JSON
+              run: node scripts/generateHtmlFromJson.js
 
             - name: Deploy to GitHub Pages
               run: |
