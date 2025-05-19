@@ -71,11 +71,28 @@
         ]
     },
     {
-        "title": "Development of an Ore Image Processing System",
+        "title": "Development of an Automated Ore Image Processing System",
         "date": "2023",
-        "description": "Developed a system that analyzes uploaded images to determine mineral sizes, with implementation on Raspberry Pi as well.",
+        "description": "An automated mineral analysis system was designed to integrate hardware and software components for efficient ore image processing. The system employs a camera for capturing images, which are then transmitted to a Node.js-based server where Python-based image processing algorithms are executed. Following the processing stage, the extracted data is sent back to the user.",
         "url": "",
-        "images": [],
+        "images": [
+            {
+                "src": "/assets/images/works/OIP/oip_intro.png",
+                "caption": "Intro screen of the Ore Image Processing (OIP) system, presenting the interface for image uploads."
+            },
+            {
+                "src": "/assets/images/works/OIP/oip_intro_image_chosen.png",
+                "caption": "User selecting an image for processing within the OIP system interface."
+            },
+            {
+                "src": "/assets/images/works/OIP/oip_processing.png",
+                "caption": "Processing stage displaying real-time mineral size detection and analysis."
+            },
+            {
+                "src": "/assets/images/works/OIP/oip_result.png",
+                "caption": "Final results showing extracted mineral sizes and related analytical data."
+            }
+        ],
         "technologies": [
             "Node.js",
             "Docker",
