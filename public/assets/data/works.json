@@ -6,11 +6,11 @@
         "url": "",
         "images": [
             {
-                "src": "/assets/images/works/vector_mind/vector_mind_create_document.png",
+                "src": "/assets/images/works/vectormind/vector_mind_create_document.png",
                 "caption": "System architecture and workflow for document creation and ingestion"
             },
             {
-                "src": "/assets/images/works/vector_mind/vector_mind_get_document.png",
+                "src": "/assets/images/works/vectormind/vector_mind_get_document.png",
                 "caption": "System architecture and workflow for semantic document querying"
             }
         ],
