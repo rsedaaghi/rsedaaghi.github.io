@@ -1,5 +1,22 @@
 [
     {
+        "title": "VectorMind: Semantic Document Search & Ingestion System",
+        "date": "2025",
+        "description": "Designed and developed a scalable, microservices-based system for semantic document search and ingestion. Implemented a Node.js Express API gateway to handle document uploads (markdown and zipped figures) with robust Joi validation and token-based authentication. Utilized RabbitMQ for asynchronous queuing of ingestion tasks, ensuring high availability and decoupling. Developed a Node.js worker that consumes messages from RabbitMQ, performs intelligent markdown chunking using `markdown-it`, and integrates with a Python ML service (Flask + llama.cpp) for generating QWen3 embeddings. Stored document metadata, chunks, and vector embeddings in PostgreSQL with `pg_vector` for efficient nearest-neighbor semantic search. Built a responsive React client with Material-UI to provide a Google-like search interface, connecting to the API via Axios.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Node.js",
+            "PostgreSQL",
+            "RabbitMQ",
+            "Python",
+            "llama",
+            "React",
+            "Material-UI",
+            "Docker"
+        ]
+    },
+    {
         "title": "Personal Portfolio Website",
         "date": "2025",
         "description": "Developed a portfolio website using React to showcase my work, skills, and contact information. The project was bootstrapped with Vite, incorporates Material-UI as the UI library, and supports PWA functionality.",
