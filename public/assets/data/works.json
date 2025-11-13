@@ -2,9 +2,13 @@
     {
         "title": "VectorMind: Semantic Document Search & Ingestion System",
         "date": "2025",
-        "description": "Developed a scalable, microservices-based platform enabling semantic search across technical documents. The system is composed of several specialized services, each responsible for a distinct function in the ingestion and retrieval pipeline.",
+        "description": "Developed a scalable, microservices-based platform enabling semantic search across technical documents. The system is composed of several specialized services, each responsible for a distinct function in the ingestion and retrieval pipeline. Retrieved semantic chunks are ranked and then fed into the Gemma-3B language model to generate final answers, forming a complete Retrieval-Augmented Generation",
         "url": "",
         "images": [
+            {
+                "src": "/assets/images/works/vectormind/vector_mind_panel.png",
+                "caption": "Main Panel"
+            },
             {
                 "src": "/assets/images/works/vectormind/vector_mind_create_document.png",
                 "caption": "System architecture and workflow for document creation and ingestion"
@@ -12,6 +16,10 @@
             {
                 "src": "/assets/images/works/vectormind/vector_mind_get_document.png",
                 "caption": "System architecture and workflow for semantic document querying"
+            },
+            {
+                "src": "/assets/images/works/vectormind/vector_mind_panel_login.png",
+                "caption": "Panel login"
             }
         ],
         "technologies": [
