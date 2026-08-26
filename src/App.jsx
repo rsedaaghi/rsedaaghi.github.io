@@ -98,16 +98,11 @@ const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<Container
-				maxWidth="md"
+			<Box
 				sx={{
-					pt: { xs: "70px", md: 6 },
-					pb: { xs: 2, md: 6 },
 					minHeight: "100vh",
 					display: "flex",
 					flexDirection: "column",
-					alignItems: "center",
-					justifyContent: { xs: "flex-start", md: "center" },
 				}}
 			>
 				<Header
@@ -118,29 +113,42 @@ const App = () => {
 					onThemeToggle={handleThemeToggle}
 				/>
 				<Container
-					maxWidth="lg"
+					maxWidth="md"
 					sx={{
-						py: { xs: 4, md: 8 },
-						background: (theme) =>
-							theme.palette.mode === "dark"
-								? "linear-gradient(135deg, #1e1e1e, #2d2d2d)"
-								: "linear-gradient(135deg, #ece9e6, #ffffff)",
-						borderRadius: 3,
-						boxShadow: 3,
-						mt: { xs: 2, md: 4 },
+						pt: { xs: "70px", md: 6 },
+						pb: { xs: 2, md: 6 },
+						flex: 1,
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+						justifyContent: { xs: "flex-start", md: "center" },
 					}}
 				>
-					{ActiveComponent ? (
-						<ActiveComponent />
-					) : (
-						<TabContent tab={activeTabData} />
-					)}
+					<Container
+						maxWidth="lg"
+						sx={{
+							py: { xs: 4, md: 8 },
+							background: (theme) =>
+								theme.palette.mode === "dark"
+									? "linear-gradient(135deg, #1e1e1e, #2d2d2d)"
+									: "linear-gradient(135deg, #ece9e6, #ffffff)",
+							borderRadius: 3,
+							boxShadow: 3,
+							mt: { xs: 2, md: 4 },
+						}}
+					>
+						{ActiveComponent ? (
+							<ActiveComponent />
+						) : (
+							<TabContent tab={activeTabData} />
+						)}
+					</Container>
+					<Footer
+						lastUpdated={formatBuildDate(__BUILD_DATE__)}
+						darkMode={darkMode}
+					/>
 				</Container>
-				<Footer
-					lastUpdated={formatBuildDate(__BUILD_DATE__)}
-					darkMode={darkMode}
-				/>
-			</Container>
+			</Box>
 		</ThemeProvider>
 	);
 };
