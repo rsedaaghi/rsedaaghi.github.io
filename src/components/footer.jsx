@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Box, IconButton, Typography } from "@mui/material";
-import { getDynamicIcon } from "../utils/helpers"; // Import the helper function
+import { getDynamicIcon } from "../utils/helpers";
+import useJsonData from "../utils/useJsonData";
 
 const Footer = ({ lastUpdated }) => {
-	const [socialLinks, setSocialLinks] = useState([]);
+	const { data } = useJsonData("/assets/data/contact.json");
 
-	useEffect(() => {
-		fetch("assets/data/contact.json")
-			.then((response) => response.json())
-			.then((data) => setSocialLinks(data))
-			.catch((error) =>
-				console.error("Error loading social links:", error)
-			);
-	}, []);
+	const socialLinks = Array.isArray(data) ? data : [];
 
 	return (
 		<Box component="footer" sx={{ py: 2, textAlign: "center" }}>
@@ -24,16 +18,17 @@ const Footer = ({ lastUpdated }) => {
 					mb: 1,
 				}}
 			>
-				{socialLinks.map((link, index) => (
+				{socialLinks.map((link) => (
 					<IconButton
-						key={index}
+						key={link.name}
 						href={link.url || "#"}
 						target="_blank"
 						rel="noopener noreferrer"
+						aria-label={link.name || "Social link"}
 						sx={{
-							color: "#1976d2",
+							color: "primary.main",
 							"&:hover": {
-								color: "#1565c0",
+								color: "primary.dark",
 								transform: "scale(1.2)",
 							},
 							transition: "0.3s",
@@ -46,7 +41,7 @@ const Footer = ({ lastUpdated }) => {
 
 			<Typography
 				variant="body2"
-				sx={{ fontStyle: "italic", color: "#757575" }}
+				sx={{ fontStyle: "italic", color: "text.secondary" }}
 			>
 				Last Updated: {lastUpdated || "N/A"}
 			</Typography>

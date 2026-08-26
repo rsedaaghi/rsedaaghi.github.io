@@ -1,32 +1,50 @@
-import * as MuiIcons from "@mui/icons-material"; // Import all MUI icons dynamically
+import EmailIcon from "@mui/icons-material/Email";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import LinkIcon from "@mui/icons-material/Link";
 import { Avatar } from "@mui/material";
-import LinkIcon from "@mui/icons-material/Link"; // Fallback generic link icon
+
+// Explicit map keeps the bundle small: only these icons are shipped.
+const ICON_MAP = {
+	Email: EmailIcon,
+	GitHub: GitHubIcon,
+	LinkedIn: LinkedInIcon,
+};
 
 export const getDynamicIcon = (link) => {
-  if (!link) return <LinkIcon />; // Default fallback icon
+	if (!link) return <LinkIcon />;
 
-  if (link.muiIcon) {
-    // Try to find the icon using the provided name exactly…
-    let IconComponent = MuiIcons[link.muiIcon];
+	const IconComponent = link.muiIcon ? ICON_MAP[link.muiIcon] : null;
 
-    // …if not found, try appending "Icon" to the name
-    if (!IconComponent) {
-      IconComponent = MuiIcons[link.muiIcon + "Icon"];
-    }
+	if (IconComponent) return <IconComponent />;
+	if (link.muiIcon) {
+		console.warn(`Unknown muiIcon "${link.muiIcon}", using fallback.`);
+	}
 
-    if (IconComponent) {
-      return <IconComponent />;
-    } else {
-      console.warn(`Icon not found for muiIcon: ${link.muiIcon}`);
-    }
-  }
+	if (link.iconUrl) {
+		return (
+			<Avatar
+				src={link.iconUrl}
+				alt={link.name}
+				sx={{ width: 32, height: 32 }}
+			/>
+		);
+	}
 
-  // If the JSON provides an iconUrl, fallback to an Avatar
-  if (link.iconUrl) {
-    return (
-      <Avatar src={link.iconUrl} alt={link.name} sx={{ width: 32, height: 32 }} />
-    );
-  }
-
-  return <LinkIcon />; // Final fallback to a generic Link icon
+	return <LinkIcon />;
 };
+
+const YEAR_DATE = new Intl.DateTimeFormat("en-US");
+
+export const formatYear = (dateString) =>
+	new Date(dateString).getFullYear().toString();
+
+export const formatDateRange = ({ startDate, endDate, date }) => {
+	if (startDate && endDate) {
+		return `${formatYear(startDate)} - ${formatYear(endDate)}`;
+	}
+	if (startDate) return formatYear(startDate);
+	return formatYear(date);
+};
+
+export { YEAR_DATE };
