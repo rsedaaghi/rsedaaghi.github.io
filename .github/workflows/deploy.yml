@@ -35,7 +35,8 @@ jobs:
         run: node scripts/generateSitemap.js
 
       - name: Verify Sitemap Exists
-        run: ls -l dist/sitemap.xml || echo "Warning: Sitemap file missing"
+        run: |
+          ls -l dist/sitemap.xml || echo "Warning: Sitemap file missing"
 
       - name: Deploy to GitHub Pages
         run: npx gh-pages -d dist --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/rsedaaghi/rsedaaghi.github.io.git
