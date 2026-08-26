@@ -27,7 +27,11 @@ const ContactTab = () => {
 					sx={{ width: "100%" }}
 				>
 					{contacts.map((item) => (
-						<Grid key={item.name} size={{ xs: 12 }} sx={{ display: "flex" }}>
+						<Grid
+							key={item.name}
+							size={{ xs: 12, sm: 4 }}
+							sx={{ display: "flex" }}
+						>
 							{item.url ? (
 								<Button
 									variant="outlined"
