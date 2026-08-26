@@ -10,11 +10,11 @@
                 "caption": "Main Panel"
             },
             {
-                "src": "/assets/images/works/vectormind/vector_mind_create_document.png",
+                "src": "/assets/images/works/vectormind/vector_mind_create_document.webp",
                 "caption": "System architecture and workflow for document creation and ingestion"
             },
             {
-                "src": "/assets/images/works/vectormind/vector_mind_get_document.png",
+                "src": "/assets/images/works/vectormind/vector_mind_get_document.webp",
                 "caption": "System architecture and workflow for semantic document querying"
             },
             {
@@ -111,11 +111,11 @@
         "url": "",
         "images": [
             {
-                "src": "/assets/images/works/OIP/oip_intro.png",
+                "src": "/assets/images/works/OIP/oip_intro.webp",
                 "caption": "Intro screen of the Ore Image Processing (OIP) system, presenting the interface for image uploads."
             },
             {
-                "src": "/assets/images/works/OIP/oip_intro_image_chosen.png",
+                "src": "/assets/images/works/OIP/oip_intro_image_chosen.webp",
                 "caption": "User selecting an image for processing within the OIP system interface."
             },
             {
@@ -123,7 +123,7 @@
                 "caption": "Processing stage displaying real-time mineral size detection and analysis."
             },
             {
-                "src": "/assets/images/works/OIP/oip_result.png",
+                "src": "/assets/images/works/OIP/oip_result.webp",
                 "caption": "Final results showing extracted mineral sizes and related analytical data."
             }
         ],
@@ -214,51 +214,51 @@
         "url": "",
         "images": [
             {
-                "src": "/assets/images/works/edc/edc_dashboard.png",
+                "src": "/assets/images/works/edc/edc_dashboard.webp",
                 "caption": "Main dashboard of the EDC system displayed with the collapsed main menu. Overlays highlight a shrunk view of the login page, expanded profile menu, expanded language menu, and expanded main menu for better visualization of key navigation elements."
             },
             {
-                "src": "/assets/images/works/edc/edc_admins.png",
+                "src": "/assets/images/works/edc/edc_admins.webp",
                 "caption": "Administrative panel of the EDC system displayed with overlays showcasing role management functionalities, including creating roles, editing roles, listing roles, modifying permissions, and viewing detailed permission settings assigned to administrators."
             },
             {
-                "src": "/assets/images/works/edc/edc_people.png",
+                "src": "/assets/images/works/edc/edc_people.webp",
                 "caption": "Participant management panel of the EDC system displayed, showing a list of participants (represented as people). Overlays highlight options for creating new participants or adding people to the system."
             },
             {
-                "src": "/assets/images/works/edc/edc_create_input_field.png",
+                "src": "/assets/images/works/edc/edc_create_input_field.webp",
                 "caption": "Interface for creating input fields displayed."
             },
             {
-                "src": "/assets/images/works/edc/edc_form_input_field_edit.png",
+                "src": "/assets/images/works/edc/edc_form_input_field_edit.webp",
                 "caption": "Editing section of the form input fields displayed, allowing users to modify existing fields and define validation rules for structured data entry."
             },
             {
-                "src": "/assets/images/works/edc/edc_conditional_questions.png",
+                "src": "/assets/images/works/edc/edc_conditional_questions.webp",
                 "caption": "Conditional question setup for the EDC system displayed, allowing users to define dependencies between questions based on participant responses."
             },
             {
-                "src": "/assets/images/works/edc/edc_input_field_types.png",
+                "src": "/assets/images/works/edc/edc_input_field_types.webp",
                 "caption": "List of available input field types in the EDC system displayed, showcasing customization options for structured data collection."
             },
             {
-                "src": "/assets/images/works/edc/edc_processes.png",
+                "src": "/assets/images/works/edc/edc_processes.webp",
                 "caption": "Workflow and process management panel displayed, enabling users to define and monitor various steps involved in data collection and processing."
             },
             {
-                "src": "/assets/images/works/edc/edc_case_study.png",
+                "src": "/assets/images/works/edc/edc_case_study.webp",
                 "caption": "Case study section of the EDC system displayed, providing structured data collection for medical research. Users can define studies, configure data fields, and track participant responses."
             },
             {
-                "src": "/assets/images/works/edc/edc_case_study_questions.png",
+                "src": "/assets/images/works/edc/edc_case_study_questions.webp",
                 "caption": "Case study question management section displayed. Overlays highlight the ability to create, edit, and organize study-specific questions for better data collection."
             },
             {
-                "src": "/assets/images/works/edc/edc_report.png",
+                "src": "/assets/images/works/edc/edc_report.webp",
                 "caption": "Report generation interface displayed."
             },
             {
-                "src": "/assets/images/works/edc/edc_farsi.png",
+                "src": "/assets/images/works/edc/edc_farsi.webp",
                 "caption": "Localized interface of the EDC system displayed in Farsi, demonstrating multilingual support to enhance accessibility and usability."
             }
         ],
@@ -381,7 +381,7 @@
         "url": "",
         "images": [
             {
-                "src": "/assets/images/works/android/android_icons.png",
+                "src": "/assets/images/works/android/android_icons.webp",
                 "caption": "Android device showcasing the icons of 'Guess the Number' and Salavat Counter applications."
             },
             {

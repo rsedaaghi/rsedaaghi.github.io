@@ -1,50 +1,42 @@
 name: Deploy to GitHub Pages
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 permissions:
-    contents: write
+  contents: write
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-            - name: Configure Git
-              run: |
-                  git config --global user.email "your_email@example.com"
-                  git config --global user.name "Your Name"
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
 
-            - name: Set up Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: "22.14.0"
+      - name: Install dependencies
+        run: npm ci
 
-            - name: Install dependencies
-              run: npm install
+      - name: Lint
+        run: npm run lint
 
-            - name: Update Last Modified Timestamp
-              run: node scripts/updateLastModified.js
+      - name: Build the project
+        run: npm run build
 
-            - name: Build the project
-              run: npm run build
+      - name: Generate Sitemap
+        run: node scripts/generateSitemap.js
 
-            - name: Generate Sitemap
-              run: node scripts/generateSitemap.js
+      - name: Verify Sitemap Exists
+        run: |
+          ls -l dist/sitemap.xml || echo "Warning: Sitemap file missing"
 
-            - name: Verify Sitemap Exists
-              run: |
-                  ls -l dist/sitemap.xml || echo "Warning: Sitemap file missing"
-
-            # - name: Generate HTML from JSON
-            #   run: node scripts/generateHtmlFromJson.js
-
-            - name: Deploy to GitHub Pages
-              run: |
-                  npx gh-pages -d dist --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/rsedaaghi/rsedaaghi.github.io.git
+      - name: Deploy to GitHub Pages
+        run: npx gh-pages -d dist --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/rsedaaghi/rsedaaghi.github.io.git

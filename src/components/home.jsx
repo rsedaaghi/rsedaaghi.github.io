@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Grid, Typography, Button, Box } from "@mui/material";
+import useJsonData from "../utils/useJsonData";
 
 const Home = () => {
-	const [homeData, setHomeData] = useState({});
-
-	useEffect(() => {
-		fetch("/assets/data/home.json")
-			.then((response) => response.json())
-			.then((data) => setHomeData(data))
-			.catch((error) => console.error("Error loading home data:", error));
-	}, []);
+	const { data: homeData } = useJsonData("/assets/data/home.json");
 
 	return (
 		<Grid
@@ -18,7 +12,6 @@ const Home = () => {
 			sx={{
 				textAlign: { xs: "center", md: "left" },
 				alignItems: "center",
-				// Small top margin for mobile breathing room
 				mt: { xs: 2, md: 0 },
 			}}
 		>
@@ -27,21 +20,21 @@ const Home = () => {
 				<Box
 					sx={{
 						width: "100%",
-						maxWidth: { xs: "200px", md: "400px" }, // Reduced maxWidth on mobile
+						maxWidth: { xs: "200px", md: "400px" },
 						mx: "auto",
 					}}
 				>
 					<Box
 						sx={{
 							width: "100%",
-							maxWidth: { xs: "250px", md: "500px" }, // Increased by 1.25x
+							maxWidth: { xs: "250px", md: "500px" },
 							mx: "auto",
 						}}
 					>
 						<Box
 							sx={{
 								width: "100%",
-								height: { xs: "187px", md: "auto" }, // Increased by 1.25x
+								height: { xs: "187px", md: "auto" },
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "center",
@@ -52,7 +45,10 @@ const Home = () => {
 								viewBox="0 0 479 467"
 								width="100%"
 								height="100%"
+								role="img"
+								aria-label="Portrait of Reza Sedaaghi"
 							>
+								<title>Reza Sedaaghi</title>
 								<defs>
 									<mask id="svg-mask">
 										<path
@@ -62,7 +58,7 @@ const Home = () => {
 									</mask>
 								</defs>
 								<image
-									href={homeData.image}
+									href={homeData?.image}
 									width="100%"
 									height="100%"
 									mask="url(#svg-mask)"
@@ -95,9 +91,9 @@ const Home = () => {
 						fontSize: { xs: "1rem", md: "1.15rem" },
 					}}
 				>
-					{homeData.description}
+					{homeData?.description}
 				</Typography>
-				{homeData.contactButton?.isOn && (
+				{homeData?.contactButton?.isOn && (
 					<Button
 						variant="contained"
 						href={homeData.contactButton.url}
@@ -106,10 +102,7 @@ const Home = () => {
 							px: 5,
 							py: 1.5,
 							transition: "transform 0.2s ease-in-out",
-							"&:hover": {
-								transform: "scale(1.05)",
-								backgroundColor: "#1565c0",
-							},
+							"&:hover": { transform: "scale(1.05)" },
 						}}
 					>
 						Contact Me

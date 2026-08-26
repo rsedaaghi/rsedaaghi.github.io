@@ -7,7 +7,7 @@ import {
 	Tab,
 	IconButton,
 	useMediaQuery,
-	useTheme as useMuiTheme,
+	useTheme,
 	Drawer,
 	List,
 	ListItem,
@@ -16,21 +16,16 @@ import {
 	Box,
 	Button,
 } from "@mui/material";
-import { Menu } from "@mui/icons-material";
+import { Menu, DarkMode, LightMode } from "@mui/icons-material";
 import packageJSON from "../../package.json";
 
 const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
-	const muiTheme = useMuiTheme();
+	const muiTheme = useTheme();
 	const isMobile = useMediaQuery(muiTheme.breakpoints.down("md"));
 	const [drawerOpen, setDrawerOpen] = useState(false);
 
 	const toggleDrawer = (open) => () => {
 		setDrawerOpen(open);
-	};
-
-	const handleAuthorClick = () => {
-		onTabChange("home");
-		window.history.pushState(null, "", "#home");
 	};
 
 	const drawerContent = (
@@ -56,37 +51,46 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 				position={isMobile ? "fixed" : "sticky"}
 				sx={{
 					top: 0,
-					backgroundColor: darkMode ? "#212121" : "#ffffff",
-					color: darkMode ? "#ffffff" : "#000000",
+					backgroundColor: "background.paper",
+					color: "text.primary",
 					boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
 					zIndex: 10,
 					borderRadius: isMobile ? "0" : "0 0 8px 8px",
 				}}
 			>
 				<Toolbar
-					sx={{ display: "flex", justifyContent: "space-between" }}
+					sx={{ display: "flex", justifyContent: "space-between", gap: 1 }}
 				>
 					<Button
-						onClick={handleAuthorClick}
+						onClick={() => onTabChange("home")}
 						sx={{ textTransform: "none", p: 0 }}
 					>
 						<Typography
 							variant="h6"
 							sx={{
 								fontWeight: "bold",
-								color: darkMode ? "#90caf9" : "#1976d2",
+								color: darkMode ? "primary.light" : "primary.main",
 							}}
 						>
 							{packageJSON.author}
 						</Typography>
 					</Button>
 					{isMobile ? (
-						<IconButton
-							onClick={toggleDrawer(true)}
-							sx={{ color: darkMode ? "#fbc02d" : "#ffa000" }}
-						>
-							<Menu />
-						</IconButton>
+						<>
+							<IconButton
+								onClick={onThemeToggle}
+								aria-label="Toggle dark mode"
+								sx={{ color: darkMode ? "#fbc02d" : "#ffa000" }}
+							>
+								{darkMode ? <LightMode /> : <DarkMode />}
+							</IconButton>
+							<IconButton
+								onClick={toggleDrawer(true)}
+								sx={{ color: darkMode ? "#fbc02d" : "#ffa000" }}
+							>
+								<Menu />
+							</IconButton>
+						</>
 					) : (
 						<Tabs
 							value={activeTab}
@@ -94,11 +98,7 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 							textColor="inherit"
 							slotProps={{
 								indicator: {
-									sx: {
-										backgroundColor: darkMode
-											? "#90caf9"
-											: "#1976d2",
-									},
+									sx: { backgroundColor: "primary.main" },
 								},
 							}}
 						>
@@ -115,6 +115,13 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 							))}
 						</Tabs>
 					)}
+					<IconButton
+						onClick={onThemeToggle}
+						aria-label="Toggle dark mode"
+						sx={{ color: darkMode ? "#fbc02d" : "#ffa000", ml: 1 }}
+					>
+						{darkMode ? <LightMode /> : <DarkMode />}
+					</IconButton>
 				</Toolbar>
 			</AppBar>
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
 	Box,
 	Typography,
@@ -10,28 +10,18 @@ import {
 } from "@mui/material";
 import Masonry from "@mui/lab/Masonry";
 import CloseIcon from "@mui/icons-material/Close";
+import useJsonData from "../utils/useJsonData";
 
-const GalleryTab = ({ onTabChange }) => {
-	const [worksData, setWorksData] = useState([]);
+const GalleryTab = () => {
+	const { data, loading, error } = useJsonData("/assets/data/works.json");
 	const [magnifyModalOpen, setMagnifyModalOpen] = useState(false);
 	const [selectedWork, setSelectedWork] = useState(null);
 
-	useEffect(() => {
-		fetch("/assets/data/works.json") // Fetch instead of importing
-			.then((response) => response.json())
-			.then((data) => setWorksData(data))
-			.catch((error) =>
-				console.error("Error loading works data:", error)
-			);
-	}, []);
-
-	// Filter for works that have at least one image.
-	const worksWithImages = worksData.filter(
+	const works = Array.isArray(data) ? data : [];
+	const worksWithImages = works.filter(
 		(item) => item.images && item.images.length > 0
 	);
-
-	// Sort the filtered works by date (newest first).
-	const sortedWorks = worksWithImages.sort(
+	const sortedWorks = [...worksWithImages].sort(
 		(a, b) => new Date(b.date) - new Date(a.date)
 	);
 
@@ -45,27 +35,20 @@ const GalleryTab = ({ onTabChange }) => {
 		setSelectedWork(null);
 	};
 
-	return (
-		<Box sx={{ width: "100%", px: 2, py: 4 }}>
-			<Typography
-				variant="h4"
-				sx={{
-					fontWeight: "bold",
-					textAlign: "center",
-					mb: 4,
-					color: "#1976d2",
-				}}
-			>
-				Gallery
+	if (loading) return <Typography align="center">Loading...</Typography>;
+	if (error) {
+		return (
+			<Typography align="center" color="error">
+				Failed to load content.
 			</Typography>
+		);
+	}
 
+	return (
+		<Box sx={{ width: "100%", py: 2 }}>
 			<Typography
 				variant="subtitle1"
-				sx={{
-					mb: 3,
-					textAlign: "center",
-					color: "#757575",
-				}}
+				sx={{ mb: 3, textAlign: "center", color: "text.secondary" }}
 			>
 				This is a showcase of some of my works. By going to the Works
 				tab, you can find more details about each project and see
@@ -73,13 +56,14 @@ const GalleryTab = ({ onTabChange }) => {
 			</Typography>
 
 			<Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
-				{sortedWorks.map((item, index) => (
+				{sortedWorks.map((item) => (
 					<Card
-						key={index}
+						key={item.title}
 						sx={{
 							borderRadius: 2,
 							boxShadow: 3,
-							backgroundColor: "#fafafa",
+							bgcolor: (theme) =>
+								theme.palette.mode === "dark" ? "grey.900" : "grey.50",
 						}}
 					>
 						<CardActionArea onClick={() => handleCardClick(item)}>
@@ -100,7 +84,7 @@ const GalleryTab = ({ onTabChange }) => {
 									p: 1,
 									display: "block",
 									textAlign: "center",
-									color: "#333",
+									color: "text.primary",
 								}}
 							>
 								{item.title}
@@ -109,8 +93,12 @@ const GalleryTab = ({ onTabChange }) => {
 					</Card>
 				))}
 			</Masonry>
-			{/* Magnified Image Modal */}
-			<Modal open={magnifyModalOpen} onClose={handleCloseModal}>
+
+			<Modal
+				open={magnifyModalOpen}
+				onClose={handleCloseModal}
+				aria-labelledby="gallery-modal-title"
+			>
 				<Box
 					sx={{
 						position: "fixed",
@@ -128,6 +116,7 @@ const GalleryTab = ({ onTabChange }) => {
 				>
 					<IconButton
 						onClick={handleCloseModal}
+						aria-label="Close gallery"
 						sx={{
 							position: "absolute",
 							top: 16,
@@ -150,6 +139,7 @@ const GalleryTab = ({ onTabChange }) => {
 								}}
 							/>
 							<Typography
+								id="gallery-modal-title"
 								variant="h6"
 								sx={{
 									mt: 2,
