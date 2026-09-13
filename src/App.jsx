@@ -112,7 +112,7 @@ const App = () => {
 							/>
 						</Box>
 					</Container>
-					<Footer
+<Footer
 						lastUpdated={formatBuildDate(__BUILD_DATE__)}
 						darkMode={darkMode}
 					/>
