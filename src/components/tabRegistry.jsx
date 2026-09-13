@@ -35,10 +35,3 @@ export const TAB_COMPONENTS = {
 export const TABS_WITH_HEADING = TABS.map((t) => t.name).filter(
 	(name) => name !== "home"
 );
-
-// Tabs whose counts (shown in the nav) are computed from a JSON data file.
-export const COUNT_FILES = {
-	skills: "skills.json",
-	works: "works.json",
-	experience: "experience.json",
-};

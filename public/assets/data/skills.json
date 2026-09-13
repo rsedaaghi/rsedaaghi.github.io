@@ -25,13 +25,15 @@
         "category": "Frontend",
         "skills": [
             "React",
+            "Next.js",
             "Material-UI",
+            "Ant Design",
             "Vite",
             "PWA",
             "Bootstrap",
-            "jQuery",
+            "JQuery",
             "SCSS",
-            "Wordpress",
+            "WordPress",
             "HTML",
             "CSS"
         ]
@@ -50,6 +52,7 @@
         "skills": [
             "Android",
             "Flutter",
+            "Electron",
             "Java",
             "MATLAB"
         ]

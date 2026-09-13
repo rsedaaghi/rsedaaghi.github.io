@@ -16,7 +16,6 @@ import {
 	ListItemButton,
 	Box,
 	Button,
-	Badge,
 } from "@mui/material";
 import { Menu, DarkMode, LightMode, Close } from "@mui/icons-material";
 import packageJSON from "../../package.json";
@@ -64,7 +63,6 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 							<ListItemText
 								primary={tab.label}
 								primaryTypographyProps={{ fontWeight: 700 }}
-								secondary={tab.count != null ? `${tab.count} items` : undefined}
 							/>
 						</ListItemButton>
 					</ListItem>
@@ -161,24 +159,7 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 										value={tab.name}
 										icon={Icon ? <Icon sx={{ fontSize: 18 }} /> : undefined}
 										iconPosition="start"
-										label={
-											<span>
-												{tab.label}
-												{tab.count != null && (
-													<Badge
-														color="primary"
-														badgeContent={tab.count}
-														sx={{
-															ml: 1,
-															"& .MuiBadge-badge": {
-																position: "static",
-																transform: "none",
-															},
-														}}
-													/>
-												)}
-											</span>
-										}
+										label={tab.label}
 										sx={{
 											textTransform: "capitalize",
 											fontWeight: "bold",
