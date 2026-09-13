@@ -8,8 +8,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // ---- Configuration -------------------------------------------------------
 const IMAGES_DIR = path.resolve(__dirname, "../public/assets/images");
 const DATA_DIR = path.resolve(__dirname, "../public/assets/data");
-const SIZE_THRESHOLD_BYTES = 300 * 1024; // Only convert files larger than this
 const WEBP_QUALITY = 85; // 1-100, higher = better quality/larger file
+const SUPPORTED_EXTENSIONS = [".png", ".jpg", ".jpeg"];
 // ---------------------------------------------------------------------------
 
 async function walk(dir) {
@@ -58,16 +58,22 @@ async function updateJsonReferences(convertedPairs) {
 }
 
 async function convertImagesToWebp() {
-	const candidates = (await walk(IMAGES_DIR)).filter(
-		(file) => path.extname(file).toLowerCase() === ".png"
+	const candidates = (await walk(IMAGES_DIR)).filter((file) =>
+		SUPPORTED_EXTENSIONS.includes(path.extname(file).toLowerCase())
 	);
 
 	const converted = [];
 	for (const src of candidates) {
 		const stat = await fs.stat(src);
-		if (stat.size <= SIZE_THRESHOLD_BYTES) continue;
+		const ext = path.extname(src).toLowerCase();
+		const dest = `${src.slice(0, -ext.length)}.webp`;
 
-		const dest = `${src.slice(0, -path.extname(src).length)}.webp`;
+		const existing = await fs.stat(dest).catch(() => null);
+		// Re-encode only when the WebP is missing or the source is newer.
+		const needsConversion =
+			!existing || stat.mtimeMs > existing.mtimeMs;
+		if (!needsConversion) continue;
+
 		await sharp(src).webp({ quality: WEBP_QUALITY }).toFile(dest);
 
 		const newStat = await fs.stat(dest);
@@ -79,10 +85,8 @@ async function convertImagesToWebp() {
 		converted.push([src, dest]);
 	}
 
-	if (converted.length === 0) {
-		console.log(
-		`No PNG files larger than ${SIZE_THRESHOLD_BYTES / 1024} KB found. Nothing to do.`
-		);
+if (converted.length === 0) {
+		console.log("No changeable images found. Nothing to do.");
 		return;
 	}
 

@@ -33,15 +33,16 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      # build already generates sitemap.xml + llms.txt + llms-full.txt
+      # from the site data at build time, so SEO/AEO files stay in sync.
       - name: Build the project
         run: npm run build
 
-      - name: Generate Sitemap
-        run: node scripts/generateSitemap.js
-
-      - name: Verify Sitemap Exists
+      - name: Verify build artifacts
         run: |
-          ls -l dist/sitemap.xml || echo "Warning: Sitemap file missing"
+          for f in dist/index.html dist/sitemap.xml dist/llms.txt dist/llms-full.txt; do
+            test -f "$f" && echo "OK: $f" || { echo "Error: $f missing"; exit 1; }
+          done
 
       - name: Deploy to GitHub Pages
         run: npx gh-pages -d dist --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/rsedaaghi/rsedaaghi.github.io.git

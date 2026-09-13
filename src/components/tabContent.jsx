@@ -1,18 +1,10 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import SkillsTab from "./tabs/skillsTab";
-import WorksTab from "./tabs/worksTab";
-import ContactTab from "./tabs/contactTab";
+import { TAB_COMPONENTS, TABS_WITH_HEADING } from "./tabRegistry";
 
-// Registry: tab.name -> component
-// If a tab has no entry here it renders a generic message.
-const TAB_COMPONENTS = {
-	skills: SkillsTab,
-	works: WorksTab,
-	contact: ContactTab,
-};
-
-const TabContent = ({ tab }) => {
+// Renders the currently active tab. Component resolution is centralized in
+// tabRegistry (DRY): this file owns presentation only (SOLID).
+const TabContent = ({ tab, onNavigate }) => {
 	if (!tab) {
 		return (
 			<Typography variant="body1" color="textSecondary" align="center">
@@ -23,30 +15,33 @@ const TabContent = ({ tab }) => {
 
 	const TabComponent = TAB_COMPONENTS[tab.name];
 
+	if (!TabComponent) {
+		return (
+			<Typography
+				variant="body1"
+				sx={{ textAlign: "center", color: "text.secondary", mt: 2 }}
+			>
+				No content available.
+			</Typography>
+		);
+	}
+
 	return (
 		<Box>
-			<Typography
-				variant="h4"
-				sx={{
-					fontWeight: "bold",
-					textAlign: "center",
-					mb: 4,
-					color: "primary.main",
-				}}
-			>
-				{tab.label}
-			</Typography>
-
-			{TabComponent ? (
-				<TabComponent tab={tab} />
-			) : (
+			{TABS_WITH_HEADING.includes(tab.name) && (
 				<Typography
-					variant="body1"
-					sx={{ textAlign: "center", color: "text.secondary", mt: 2 }}
+					variant="h4"
+					sx={{
+						fontWeight: "bold",
+						textAlign: "center",
+						mb: 2.5,
+						color: "primary.main",
+					}}
 				>
-					No content available.
+					{tab.label}
 				</Typography>
 			)}
+			<TabComponent tab={tab} onNavigate={onNavigate} />
 		</Box>
 	);
 };

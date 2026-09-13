@@ -1,2 +1,21 @@
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Sitemap: https://rsedaaghi.github.io/sitemap.xml
+
+# AI assistant / answer-engine crawlers (GEO/AEO) are welcome to index.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

@@ -9,13 +9,13 @@ const Footer = ({ lastUpdated }) => {
 	const socialLinks = Array.isArray(data) ? data : [];
 
 	return (
-		<Box component="footer" sx={{ py: 2, textAlign: "center" }}>
+		<Box component="footer" sx={{ py: 1, textAlign: "center" }}>
 			<Box
 				sx={{
 					display: "flex",
 					justifyContent: "center",
-					gap: 2,
-					mb: 1,
+					gap: 1.5,
+					mb: 0.5,
 				}}
 			>
 				{socialLinks.map((link) => (

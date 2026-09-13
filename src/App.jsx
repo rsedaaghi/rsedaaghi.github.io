@@ -1,26 +1,11 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { CssBaseline, Box, ThemeProvider, Container } from "@mui/material";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import TabContent from "./components/tabContent";
-import Home from "./components/home";
-import GalleryTab from "./components/gallery";
-import {
-	CssBaseline,
-	Box,
-	createTheme,
-	ThemeProvider,
-	Container,
-} from "@mui/material";
-
-const TABS = [
-	{ label: "Home", name: "home" },
-	{ label: "Skills", name: "skills", jsonFile: "skills.json" },
-	{ label: "Works", name: "works", jsonFile: "works.json" },
-	{ label: "Gallery", name: "gallery" },
-	{ label: "Contact", name: "contact", jsonFile: "contact.json" },
-];
-
-const TAB_COMPONENTS = { home: Home, gallery: GalleryTab };
+import useJsonData from "./utils/useJsonData";
+import { TABS } from "./components/tabRegistry";
+import { createAppTheme } from "./theme";
 
 const THEME_STORAGE_KEY = "theme";
 
@@ -49,6 +34,10 @@ const App = () => {
 	const [activeTab, setActiveTab] = useState(() => getTabFromHash() ?? "home");
 	const [darkMode, setDarkMode] = useState(getInitialDarkMode);
 
+	const { data: skillsData } = useJsonData("/assets/data/skills.json");
+	const { data: worksData } = useJsonData("/assets/data/works.json");
+	const { data: experienceData } = useJsonData("/assets/data/experience.json");
+
 	useEffect(() => {
 		localStorage.setItem(THEME_STORAGE_KEY, darkMode ? "dark" : "light");
 	}, [darkMode]);
@@ -61,39 +50,31 @@ const App = () => {
 		return () => window.removeEventListener("popstate", handlePopState);
 	}, []);
 
-	const theme = useMemo(
-		() =>
-			createTheme({
-				palette: {
-					mode: darkMode ? "dark" : "light",
-					primary: { main: "#1976d2", light: "#e3f2fd", dark: "#1565c0" },
-					secondary: { main: "#f50057" },
-				},
-				typography: {
-					fontFamily: "'Nunito','Roboto', sans-serif",
-				},
-				components: {
-					MuiPaper: {
-						styleOverrides: {
-							root: { transition: "all 0.3s ease-in-out" },
-						},
-					},
-				},
-			}),
-		[darkMode]
-	);
+	const theme = useMemo(() => createAppTheme(darkMode), [darkMode]);
 
-	const handleTabChange = useCallback((newValue) => {
+	// Small item counts enrich the nav labels (e.g. "Works · 24").
+	const navTabs = useMemo(() => {
+		const counts = {
+			skills: Array.isArray(skillsData) ? skillsData.length : 0,
+			works: Array.isArray(worksData) ? worksData.length : 0,
+			experience: Array.isArray(experienceData) ? experienceData.length : 0,
+		};
+		return TABS.map((tab) =>
+			counts[tab.name] > 0 ? { ...tab, count: counts[tab.name] } : tab
+		);
+	}, [skillsData, worksData, experienceData]);
+
+	const handleTabChange = (newValue) => {
 		setActiveTab(newValue);
 		window.history.pushState(null, "", `#${newValue}`);
-	}, []);
-
-	const handleThemeToggle = useCallback(() => {
-		setDarkMode((prev) => !prev);
-	}, []);
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
 
 	const activeTabData = TABS.find((tab) => tab.name === activeTab);
-	const ActiveComponent = TAB_COMPONENTS[activeTab];
+	// Short pages (home, skills, contact) center vertically on desktop, but if
+	// they ever outgrow the viewport they must fall back to normal page scroll
+	// ("safe center") instead of clipping the top. Tall pages stay top-aligned.
+	const isCompactCentered = ["home", "skills", "contact"].includes(activeTab);
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -106,42 +87,47 @@ const App = () => {
 				}}
 			>
 				<Header
-					tabs={TABS}
+					tabs={navTabs}
 					activeTab={activeTab}
 					darkMode={darkMode}
 					onTabChange={handleTabChange}
-					onThemeToggle={handleThemeToggle}
+					onThemeToggle={() => setDarkMode((prev) => !prev)}
 				/>
 				<Container
 					maxWidth="md"
 					sx={{
-						pt: { xs: "70px", md: 6 },
-						pb: { xs: 2, md: 6 },
+						pt: { xs: "70px", md: 1 },
+						pb: { xs: 1, md: 1 },
 						flex: 1,
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
-						justifyContent: { xs: "flex-start", md: "center" },
+						justifyContent: {
+							xs: "flex-start",
+							md: isCompactCentered ? "safe center" : "flex-start",
+						},
 					}}
 				>
 					<Container
 						maxWidth="lg"
 						sx={{
-							py: { xs: 4, md: 8 },
+							py: { xs: 2.5, md: 2 },
 							background: (theme) =>
+								theme.custom.surfaceGradient[theme.palette.mode],
+							borderRadius: 4,
+							boxShadow: (theme) =>
 								theme.palette.mode === "dark"
-									? "linear-gradient(135deg, #1e1e1e, #2d2d2d)"
-									: "linear-gradient(135deg, #ece9e6, #ffffff)",
-							borderRadius: 3,
-							boxShadow: 3,
-							mt: { xs: 2, md: 4 },
+									? "0 18px 48px rgba(0,0,0,0.45)"
+									: "0 18px 48px rgba(79,70,229,0.10)",
+							mt: { xs: 1, md: 1 },
 						}}
 					>
-						{ActiveComponent ? (
-							<ActiveComponent />
-						) : (
-							<TabContent tab={activeTabData} />
-						)}
+						<Box className="fade-in" key={activeTab}>
+							<TabContent
+								tab={activeTabData}
+								onNavigate={handleTabChange}
+							/>
+						</Box>
 					</Container>
 					<Footer
 						lastUpdated={formatBuildDate(__BUILD_DATE__)}

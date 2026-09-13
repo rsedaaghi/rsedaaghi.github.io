@@ -1,10 +1,57 @@
 [
-    "Node.js",
-    "React",
-    "Docker",
-    "CI/CD",
-    "PostgreSQL",
-    "RabbitMQ",
-    "Python",
-    "jQuery"
+    {
+        "category": "Backend & APIs",
+        "skills": [
+            "Node.js",
+            "Python",
+            "PHP",
+            "C++",
+            "C",
+            "Fortran",
+            "gRPC",
+            "WebSocket"
+        ]
+    },
+    {
+        "category": "Data & Storage",
+        "skills": [
+            "PostgreSQL",
+            "Redis",
+            "RabbitMQ",
+            "SQL"
+        ]
+    },
+    {
+        "category": "Frontend",
+        "skills": [
+            "React",
+            "Material-UI",
+            "Vite",
+            "PWA",
+            "Bootstrap",
+            "jQuery",
+            "SCSS",
+            "Wordpress",
+            "HTML",
+            "CSS"
+        ]
+    },
+    {
+        "category": "DevOps & Infrastructure",
+        "skills": [
+            "Docker",
+            "Linux",
+            "CI/CD",
+            "Zabbix"
+        ]
+    },
+    {
+        "category": "Mobile & Desktop",
+        "skills": [
+            "Android",
+            "Flutter",
+            "Java",
+            "MATLAB"
+        ]
+    }
 ]
