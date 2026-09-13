@@ -59,3 +59,238 @@ html {
     outline: 2px solid #4f46e5;
     outline-offset: 2px;
 }
+
+/* ---------------------------------------------------------------------------
+   Pre-rendered static content (`.static-*`)
+   The build emits crawlable HTML inside #root for each section (see
+   scripts/generateSectionPages.js) so crawlers see real content without JS.
+   These rules make that first paint look like the app until React mounts and
+   replaces it — one stylesheet, no duplicated inline blocks.
+--------------------------------------------------------------------------- */
+.static-role {
+    display: inline-block;
+    background: #cffafe;
+    color: #155e75;
+    border-radius: 999px;
+    padding: 4px 16px;
+    font-weight: 800;
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+
+    @media (prefers-color-scheme: dark) {
+        background: #155e75;
+        color: #cffafe;
+    }
+}
+
+.static-headline {
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 0 0 0.25rem;
+    background: linear-gradient(120deg, #4f46e5, #0891b2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.static-about {
+    color: #475569;
+    line-height: 1.6;
+    margin: 0.75rem 0 1rem;
+
+    @media (prefers-color-scheme: dark) {
+        color: #94a3b8;
+    }
+}
+
+.static-cta {
+    margin: 1rem 0 1.5rem;
+
+    a {
+        display: inline-block;
+        margin: 0 8px 8px 0;
+        padding: 9px 22px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    a:first-child {
+        background: linear-gradient(120deg, #4f46e5, #0891b2);
+        color: #fff;
+        box-shadow: 0 10px 24px rgba(79, 70, 229, 0.25);
+    }
+
+    a:last-child {
+        border: 1px solid #4f46e5;
+        color: #4f46e5;
+    }
+}
+
+.static-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 18px 48px rgba(79, 70, 229, 0.1);
+    overflow: hidden;
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: #1e293b;
+    }
+}
+
+.static-stat {
+    padding: 18px 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    & + & {
+        border-left: 1px solid #e2e8f0;
+
+        @media (prefers-color-scheme: dark) {
+            border-left-color: #1e293b;
+        }
+    }
+
+    strong {
+        font-size: 1.3rem;
+        font-weight: 900;
+        background: linear-gradient(120deg, #4f46e5, #0891b2);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    span {
+        color: #64748b;
+        font-size: 0.75rem;
+
+        @media (prefers-color-scheme: dark) {
+            color: #94a3b8;
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding: 12px 6px;
+
+        strong {
+            font-size: 1.05rem;
+        }
+    }
+}
+
+.static-date {
+    color: #0891b2;
+    font-weight: 700;
+    margin: 0.15rem 0 0.5rem;
+}
+
+.static-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1.25rem;
+
+    li {
+        background: #eef2ff;
+        color: #3730a3;
+        border-radius: 999px;
+        padding: 3px 12px;
+        font-size: 0.78rem;
+        font-weight: 600;
+    }
+}
+
+.static-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #475569;
+    line-height: 1.9;
+
+    a {
+        color: #4f46e5;
+        font-weight: 700;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        color: #94a3b8;
+    }
+}
+
+.static-gallery {
+    figure {
+        margin: 0 0 1.5rem;
+    }
+
+    img {
+        width: 100%;
+        max-width: 900px;
+        border-radius: 14px;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+        display: block;
+        height: auto;
+    }
+
+    figcaption {
+        color: #64748b;
+        font-size: 0.85rem;
+        margin-top: 0.4rem;
+
+        @media (prefers-color-scheme: dark) {
+            color: #94a3b8;
+        }
+    }
+}
+
+/* Generic section headings/paragraphs (skills, works, experience, contact).
+   The app never renders a <main>, so these styles only touch pre-render HTML. */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 0.5rem;
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        line-height: 1.3;
+        margin: 1.25rem 0 0.35rem;
+        color: #0f172a;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            color: #e2e8f0;
+        }
+    }
+
+    > p {
+        color: #475569;
+        line-height: 1.7;
+
+        @media (prefers-color-scheme: dark) {
+            color: #94a3b8;
+        }
+    }
+}

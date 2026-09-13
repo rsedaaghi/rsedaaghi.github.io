@@ -1,19 +1,11 @@
-// weight, style, file suffix
 $font-variants: (
-	200 normal "ExtraLight",
-	200 italic "ExtraLightItalic",
-	300 normal "Light",
-	300 italic "LightItalic",
 	400 normal "Regular",
 	400 italic "Italic",
 	600 normal "SemiBold",
-	600 italic "SemiBoldItalic",
 	700 normal "Bold",
 	700 italic "BoldItalic",
 	800 normal "ExtraBold",
-	800 italic "ExtraBoldItalic",
 	900 normal "Black",
-	900 italic "BlackItalic",
 );
 
 @each $weight, $style, $suffix in $font-variants {

@@ -55,6 +55,8 @@ const err = (message) => {
 };
 
 // ---- Static body builders (semantic, crawlable) ---------------------------
+// Styling for this markup lives once, in src/assets/styles/global.scss, so the
+// compiled stylesheet covers both the pre-render and React-mounted states.
 
 const homeBody = (home, worksCount) => {
 	const currentYear = new Date().getFullYear();
@@ -75,7 +77,7 @@ const homeBody = (home, worksCount) => {
 		<main>
 			<section aria-label="Introduction">
 				<p class="static-role">${esc(home.role ?? "Software Developer")}</p>
-				<h1>Reza Sedaaghi — ${esc(home.headline ?? "")}</h1>
+				<h1 class="static-headline">Reza Sedaaghi — ${esc(home.headline ?? "")}</h1>
 				<p class="static-about">${esc(home.description ?? "")}</p>
 				<p class="static-cta">
 					<a href="/works/">View My Work</a>
@@ -95,7 +97,7 @@ const homeBody = (home, worksCount) => {
 
 const skillsBody = (sections) => `
 		<main>
-			<h1>Skills</h1>
+			<h1 class="static-headline">Skills</h1>
 			${sections
 				.map(
 					(section) => `
@@ -109,7 +111,7 @@ const skillsBody = (sections) => `
 
 const worksBody = (works) => `
 		<main>
-			<h1>Projects</h1>
+			<h1 class="static-headline">Projects</h1>
 			<p>${works.length} project${works.length === 1 ? "" : "s"} showcased.</p>
 			${works
 				.map(
@@ -146,7 +148,7 @@ const experienceBody = (entries) => {
 		.join("");
 	return `
 		<main>
-			<h1>Experience</h1>${blocks}
+			<h1 class="static-headline">Experience</h1>${blocks}
 		</main>`;
 };
 
@@ -164,13 +166,15 @@ const galleryBody = (works) => {
 		.join("");
 	return `
 		<main>
-			<h1>Gallery</h1>${figures}
+			<h1 class="static-headline">Gallery</h1>
+			<div class="static-gallery">${figures}
+			</div>
 		</main>`;
 };
 
 const contactBody = (contacts) => `
 		<main>
-			<h1>Contact</h1>
+			<h1 class="static-headline">Contact</h1>
 			<ul class="static-contact">
 				${(contacts ?? [])
 					.filter((contact) => contact.url)
@@ -444,7 +448,8 @@ const generate = async () => {
 		console.log(`Generated dist/${section.name}/index.html`);
 	}
 
-	// Inject the home content into the SPA shell so the root URL is crawlable too.
+	// Inject the home content into the SPA shell so the root URL is crawlable
+	// too. Styling comes from the compiled global.scss (shared across pages).
 	if (!indexHtml.includes('<div id="root"></div>')) {
 		err("dist/index.html is missing the #root element; aborting home injection.");
 	}

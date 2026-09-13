@@ -33,7 +33,7 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      # build already generates sitemap.json + llms.txt + llms-full.txt
+      # build already generates sitemap.xml + llms.txt + llms-full.txt
       # AND pre-renders each section as dist/<name>/index.html (real paths
       # for SEO), all from the site data at build time.
       - name: Build the project
