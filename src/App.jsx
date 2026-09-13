@@ -14,9 +14,11 @@ const getInitialDarkMode = () => {
 	return window.matchMedia("(prefers-color-scheme: dark)").matches;
 };
 
-const getTabFromHash = () => {
-	const name = window.location.hash.substring(1);
-	return TABS.some((t) => t.name === name) ? name : null;
+const getTabFromPath = () => {
+	const { pathname } = window.location;
+	// "/works/" -> "works"; "/" -> "home"; deeper segments ignored (SPA).
+	const name = pathname.split("/").filter(Boolean)[0];
+	return TABS.some((t) => t.name === name) ? name : "home";
 };
 
 const formatBuildDate = (iso) => {
@@ -30,7 +32,7 @@ const formatBuildDate = (iso) => {
 };
 
 const App = () => {
-	const [activeTab, setActiveTab] = useState(() => getTabFromHash() ?? "home");
+	const [activeTab, setActiveTab] = useState(() => getTabFromPath());
 	const [darkMode, setDarkMode] = useState(getInitialDarkMode);
 
 	useEffect(() => {
@@ -39,7 +41,7 @@ const App = () => {
 
 	useEffect(() => {
 		const handlePopState = () => {
-			setActiveTab(getTabFromHash() ?? "home");
+			setActiveTab(getTabFromPath());
 		};
 		window.addEventListener("popstate", handlePopState);
 		return () => window.removeEventListener("popstate", handlePopState);
@@ -49,7 +51,9 @@ const App = () => {
 
 	const handleTabChange = (newValue) => {
 		setActiveTab(newValue);
-		window.history.pushState(null, "", `#${newValue}`);
+		const tab = TABS.find((t) => t.name === newValue);
+		const url = tab ? tab.path : "/";
+		window.history.pushState(null, "", url);
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
