@@ -9,6 +9,17 @@ export default defineConfig({
 		__BUILD_DATE__: JSON.stringify(new Date().toISOString()),
 	},
 	base: "/",
+	build: {
+		rollupOptions: {
+			output: {
+				// Split React out of the app bundle: parallel download + stable
+				// long-term caching (the vendor hash only changes on upgrades).
+				manualChunks: {
+					vendor: ["react", "react-dom"],
+				},
+			},
+		},
+	},
 	plugins: [
 		react(),
 		svgr(),
