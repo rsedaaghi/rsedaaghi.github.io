@@ -21,18 +21,36 @@ export const createAppTheme = (darkMode) =>
 	createTheme({
 		palette: {
 			mode: darkMode ? "dark" : "light",
-			primary: {
-				main: "#4f46e5",
-				light: "#eef2ff",
-				dark: "#4338ca",
-				contrastText: "#ffffff",
-			},
-			secondary: {
-				main: "#0891b2",
-				light: "#a5f3fc",
-				dark: "#0e7490",
-				contrastText: "#ffffff",
-			},
+			primary: darkMode
+				? {
+					// Lighter accent on dark surfaces: #818cf8 (~6:1 vs bg) keeps
+					// chips, headings, links and icons legible; dark contrastText
+					// lets contained buttons keep AA text on the bright tint.
+					main: "#818cf8",
+					light: "#eef2ff",
+					dark: "#6366f1",
+					contrastText: "#0a1120",
+				}
+				: {
+					main: "#4f46e5",
+					light: "#eef2ff",
+					dark: "#4338ca",
+					contrastText: "#ffffff",
+				},
+			secondary: darkMode
+				? {
+					// Bright cyan accent for dark mode (airbnb-style secondary).
+					main: "#22d3ee",
+					light: "#a5f3fc",
+					dark: "#155e75",
+					contrastText: "#0a1120",
+				}
+				: {
+					main: "#0891b2",
+					light: "#a5f3fc",
+					dark: "#0e7490",
+					contrastText: "#ffffff",
+				},
 			background: {
 				default: darkMode ? "#0a1120" : "#f8fafc",
 				paper: darkMode ? "#111a2e" : "#ffffff",

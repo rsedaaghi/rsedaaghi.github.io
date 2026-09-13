@@ -96,7 +96,7 @@ const App = () => {
 				<Container
 					maxWidth="md"
 					sx={{
-						pt: { xs: "70px", md: 1 },
+						pt: { xs: "calc(64px + env(safe-area-inset-top))", md: 1 },
 						pb: { xs: 1, md: 1 },
 						flex: 1,
 						display: "flex",
