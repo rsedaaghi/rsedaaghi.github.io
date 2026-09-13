@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import Masonry from "@mui/lab/Masonry";
 import CloseIcon from "@mui/icons-material/Close";
+import DataState from "./dataState";
 import useJsonData from "../utils/useJsonData";
 
 const GalleryTab = () => {
@@ -35,15 +36,6 @@ const GalleryTab = () => {
 		setSelectedWork(null);
 	};
 
-	if (loading) return <Typography align="center">Loading...</Typography>;
-	if (error) {
-		return (
-			<Typography align="center" color="error">
-				Failed to load content.
-			</Typography>
-		);
-	}
-
 	return (
 		<Box sx={{ width: "100%", py: 2 }}>
 			<Typography
@@ -55,44 +47,56 @@ const GalleryTab = () => {
 				additional images.
 			</Typography>
 
-			<Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
-				{sortedWorks.map((item) => (
-					<Card
-						key={item.title}
-						sx={{
-							borderRadius: 2,
-							boxShadow: 3,
-							bgcolor: (theme) =>
-								theme.palette.mode === "dark" ? "grey.900" : "grey.50",
-						}}
-					>
-						<CardActionArea onClick={() => handleCardClick(item)}>
-							<CardMedia
-								component="img"
-								image={item.images[0].src}
-								alt={item.title}
-								loading="lazy"
+			<DataState loading={loading} error={error}>
+				{sortedWorks.length > 0 ? (
+					<Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
+						{sortedWorks.map((item) => (
+							<Card
+								key={item.title}
 								sx={{
 									borderRadius: 2,
-									height: 200,
-									objectFit: "cover",
-								}}
-							/>
-							<Typography
-								variant="caption"
-								sx={{
-									p: 1,
-									display: "block",
-									textAlign: "center",
-									color: "text.primary",
+									boxShadow: 3,
+									bgcolor: (theme) =>
+										theme.palette.mode === "dark" ? "grey.900" : "grey.50",
+									"&:hover": { boxShadow: 8, transform: "translateY(-3px)" },
 								}}
 							>
-								{item.title}
-							</Typography>
-						</CardActionArea>
-					</Card>
-				))}
-			</Masonry>
+								<CardActionArea onClick={() => handleCardClick(item)}>
+									<CardMedia
+										component="img"
+										image={item.images[0].src}
+										alt={item.title}
+										loading="lazy"
+										sx={{
+											borderRadius: 2,
+											height: 200,
+											objectFit: "cover",
+										}}
+									/>
+									<Typography
+										variant="caption"
+										sx={{
+											p: 1,
+											display: "block",
+											textAlign: "center",
+											color: "text.primary",
+										}}
+									>
+										{item.title}
+									</Typography>
+								</CardActionArea>
+							</Card>
+						))}
+					</Masonry>
+				) : (
+					<Typography
+						variant="body1"
+						sx={{ textAlign: "center", color: "text.secondary", mt: 2 }}
+					>
+						No gallery items available.
+					</Typography>
+				)}
+			</DataState>
 
 			<Modal
 				open={magnifyModalOpen}

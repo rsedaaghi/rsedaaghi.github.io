@@ -10,8 +10,10 @@
   },
   "scripts": {
     "convert-images-to-webp": "node scripts/convertImagesToWebp.js",
+    "generate-seo": "node scripts/generateSeoFiles.js",
+    "generate-sitemap": "node scripts/generateSitemap.js",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run generate-seo && npm run generate-sitemap",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",

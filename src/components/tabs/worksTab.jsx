@@ -13,6 +13,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import WorkCard from "../cards/workCard";
 import PhotoAlbumModal from "../photoAlbumModal";
+import DataState from "../dataState";
 import useJsonData from "../../utils/useJsonData";
 
 const WorksTab = () => {
@@ -55,15 +56,6 @@ const WorksTab = () => {
 		setCurrentImages(images);
 		setModalOpen(true);
 	};
-
-	if (loading) return <Typography align="center">Loading...</Typography>;
-	if (error) {
-		return (
-			<Typography align="center" color="error">
-				Failed to load content.
-			</Typography>
-		);
-	}
 
 	return (
 		<Box>
@@ -123,32 +115,33 @@ const WorksTab = () => {
 				/>
 			</Box>
 
-			{filteredWorks.length > 0 ? (
-				<Grid
-					container
-					spacing={4}
-					justifyContent="center"
-					alignItems="stretch"
-					sx={{ width: "100%" }}
-				>
-					{filteredWorks.map((item) => (
-						<Grid
-							key={item.title}
-							size={{ xs: 12 }}
-							sx={{ display: "flex" }}
-						>
-							<WorkCard item={item} onOpenAlbum={handleOpenAlbum} />
-						</Grid>
-					))}
-				</Grid>
-			) : (
-				<Typography
-					variant="body1"
-					sx={{ textAlign: "center", color: "text.secondary", mt: 2 }}
-				>
-					No projects match your filters.
-				</Typography>
-			)}
+			<DataState loading={loading} error={error}>
+				{filteredWorks.length > 0 ? (
+					<Grid
+						container
+						spacing={3}
+						alignItems="stretch"
+						sx={{ width: "100%" }}
+					>
+						{filteredWorks.map((item) => (
+							<Grid
+								key={item.title}
+								size={{ xs: 12, sm: 6, lg: 6 }}
+								sx={{ display: "flex" }}
+							>
+								<WorkCard item={item} onOpenAlbum={handleOpenAlbum} />
+							</Grid>
+						))}
+					</Grid>
+				) : (
+					<Typography
+						variant="body1"
+						sx={{ textAlign: "center", color: "text.secondary", mt: 2 }}
+					>
+						No projects match your filters.
+					</Typography>
+				)}
+			</DataState>
 
 			<PhotoAlbumModal
 				open={modalOpen}

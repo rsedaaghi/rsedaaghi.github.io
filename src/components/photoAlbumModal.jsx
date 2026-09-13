@@ -17,6 +17,22 @@ const PhotoAlbumModal = ({ open, onClose, images = [], modalTitle = "" }) => {
 		}
 	}, [open]);
 
+	// Preload the neighbouring images so navigation feels instant.
+	useEffect(() => {
+		if (!images?.length) return;
+		const neighbours = [
+			(currentIndex - 1 + images.length) % images.length,
+			(currentIndex + 1) % images.length,
+		];
+		neighbours.forEach((index) => {
+			const src = images[index]?.src;
+			if (src) {
+				const preload = new window.Image();
+				preload.src = src;
+			}
+		});
+	}, [images, currentIndex]);
+
 	const handleNext = () => {
 		setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
 	};

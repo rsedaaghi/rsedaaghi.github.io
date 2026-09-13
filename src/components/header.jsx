@@ -28,6 +28,9 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 		setDrawerOpen(open);
 	};
 
+	const modeColor = (theme) =>
+		darkMode ? theme.palette.warning.light : theme.palette.warning.main;
+
 	const drawerContent = (
 		<List>
 			{tabs.map((tab) => (
@@ -37,6 +40,7 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 							onTabChange(tab.name);
 							setDrawerOpen(false);
 						}}
+						sx={{ borderRadius: 2 }}
 					>
 						<ListItemText primary={tab.label} />
 					</ListItemButton>
@@ -70,6 +74,17 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 							sx={{
 								fontWeight: "bold",
 								color: darkMode ? "primary.light" : "primary.main",
+								background: (theme) =>
+									darkMode
+										? "none"
+										: `linear-gradient(120deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+								...(darkMode
+									? {}
+									: {
+										WebkitBackgroundClip: "text",
+										WebkitTextFillColor: "transparent",
+										backgroundClip: "text",
+									}),
 							}}
 						>
 							{packageJSON.author}
@@ -80,13 +95,14 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 							<IconButton
 								onClick={onThemeToggle}
 								aria-label="Toggle dark mode"
-								sx={{ color: darkMode ? "#fbc02d" : "#ffa000" }}
+								sx={{ color: modeColor }}
 							>
 								{darkMode ? <LightMode /> : <DarkMode />}
 							</IconButton>
 							<IconButton
 								onClick={toggleDrawer(true)}
-								sx={{ color: darkMode ? "#fbc02d" : "#ffa000" }}
+								aria-label="Open navigation menu"
+								sx={{ color: modeColor }}
 							>
 								<Menu />
 							</IconButton>
@@ -118,7 +134,7 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 					<IconButton
 						onClick={onThemeToggle}
 						aria-label="Toggle dark mode"
-						sx={{ color: darkMode ? "#fbc02d" : "#ffa000", ml: 1 }}
+						sx={{ color: modeColor, ml: 1 }}
 					>
 						{darkMode ? <LightMode /> : <DarkMode />}
 					</IconButton>
@@ -132,10 +148,11 @@ const Header = ({ tabs, onTabChange, activeTab, onThemeToggle, darkMode }) => {
 				sx={{
 					"& .MuiDrawer-paper": {
 						borderRadius: "8px 0 0 8px",
+						bgcolor: "background.default",
 					},
 				}}
 			>
-				<Box sx={{ padding: 2 }}>{drawerContent}</Box>
+				<Box sx={{ padding: 2, minWidth: 220 }}>{drawerContent}</Box>
 			</Drawer>
 		</>
 	);
