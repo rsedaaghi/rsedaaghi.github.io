@@ -68,11 +68,12 @@ async function generate() {
 	const bio = `Reza Sedaaghi (known as Parham) — Software Developer specializing in Python, Node.js, React, PostgreSQL, Docker, and CI/CD pipelines. Programming since ${programmingSince}; professional web development since ${webSince}. Public portfolio: ${SITE}`;
 
 	const selectedTabs = [
-		{ name: "Home", hash: "#home", note: "Welcome page with a summary and quick stats." },
-		{ name: "Skills", hash: "#skills", note: "Technologies grouped by category." },
-		{ name: "Works", hash: "#works", note: "Full project list with search and technology filters." },
-		{ name: "Gallery", hash: "#gallery", note: "Image showcase of notable projects." },
-		{ name: "Contact", hash: "#contact", note: "Ways to get in touch." },
+		{ name: "Home", url: "/", note: "Welcome page with a summary and quick stats." },
+		{ name: "Skills", url: "/skills/", note: "Technologies grouped by category." },
+		{ name: "Works", url: "/works/", note: "Full project list with search and technology filters." },
+		{ name: "Experience", url: "/experience/", note: "Work history and education timeline." },
+		{ name: "Gallery", url: "/gallery/", note: "Image showcase of notable projects." },
+		{ name: "Contact", url: "/contact/", note: "Ways to get in touch." },
 	];
 
 	const llmsTxt = [
@@ -81,7 +82,7 @@ async function generate() {
 		`> ${bio}`,
 		``,
 		`## Portfolio`,
-		...selectedTabs.map((tab) => `- [${tab.name}](${SITE}${tab.hash}): ${tab.note}`),
+		...selectedTabs.map((tab) => `- [${tab.name}](${SITE}${tab.url}): ${tab.note}`),
 		`- [Full profile for AI assistants](${SITE}/llms-full.txt): Complete machine-readable profile with project details.`,
 		``,
 		`## Contact`,

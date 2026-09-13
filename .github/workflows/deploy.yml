@@ -33,14 +33,15 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      # build already generates sitemap.xml + llms.txt + llms-full.txt
-      # from the site data at build time, so SEO/AEO files stay in sync.
+      # build already generates sitemap.json + llms.txt + llms-full.txt
+      # AND pre-renders each section as dist/<name>/index.html (real paths
+      # for SEO), all from the site data at build time.
       - name: Build the project
         run: npm run build
 
       - name: Verify build artifacts
         run: |
-          for f in dist/index.html dist/sitemap.xml dist/llms.txt dist/llms-full.txt; do
+          for f in dist/index.html dist/sitemap.xml dist/llms.txt dist/llms-full.txt dist/works/index.html dist/skills/index.html dist/contact/index.html; do
             test -f "$f" && echo "OK: $f" || { echo "Error: $f missing"; exit 1; }
           done
 
