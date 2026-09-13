@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Box, Button, Grid, IconButton, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import useJsonData from "../utils/useJsonData";
-import { getDynamicIcon } from "../utils/helpers";
 
 const prefersReducedMotion = () =>
 	typeof window !== "undefined" &&
@@ -67,10 +66,8 @@ const StatItem = ({ stat }) => {
 const Home = ({ onNavigate }) => {
 	const { data: homeData } = useJsonData("/assets/data/home.json");
 	const { data: worksData } = useJsonData("/assets/data/works.json");
-	const { data: contactsData } = useJsonData("/assets/data/contact.json");
 
 	const works = useMemo(() => (Array.isArray(worksData) ? worksData : []), [worksData]);
-	const socials = Array.isArray(contactsData) ? contactsData : [];
 
 	const currentYear = new Date().getFullYear();
 
@@ -227,29 +224,6 @@ const Home = ({ onNavigate }) => {
 					</Button>
 				)}
 			</Stack>
-
-			<Stack
-				direction="row"
-				spacing={1}
-				sx={{ justifyContent: { xs: "center", md: "flex-start" } }}
-			>
-				{socials.map((link) => (
-					<IconButton
-						key={link.name}
-						href={link.url || "#"}
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label={link.label || link.name}
-						sx={{
-							color: "text.secondary",
-							"&:hover": { color: "primary.main", transform: "translateY(-2px)" },
-							transition: "0.2s",
-						}}
-					>
-						{getDynamicIcon(link)}
-					</IconButton>
-				))}
-			</Stack>
 		</Box>
 	);
 
@@ -267,10 +241,7 @@ const Home = ({ onNavigate }) => {
 					theme.palette.mode === "dark"
 						? "rgba(255,255,255,0.04)"
 						: "rgba(255,255,255,0.65)",
-				boxShadow: (theme) =>
-					theme.palette.mode === "dark"
-						? "0 10px 30px rgba(0,0,0,0.25)"
-						: "0 10px 30px rgba(79,70,229,0.06)",
+				boxShadow: (theme) => theme.custom.shadowBand[theme.palette.mode],
 				overflow: "hidden",
 			}}
 		>

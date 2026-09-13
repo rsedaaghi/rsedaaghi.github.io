@@ -126,7 +126,6 @@ const WorkCard = ({ item, onOpenAlbum }) => {
 					theme.palette.mode === "dark" ? "grey.900" : "grey.50",
 				"&:hover": {
 					transform: "translateY(-4px)",
-					boxShadow: 8,
 				},
 			}}
 		>

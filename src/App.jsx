@@ -3,7 +3,6 @@ import { CssBaseline, Box, ThemeProvider, Container } from "@mui/material";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import TabContent from "./components/tabContent";
-import useJsonData from "./utils/useJsonData";
 import { TABS } from "./components/tabRegistry";
 import { createAppTheme } from "./theme";
 
@@ -15,9 +14,11 @@ const getInitialDarkMode = () => {
 	return window.matchMedia("(prefers-color-scheme: dark)").matches;
 };
 
-const getTabFromHash = () => {
-	const name = window.location.hash.substring(1);
-	return TABS.some((t) => t.name === name) ? name : null;
+const getTabFromPath = () => {
+	const { pathname } = window.location;
+	// "/works/" -> "works"; "/" -> "home"; deeper segments ignored (SPA).
+	const name = pathname.split("/").filter(Boolean)[0];
+	return TABS.some((t) => t.name === name) ? name : "home";
 };
 
 const formatBuildDate = (iso) => {
@@ -31,12 +32,8 @@ const formatBuildDate = (iso) => {
 };
 
 const App = () => {
-	const [activeTab, setActiveTab] = useState(() => getTabFromHash() ?? "home");
+	const [activeTab, setActiveTab] = useState(() => getTabFromPath());
 	const [darkMode, setDarkMode] = useState(getInitialDarkMode);
-
-	const { data: skillsData } = useJsonData("/assets/data/skills.json");
-	const { data: worksData } = useJsonData("/assets/data/works.json");
-	const { data: experienceData } = useJsonData("/assets/data/experience.json");
 
 	useEffect(() => {
 		localStorage.setItem(THEME_STORAGE_KEY, darkMode ? "dark" : "light");
@@ -44,7 +41,7 @@ const App = () => {
 
 	useEffect(() => {
 		const handlePopState = () => {
-			setActiveTab(getTabFromHash() ?? "home");
+			setActiveTab(getTabFromPath());
 		};
 		window.addEventListener("popstate", handlePopState);
 		return () => window.removeEventListener("popstate", handlePopState);
@@ -52,21 +49,11 @@ const App = () => {
 
 	const theme = useMemo(() => createAppTheme(darkMode), [darkMode]);
 
-	// Small item counts enrich the nav labels (e.g. "Works · 24").
-	const navTabs = useMemo(() => {
-		const counts = {
-			skills: Array.isArray(skillsData) ? skillsData.length : 0,
-			works: Array.isArray(worksData) ? worksData.length : 0,
-			experience: Array.isArray(experienceData) ? experienceData.length : 0,
-		};
-		return TABS.map((tab) =>
-			counts[tab.name] > 0 ? { ...tab, count: counts[tab.name] } : tab
-		);
-	}, [skillsData, worksData, experienceData]);
-
 	const handleTabChange = (newValue) => {
 		setActiveTab(newValue);
-		window.history.pushState(null, "", `#${newValue}`);
+		const tab = TABS.find((t) => t.name === newValue);
+		const url = tab ? tab.path : "/";
+		window.history.pushState(null, "", url);
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
@@ -87,7 +74,7 @@ const App = () => {
 				}}
 			>
 				<Header
-					tabs={navTabs}
+					tabs={TABS}
 					activeTab={activeTab}
 					darkMode={darkMode}
 					onTabChange={handleTabChange}
@@ -96,7 +83,7 @@ const App = () => {
 				<Container
 					maxWidth="md"
 					sx={{
-						pt: { xs: "70px", md: 1 },
+						pt: { xs: "calc(64px + env(safe-area-inset-top))", md: 1 },
 						pb: { xs: 1, md: 1 },
 						flex: 1,
 						display: "flex",
@@ -129,7 +116,7 @@ const App = () => {
 							/>
 						</Box>
 					</Container>
-					<Footer
+<Footer
 						lastUpdated={formatBuildDate(__BUILD_DATE__)}
 						darkMode={darkMode}
 					/>

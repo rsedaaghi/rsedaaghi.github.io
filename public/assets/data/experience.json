@@ -3,7 +3,7 @@
         "kind": "work",
         "role": "Technical Support & HIS Software Developer",
         "company": "Aria Teb Firouz",
-        "companyUrl": "",
+        "websiteUrl": "https://en.arya-teb.com/",
         "startDate": "2022",
         "endDate": ""
     },
@@ -11,7 +11,7 @@
         "kind": "work",
         "role": "Web Developer",
         "company": "Pars Smartware Solution",
-        "companyUrl": "",
+        "websiteUrl": "https://parssolution.net/",
         "startDate": "2020",
         "endDate": "2022"
     },
@@ -19,7 +19,7 @@
         "kind": "work",
         "role": "Software Development Expert",
         "company": "Sharif University of Technology Service Complex",
-        "companyUrl": "",
+        "websiteUrl": "https://techpark.sharif.ir/en",
         "startDate": "2018",
         "endDate": "2019"
     },
@@ -27,6 +27,7 @@
         "kind": "education",
         "role": "MSc & PhD",
         "institution": "Sharif University of Technology",
+        "websiteUrl": "https://www.sharif.edu/",
         "startDate": "2014",
         "endDate": "2025"
     },
@@ -34,13 +35,15 @@
         "kind": "education",
         "role": "BSc",
         "institution": "Tabriz University",
+        "websiteUrl": "https://tabrizu.ac.ir/en",
         "startDate": "2009",
         "endDate": "2013"
     },
     {
         "kind": "education",
         "role": "Secondary Education",
-        "institution": "NODET (National Organization for Development of Exceptional Talents)",
+        "institution": "Shahid Madani High School, National Organization for Development of Exceptional Talents (NODET)",
+        "websiteUrl": "https://www.sampad.gov.ir/",
         "startDate": "2005",
         "endDate": "2009"
     }

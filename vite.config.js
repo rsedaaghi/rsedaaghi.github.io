@@ -22,7 +22,7 @@ export default defineConfig({
 					"Portfolio website of Reza Sedaaghi showcasing software development skills and experience.",
 				start_url: "/",
 				display: "standalone",
-				background_color: "#f8fafc",
+				background_color: "#f6f8fd",
 				theme_color: "#4f46e5",
 				icons: [
 					{

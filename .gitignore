@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Temporary agent deliverables (other projects' capture output)
+/OTHER_PROJECTS_TEMP/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -65,11 +65,13 @@ const PhotoAlbumModal = ({ open, onClose, images = [], modalTitle = "" }) => {
 		}
 		: {
 			position: "relative",
-			width: "80%",
+			width: { xs: "calc(100% - 24px)", sm: "80%" },
 			maxWidth: "1000px",
+			maxHeight: { xs: "90vh", sm: "90vh" },
+			overflowY: "auto",
 			bgcolor: "background.paper",
 			boxShadow: 24,
-			p: 4,
+			p: { xs: 2, sm: 4 },
 			borderRadius: 4,
 			textAlign: "left",
 		};

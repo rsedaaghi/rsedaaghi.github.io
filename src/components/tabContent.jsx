@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
+import React, { Suspense } from "react";
+import { Box, CircularProgress, Typography } from "@mui/material";
 import { TAB_COMPONENTS, TABS_WITH_HEADING } from "./tabRegistry";
 
 // Renders the currently active tab. Component resolution is centralized in
@@ -41,7 +41,23 @@ const TabContent = ({ tab, onNavigate }) => {
 					{tab.label}
 				</Typography>
 			)}
-			<TabComponent tab={tab} onNavigate={onNavigate} />
+			<Suspense
+				fallback={
+					<Box
+						sx={{
+							py: 4,
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							minHeight: 240,
+						}}
+					>
+						<CircularProgress size={32} />
+					</Box>
+				}
+			>
+				<TabComponent tab={tab} onNavigate={onNavigate} />
+			</Suspense>
 		</Box>
 	);
 };

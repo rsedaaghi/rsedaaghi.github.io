@@ -8,7 +8,6 @@ import {
 	Modal,
 	IconButton,
 } from "@mui/material";
-import Masonry from "@mui/lab/Masonry";
 import CloseIcon from "@mui/icons-material/Close";
 import DataState from "./dataState";
 import useJsonData from "../utils/useJsonData";
@@ -49,11 +48,18 @@ const GalleryTab = () => {
 
 			<DataState loading={loading} error={error}>
 				{sortedWorks.length > 0 ? (
-					<Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
+					<Box
+						sx={{
+							columns: { xs: 1, sm: 2, md: 3 },
+							columnGap: 2,
+						}}
+					>
 						{sortedWorks.map((item) => (
 							<Card
 								key={item.title}
 								sx={{
+									mb: 2,
+									breakInside: "avoid",
 									borderRadius: 2,
 									boxShadow: 3,
 									bgcolor: (theme) =>
@@ -87,7 +93,7 @@ const GalleryTab = () => {
 								</CardActionArea>
 							</Card>
 						))}
-					</Masonry>
+					</Box>
 				) : (
 					<Typography
 						variant="body1"
