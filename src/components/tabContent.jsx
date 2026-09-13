@@ -34,7 +34,7 @@ const TabContent = ({ tab, onNavigate }) => {
 					sx={{
 						fontWeight: "bold",
 						textAlign: "center",
-						mb: 4,
+						mb: 2.5,
 						color: "primary.main",
 					}}
 				>

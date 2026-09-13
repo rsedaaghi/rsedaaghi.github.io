@@ -1,6 +1,8 @@
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import PlaceIcon from "@mui/icons-material/Place";
+import PhoneIcon from "@mui/icons-material/Phone";
 import LinkIcon from "@mui/icons-material/Link";
 import { Avatar } from "@mui/material";
 
@@ -9,6 +11,8 @@ const ICON_MAP = {
 	Email: EmailIcon,
 	GitHub: GitHubIcon,
 	LinkedIn: LinkedInIcon,
+	Place: PlaceIcon,
+	Phone: PhoneIcon,
 };
 
 export const getDynamicIcon = (link) => {

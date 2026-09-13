@@ -1,20 +1,32 @@
 [
     {
         "name": "Email",
-        "label": "Contact via Email",
+        "label": "rsedaaghi",
         "url": "mailto:rsedaaghi@gmail.com",
         "muiIcon": "Email"
     },
     {
         "name": "LinkedIn",
-        "label": "Connect on LinkedIn",
+        "label": "reza-sedaaghi",
         "url": "https://www.linkedin.com/in/reza-sedaaghi/",
         "muiIcon": "LinkedIn"
     },
     {
         "name": "GitHub",
-        "label": "View GitHub Profile",
+        "label": "rsedaaghi",
         "url": "https://github.com/rsedaaghi",
         "muiIcon": "GitHub"
+    },
+    {
+        "name": "Phone",
+        "label": "+98 914 109 9320",
+        "url": "tel:+989141099320",
+        "muiIcon": "Phone"
+    },
+    {
+        "name": "Address",
+        "label": "Sharif University of Technology Service Complex, Sharif University, Tehran, Iran",
+        "url": "https://www.google.com/maps/search/?api=1&query=Sharif+University+of+Technology",
+        "muiIcon": "Place"
     }
 ]

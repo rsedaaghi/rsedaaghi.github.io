@@ -1,0 +1,47 @@
+[
+    {
+        "kind": "work",
+        "role": "Technical Support & HIS Software Developer",
+        "company": "Aria Teb Firouz",
+        "companyUrl": "",
+        "startDate": "2022",
+        "endDate": ""
+    },
+    {
+        "kind": "work",
+        "role": "Web Developer",
+        "company": "Pars Smartware Solution",
+        "companyUrl": "",
+        "startDate": "2020",
+        "endDate": "2022"
+    },
+    {
+        "kind": "work",
+        "role": "Software Development Expert",
+        "company": "Sharif University of Technology Service Complex",
+        "companyUrl": "",
+        "startDate": "2018",
+        "endDate": "2019"
+    },
+    {
+        "kind": "education",
+        "role": "MSc & PhD",
+        "institution": "Sharif University of Technology",
+        "startDate": "2014",
+        "endDate": "2025"
+    },
+    {
+        "kind": "education",
+        "role": "BSc",
+        "institution": "Tabriz University",
+        "startDate": "2009",
+        "endDate": "2013"
+    },
+    {
+        "kind": "education",
+        "role": "Secondary Education",
+        "institution": "NODET (National Organization for Development of Exceptional Talents)",
+        "startDate": "2005",
+        "endDate": "2009"
+    }
+]

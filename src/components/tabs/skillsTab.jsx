@@ -30,12 +30,12 @@ const SkillsTab = () => {
 			<DataState loading={loading} error={error}>
 				{sections.length > 0 ? (
 					sections.map((section) => (
-						<Box key={section.category} sx={{ mb: 4, textAlign: "center" }}>
+						<Box key={section.category} sx={{ mb: 3, textAlign: "center" }}>
 							<Typography
 								variant="h6"
 								sx={{
 									fontWeight: "bold",
-									mb: 1.5,
+									mb: 1.25,
 									color: "primary.main",
 								}}
 							>
@@ -46,8 +46,8 @@ const SkillsTab = () => {
 									display: "flex",
 									justifyContent: "center",
 									flexWrap: "wrap",
-									gap: 1.5,
-									px: 2,
+									gap: 1.25,
+									px: 1.5,
 								}}
 							>
 								{section.skills.map((title) => (
@@ -56,7 +56,7 @@ const SkillsTab = () => {
 										label={title}
 										color="primary"
 										variant="outlined"
-										sx={{ fontSize: "0.95rem", px: 0.5 }}
+										sx={{ fontSize: "0.85rem", px: 0.5 }}
 									/>
 								))}
 							</Box>
