@@ -6,7 +6,7 @@
         "url": "",
         "images": [
             {
-                "src": "/assets/images/works/vectormind/vector_mind_panel.png",
+                "src": "/assets/images/works/vectormind/vector_mind_panel.webp",
                 "caption": "Main Panel"
             },
             {
@@ -18,19 +18,19 @@
                 "caption": "System architecture and workflow for semantic document querying"
             },
             {
-                "src": "/assets/images/works/vectormind/vector_mind_panel_login.png",
+                "src": "/assets/images/works/vectormind/vector_mind_panel_login.webp",
                 "caption": "Panel login"
             }
         ],
         "technologies": [
             "Node.js",
+            "Python",
+            "React",
             "PostgreSQL",
             "RabbitMQ",
-            "Python",
+            "Docker",
             "llama",
-            "React",
-            "Material-UI",
-            "Docker"
+            "Material-UI"
         ]
     },
     {
@@ -38,7 +38,16 @@
         "date": "2025",
         "description": "Developed a portfolio website using React to showcase my work, skills, and contact information. The project was bootstrapped with Vite, incorporates Material-UI as the UI library, and supports PWA functionality.",
         "url": "https://rsedaaghi.github.io/",
-        "images": [],
+        "images": [
+            {
+                "src": "/assets/images/works/personal-website/home-desktop.webp",
+                "caption": "Home page"
+            },
+            {
+                "src": "/assets/images/works/personal-website/home-mobile.webp",
+                "caption": "Home page (mobile)"
+            }
+        ],
         "technologies": [
             "React",
             "Vite",
@@ -53,7 +62,7 @@
         "url": "https://educaite.org/",
         "images": [
             {
-                "src": "/assets/images/works/educaite/educaite_backend_github.png",
+                "src": "/assets/images/works/educaite/educaite_backend_github.webp",
                 "caption": "GitHub / educaite-core"
             }
         ],
@@ -70,11 +79,11 @@
         "url": "",
         "images": [
             {
-                "src": "/assets/images/works/monitoring/monitoring_zabbix_1.png",
+                "src": "/assets/images/works/monitoring/monitoring_zabbix_1.webp",
                 "caption": "Admin panel in Zabbix showing the status of centers as operational and their network topology"
             },
             {
-                "src": "/assets/images/works/monitoring/monitoring_zabbix_2.png",
+                "src": "/assets/images/works/monitoring/monitoring_zabbix_2.webp",
                 "caption": "Timeline view of network activity for each dialysis center"
             },
             {
@@ -96,12 +105,12 @@
         "url": "",
         "images": [],
         "technologies": [
-            "Service-oriented architecture",
             "Node.js",
             "Redis",
-            "gRPC",
             "PostgreSQL",
-            "Docker"
+            "gRPC",
+            "Docker",
+            "Service-oriented architecture"
         ]
     },
     {
@@ -119,7 +128,7 @@
                 "caption": "User selecting an image for processing within the OIP system interface."
             },
             {
-                "src": "/assets/images/works/OIP/oip_processing.png",
+                "src": "/assets/images/works/OIP/oip_processing.webp",
                 "caption": "Processing stage displaying real-time mineral size detection and analysis."
             },
             {
@@ -129,10 +138,10 @@
         ],
         "technologies": [
             "Node.js",
-            "Docker",
-            "Linux",
+            "Python",
             "React",
-            "Python"
+            "Docker",
+            "Linux"
         ]
     },
     {
@@ -175,8 +184,8 @@
         "url": "",
         "images": [],
         "technologies": [
-            "Node.js",
             "React",
+            "Node.js",
             "PWA"
         ]
     },
@@ -189,9 +198,9 @@
         "technologies": [
             "PHP",
             "Wordpress",
-            "Linux",
             "Bootstrap",
-            "JQuery"
+            "JQuery",
+            "Linux"
         ]
     },
     {
@@ -202,8 +211,8 @@
         "images": [],
         "technologies": [
             "Node.js",
-            "SQL Query",
             "PostgreSQL",
+            "SQL Query",
             "Docker"
         ]
     },
@@ -287,9 +296,9 @@
         "url": "",
         "images": [],
         "technologies": [
-            "Docker",
+            "Zabbix",
             "Linux",
-            "Zabbix"
+            "Docker"
         ]
     },
     {
@@ -299,9 +308,9 @@
         "url": "",
         "images": [],
         "technologies": [
+            "PHP",
             "Bootstrap",
-            "JQuery",
-            "PHP"
+            "JQuery"
         ]
     },
     {
@@ -314,9 +323,9 @@
             "Python",
             "WebSocket",
             "Leaflet",
+            "Bootstrap",
             "JQuery",
-            "SCSS",
-            "Bootstrap"
+            "SCSS"
         ]
     },
     {
@@ -385,41 +394,41 @@
                 "caption": "Android device showcasing the icons of 'Guess the Number' and Salavat Counter applications."
             },
             {
-                "src": "/assets/images/works/android/android_guess_game1.png",
+                "src": "/assets/images/works/android/android_guess_game1.webp",
                 "caption": "'Guess the Number' game welcome screen (email updated to rsedaaghi@gmail.com)."
             },
             {
-                "src": "/assets/images/works/android/android_guess_game2.png",
+                "src": "/assets/images/works/android/android_guess_game2.webp",
                 "caption": "'Guess the Number' gameplay showing user interactions (email updated to rsedaaghi@gmail.com)."
             },
             {
-                "src": "/assets/images/works/android/android_guess_game3.png",
+                "src": "/assets/images/works/android/android_guess_game3.webp",
                 "caption": "'Guess the Number' gameplay showing user interactions (email updated to rsedaaghi@gmail.com)."
             },
             {
-                "src": "/assets/images/works/android/android_guess_game4.png",
+                "src": "/assets/images/works/android/android_guess_game4.webp",
                 "caption": "'Guess the Number' result display after user input (email updated to rsedaaghi@gmail.com)."
             },
             {
-                "src": "/assets/images/works/android/android_counter1.png",
+                "src": "/assets/images/works/android/android_counter1.webp",
                 "caption": "Salavat Counter app showing user-friendly interface (email updated to rsedaaghi@gmail.com)."
             },
             {
-                "src": "/assets/images/works/android/android_counter2.png",
+                "src": "/assets/images/works/android/android_counter2.webp",
                 "caption": "Salavat Counter app tracking counts in real time (email updated to rsedaaghi@gmail.com)."
             },
             {
-                "src": "/assets/images/works/android/android_calc1.png",
+                "src": "/assets/images/works/android/android_calc1.webp",
                 "caption": "Calculator application interface during early testing (labeled 'Designed by Parham' to reflect my preferred name)."
             },
             {
-                "src": "/assets/images/works/android/android_calc2.png",
+                "src": "/assets/images/works/android/android_calc2.webp",
                 "caption": "Calculator application interface during early testing (labeled 'Designed by Parham' to reflect my preferred name)."
             }
         ],
         "technologies": [
-            "Java",
-            "Android"
+            "Android",
+            "Java"
         ]
     },
     {

@@ -1,8 +1,12 @@
 {
-    "description": "Hi, I'm Reza Sedaaghi, a Software Developer specializing in Node.js, React, and CI/CD pipelines. Passionate about creating scalable, efficient, and modern solutions. While my official name is Reza Sedaaghi, I am known as Parham among family and friends.",
+    "role": "Software Developer",
+    "headline": "Crafting Scalable, Efficient & Modern Software",
+    "programmingStartYear": 2011,
+    "webDevelopmentStartYear": 2021,
+    "description": "Hi, I'm Reza Sedaaghi (known as Parham), a Software Developer specializing in Python, Node.js, React, PostgreSQL, Docker, and CI/CD pipelines. From data processing and automation to scalable backends and modern frontends, I design and build efficient solutions that stand up to real-world traffic and complexity.",
     "contactButton": {
         "isOn": true,
         "url": "mailto:rsedaaghi@gmail.com"
     },
-    "image": "/assets/images/profile.jpg"
+    "image": "/assets/images/profile.webp"
 }

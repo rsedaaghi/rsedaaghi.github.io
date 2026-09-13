@@ -1,0 +1,130 @@
+# Reza Sedaaghi — Full Profile
+
+> Machine-readable profile for AI assistants and answer engines. Mirrors the live portfolio at https://rsedaaghi.github.io (generated at build time from the same data the site renders).
+
+## About
+
+Hi, I'm Reza Sedaaghi (known as Parham), a Software Developer specializing in Python, Node.js, React, PostgreSQL, Docker, and CI/CD pipelines. From data processing and automation to scalable backends and modern frontends, I design and build efficient solutions that stand up to real-world traffic and complexity.
+
+- Projects showcased: 24+
+- Technologies in use: 32+
+- Years of programming: 15+ (since 2011)
+- Years of web development: 5+ (since 2021)
+
+## Skills
+
+**Backend & APIs:** Node.js, Python, PHP, C++, C, Fortran, gRPC, WebSocket
+**Data & Storage:** PostgreSQL, Redis, RabbitMQ, SQL
+**Frontend:** React, Material-UI, Vite, PWA, Bootstrap, jQuery, SCSS, Wordpress, HTML, CSS
+**DevOps & Infrastructure:** Docker, Linux, CI/CD, Zabbix
+**Mobile & Desktop:** Android, Flutter, Java, MATLAB
+
+## Projects
+
+### VectorMind: Semantic Document Search & Ingestion System (2025)
+Developed a scalable, microservices-based platform enabling semantic search across technical documents.
+Technologies: Node.js, Python, React, PostgreSQL, RabbitMQ, Docker, llama, Material-UI
+
+### Personal Portfolio Website (2025)
+Link: https://rsedaaghi.github.io/
+Developed a portfolio website using React to showcase my work, skills, and contact information.
+Technologies: React, Vite, Material-UI, PWA
+
+### Backend Enhancement for the Educaite Website (2025)
+Link: https://educaite.org/
+Continued developing the backend for the Educaite website.
+Technologies: Node.js, PostgreSQL, Docker
+
+### Implementation and Configuration of the Monitoring System for Rayehe Sepehr Salam Co. Dialysis Centers (2024)
+Hospital Information System (HIS) at Aria Teb Firouz.
+Technologies: Node.js, Redis, PostgreSQL, Docker
+
+### Technical Support and Backend Development for the Electronic data capture (EDC) System (2023)
+Provided technical support and backend development for the EDC system at Aria Teb Firouz.
+Technologies: Node.js, Redis, PostgreSQL, gRPC, Docker, Service-oriented architecture
+
+### Development of an Automated Ore Image Processing System (2023)
+An automated mineral analysis system was designed to integrate hardware and software components for efficient ore image processing.
+Technologies: Node.js, Python, React, Docker, Linux
+
+### Development of the Admin Panel for the Educaite Website (2023)
+Link: https://educaite.org/
+Continued developing the administrative panel and mobile application for Educaite, enabling educators to upload course content and automatically generate test questions using AI, thereby enhancing fu….
+Technologies: React
+
+### Development of Data Display Code for Automated Waste Collection Vehicles (2023)
+Implemented code to display data from sensor and camera systems installed on waste collection vehicles..
+Technologies: C++, Python, Bootstrap
+
+### Smart Waste Collection System (2023)
+Designed a system where sensor and camera data from waste collection trucks are transmitted via Bluetooth and Wi-Fi to a tablet, then sent to a server.
+Technologies: C++, Flutter
+
+### Development of a React-based PWA for Vehicle Tracking (2023)
+Created a progressive web application (PWA) using React for vehicle tracking and real-time location monitoring..
+Technologies: React, Node.js, PWA
+
+### Digital Systems and Data Mining Laboratory Website – Amir Kabir University (2023)
+Link: https://ssail.aut.ac.ir/
+Developed an academic showcase website for the Digital Systems and Data Mining Laboratory at Amir Kabir University's Electrical Engineering Department.
+Technologies: PHP, Wordpress, Bootstrap, JQuery, Linux
+
+### Development of the Collective Reporting Module for the Hospital Information System (HIS) (2023)
+Implemented a comprehensive reporting module within Aria Teb Firouz's HIS, covering patient scheduling, medical, administrative, financial, and inventory management functionalities..
+Technologies: Node.js, PostgreSQL, SQL Query, Docker
+
+### Front-end Development for the Electronic Data Capture (EDC) System Panel (2022)
+Designed and developed the front-end interface of the EDC system panel using React and Material-UI, ensuring a responsive and intuitive user experience.
+Technologies: React, Material-UI
+
+### Technical Support and Backend Development for the Hospital Information System (HIS) (2022)
+Provided technical support and backend development for Aria Teb Firouz's integrated HIS..
+Technologies: Node.js, Redis, PostgreSQL, Docker
+
+### Technical Support, Supervision, and Monitoring of HIS Software (2022)
+Monitored and maintained HIS software across dialysis centers and supported the launch of HIS in new centers at Rayehe Sepehr Salam Co., a healthcare services company..
+Technologies: Zabbix, Linux, Docker
+
+### Development of a Fare Estimation System for International Freight Shipping (2021)
+Built a web-based system providing freight information, consultation, price estimates, and online bidding for international cargo transportation..
+Technologies: PHP, Bootstrap, JQuery
+
+### Development of an Intelligent Valve Manifold Monitoring System at Qazvin Gas Company (2021)
+Developed a management panel with user roles, access controls, log storage, mapping of organizations and installation sites, and real-time alerts via email/SMS for theft detection..
+Technologies: Python, WebSocket, Leaflet, Bootstrap, JQuery, SCSS
+
+### Object-Oriented Neural Network Training and Performance Reporting Code (2020)
+Implemented an object-oriented approach to train a multilayer neural network and report its performance after testing..
+Technologies: Python
+
+### Development of the Methane Detector (MDet) Software (2020)
+Created a GUI application to display methane leak levels on a map and track drone movement, with color-coded severity indicators, as part of a joint project with Qazvin Gas Company..
+Technologies: Python, Leaflet
+
+### GUI Software for Price Difference Detection between Nobitex and Binance (2020)
+Developed a desktop application to detect and notify discrepancies in cryptocurrency prices between Nobitex and Binance exchanges..
+Technologies: Python
+
+### Graduate Coursework Projects (Console and GUI Based) (2014 - 2016)
+Conducted a series of academic projects during postgraduate studies at Sharif University of Technology, widely regarded as the leading technological university in Iran.
+Technologies: C++, MATLAB
+
+### Android Application Development: Mini Projects (2010)
+During the summers of my Bachelor’s degree in Mechanical Engineering at Tabriz University of Technology, I explored Android development and created two mini projects: a 'Guess the Number' game and a ….
+Technologies: Android, Java
+
+### Console-Based Course Projects (2009 - 2014)
+Developed console-based projects as part of coursework during a Bachelor’s degree in Mechanical Engineering at Tabriz University of Technology from 2009 to 2013, with activities continuing until 2014.
+Technologies: C, Fortran
+
+### Design and Development of Static Web Pages (2005 - 2011)
+Designed and developed static pages and themes for Blogfa and MihanBlog; activity continued until 2011.
+Technologies: HTML, CSS
+
+## Contact
+
+- rsedaaghi: mailto:rsedaaghi@gmail.com
+- reza-sedaaghi: https://www.linkedin.com/in/reza-sedaaghi/
+- rsedaaghi: https://github.com/rsedaaghi
+- +98 914 109 9320: tel:+989141099320
+- Sharif University of Technology Service Complex, Sharif University, Tehran, Iran: https://www.google.com/maps/search/?api=1&query=Sharif+University+of+Technology
