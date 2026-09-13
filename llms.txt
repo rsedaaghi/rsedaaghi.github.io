@@ -3,11 +3,12 @@
 > Reza Sedaaghi (known as Parham) — Software Developer specializing in Python, Node.js, React, PostgreSQL, Docker, and CI/CD pipelines. Programming since 2011; professional web development since 2021. Public portfolio: https://rsedaaghi.github.io
 
 ## Portfolio
-- [Home](https://rsedaaghi.github.io#home): Welcome page with a summary and quick stats.
-- [Skills](https://rsedaaghi.github.io#skills): Technologies grouped by category.
-- [Works](https://rsedaaghi.github.io#works): Full project list with search and technology filters.
-- [Gallery](https://rsedaaghi.github.io#gallery): Image showcase of notable projects.
-- [Contact](https://rsedaaghi.github.io#contact): Ways to get in touch.
+- [Home](https://rsedaaghi.github.io/): Welcome page with a summary and quick stats.
+- [Skills](https://rsedaaghi.github.io/skills/): Technologies grouped by category.
+- [Works](https://rsedaaghi.github.io/works/): Full project list with search and technology filters.
+- [Experience](https://rsedaaghi.github.io/experience/): Work history and education timeline.
+- [Gallery](https://rsedaaghi.github.io/gallery/): Image showcase of notable projects.
+- [Contact](https://rsedaaghi.github.io/contact/): Ways to get in touch.
 - [Full profile for AI assistants](https://rsedaaghi.github.io/llms-full.txt): Complete machine-readable profile with project details.
 
 ## Contact

@@ -6,8 +6,8 @@
 
 Hi, I'm Reza Sedaaghi (known as Parham), a Software Developer specializing in Python, Node.js, React, PostgreSQL, Docker, and CI/CD pipelines. From data processing and automation to scalable backends and modern frontends, I design and build efficient solutions that stand up to real-world traffic and complexity.
 
-- Projects showcased: 24+
-- Technologies in use: 32+
+- Projects showcased: 28+
+- Technologies in use: 35+
 - Years of programming: 15+ (since 2011)
 - Years of web development: 5+ (since 2021)
 
@@ -15,11 +15,25 @@ Hi, I'm Reza Sedaaghi (known as Parham), a Software Developer specializing in Py
 
 **Backend & APIs:** Node.js, Python, PHP, C++, C, Fortran, gRPC, WebSocket
 **Data & Storage:** PostgreSQL, Redis, RabbitMQ, SQL
-**Frontend:** React, Material-UI, Vite, PWA, Bootstrap, jQuery, SCSS, Wordpress, HTML, CSS
+**Frontend:** React, Next.js, Material-UI, Ant Design, Vite, PWA, Bootstrap, JQuery, SCSS, WordPress, HTML, CSS
 **DevOps & Infrastructure:** Docker, Linux, CI/CD, Zabbix
-**Mobile & Desktop:** Android, Flutter, Java, MATLAB
+**Mobile & Desktop:** Android, Flutter, Electron, Java, MATLAB
 
 ## Projects
+
+### DanX Smart LMS (2026)
+Developed a learning management system (LMS) for schools, institutes, and companies, covering organizations, courses, enrollments, and academic progress.
+Technologies: Node.js, Next.js, React, PostgreSQL, Redis, Docker, Vite, Ant Design, Electron
+
+### Persian Shine (2026)
+Link: https://persianshin.ir
+Developed a wholesale commerce platform for managing a shampoo and car-care products distribution business.
+Technologies: Node.js, Next.js, React, PostgreSQL, Redis, Docker, Ant Design, SCSS
+
+### Sanjika Mock Exam & Study Platform (2025 - 2026)
+Link: https://sanjika.ir
+Developed and shipped an online mock exam and study platform, currently focused on simulating and practicing Iranian engineering-board (نظام مهندسی) and bar-exam (نظام وکلا) tests, built end-to-end s….
+Technologies: Node.js, React, PostgreSQL, Redis, Docker, SCSS, Vite, Ant Design, WordPress, PHP, Bootstrap, JQuery, PWA
 
 ### VectorMind: Semantic Document Search & Ingestion System (2025)
 Developed a scalable, microservices-based platform enabling semantic search across technical documents.
@@ -34,6 +48,11 @@ Technologies: React, Vite, Material-UI, PWA
 Link: https://educaite.org/
 Continued developing the backend for the Educaite website.
 Technologies: Node.js, PostgreSQL, Docker
+
+### His Admin Dialysis Center Management Platform (2024 - 2026)
+Link: https://admin.asinf.ir
+Developed the central admin platform for the Rayehe Sepehr Salam dialysis center network, aggregating data from remote center HIS servers.
+Technologies: Node.js, React, PostgreSQL, Redis, WebSocket, Vite, Ant Design, SCSS, Docker
 
 ### Implementation and Configuration of the Monitoring System for Rayehe Sepehr Salam Co. Dialysis Centers (2024)
 Hospital Information System (HIS) at Aria Teb Firouz.
@@ -64,10 +83,10 @@ Technologies: C++, Flutter
 Created a progressive web application (PWA) using React for vehicle tracking and real-time location monitoring..
 Technologies: React, Node.js, PWA
 
-### Digital Systems and Data Mining Laboratory Website – Amir Kabir University (2023)
+### Digital Systems and Data Mining Laboratory Website â€“ Amir Kabir University (2023)
 Link: https://ssail.aut.ac.ir/
 Developed an academic showcase website for the Digital Systems and Data Mining Laboratory at Amir Kabir University's Electrical Engineering Department.
-Technologies: PHP, Wordpress, Bootstrap, JQuery, Linux
+Technologies: PHP, WordPress, Bootstrap, JQuery, Linux
 
 ### Development of the Collective Reporting Module for the Hospital Information System (HIS) (2023)
 Implemented a comprehensive reporting module within Aria Teb Firouz's HIS, covering patient scheduling, medical, administrative, financial, and inventory management functionalities..
@@ -110,11 +129,11 @@ Conducted a series of academic projects during postgraduate studies at Sharif Un
 Technologies: C++, MATLAB
 
 ### Android Application Development: Mini Projects (2010)
-During the summers of my Bachelor’s degree in Mechanical Engineering at Tabriz University of Technology, I explored Android development and created two mini projects: a 'Guess the Number' game and a ….
+During the summers of my Bachelorâ€™s degree in Mechanical Engineering at Tabriz University of Technology, I explored Android development and created two mini projects: a 'Guess the Number' game and ….
 Technologies: Android, Java
 
 ### Console-Based Course Projects (2009 - 2014)
-Developed console-based projects as part of coursework during a Bachelor’s degree in Mechanical Engineering at Tabriz University of Technology from 2009 to 2013, with activities continuing until 2014.
+Developed console-based projects as part of coursework during a Bachelorâ€™s degree in Mechanical Engineering at Tabriz University of Technology from 2009 to 2013, with activities continuing until 20….
 Technologies: C, Fortran
 
 ### Design and Development of Static Web Pages (2005 - 2011)

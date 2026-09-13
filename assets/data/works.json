@@ -1,5 +1,201 @@
 [
     {
+        "title": "DanX Smart LMS",
+        "date": "2026",
+        "description": "Developed a learning management system (LMS) for schools, institutes, and companies, covering organizations, courses, enrollments, and academic progress. It combines a Node.js/Express REST API with a Next.js web app (server-side rendered for SEO) for the public course catalog and admin portals, plus a Windows Electron app where learners download course packages and study offline with narrated audio. Content is delivered as interactive units with quizzes and game-style level unlocking, and offline progress syncs back to the server.",
+        "images": [
+            {
+                "src": "/assets/images/works/danx/danx_main.webp",
+                "caption": "Course catalog"
+            },
+            {
+                "src": "/assets/images/works/danx/danx_login.webp",
+                "caption": "Login"
+            },
+            {
+                "src": "/assets/images/works/danx/danx_panel_dashboard.webp",
+                "caption": "Admin dashboard"
+            },
+            {
+                "src": "/assets/images/works/danx/danx_panel_courses.webp",
+                "caption": "Course management"
+            },
+            {
+                "src": "/assets/images/works/danx/danx_panel_finance.webp",
+                "caption": "Finance ledger"
+            },
+            {
+                "src": "/assets/images/works/danx/danx_panel_organizations.webp",
+                "caption": "Organizations"
+            },
+            {
+                "src": "/assets/images/works/danx/danx_mobile.webp",
+                "caption": "Mobile catalog"
+            }
+        ],
+        "technologies": [
+            "Node.js",
+            "Next.js",
+            "React",
+            "PostgreSQL",
+            "Redis",
+            "Docker",
+            "Vite",
+            "Ant Design",
+            "Electron"
+        ]
+    },
+    {
+        "title": "Persian Shine",
+        "date": "2026",
+        "url": "https://persianshin.ir",
+        "description": "Developed a wholesale commerce platform for managing a shampoo and car-care products distribution business. It pairs a public server-side rendered (SSR) landing site with an admin panel covering products, clients, suppliers, purchase and sale invoices, inventory, and debts. The Express/Sequelize backend serves REST APIs over PostgreSQL and Redis, with role-based access and chart-based reports for sales and profit.",
+        "images": [
+            {
+                "src": "/assets/images/works/persianshine/persianshine_landing_settings.webp",
+                "caption": "Landing page settings"
+            },
+            {
+                "src": "/assets/images/works/persianshine/persianshine_dashboard.webp",
+                "caption": "Panel dashboard"
+            },
+            {
+                "src": "/assets/images/works/persianshine/persianshine_products.webp",
+                "caption": "Products list"
+            },
+            {
+                "src": "/assets/images/works/persianshine/persianshine_invoices.webp",
+                "caption": "Sales and purchase invoices"
+            },
+            {
+                "src": "/assets/images/works/persianshine/persianshine_inventory_and_entries.webp",
+                "caption": "Inventory and entries"
+            },
+            {
+                "src": "/assets/images/works/persianshine/persianshine_profit_and_loss.webp",
+                "caption": "Profit and loss report"
+            }
+        ],
+        "technologies": [
+            "Node.js",
+            "Next.js",
+            "React",
+            "PostgreSQL",
+            "Redis",
+            "Docker",
+            "Ant Design",
+            "SCSS"
+        ]
+    },
+    {
+        "title": "Sanjika Mock Exam & Study Platform",
+        "startDate": "2025",
+        "endDate": "2026",
+        "url": "https://sanjika.ir",
+        "description": "Developed and shipped an online mock exam and study platform, currently focused on simulating and practicing Iranian engineering-board (نظام مهندسی) and bar-exam (نظام وکلا) tests, built end-to-end solo. It provides realistic timed exams with question-level performance analytics, a REST API with over 100 endpoints, and React front-ends for both users and administrators. The public marketing site is a custom WordPress theme with an exam archive and live search, and the platform integrates Zarinpal payments, OTP-based authentication with brute-force protection, and Docker deployment.",
+        "images": [
+            {
+                "src": "/assets/images/works/sanjika/sanjika_homepage.webp",
+                "caption": "Platform landing page"
+            },
+            {
+                "src": "/assets/images/works/sanjika/sanjika_login.webp",
+                "caption": "Login"
+            },
+            {
+                "src": "/assets/images/works/sanjika/sanjika_otp.webp",
+                "caption": "OTP verification"
+            },
+            {
+                "src": "/assets/images/works/sanjika/sanjika_exam_rules.webp",
+                "caption": "Exam rules"
+            },
+            {
+                "src": "/assets/images/works/sanjika/sanjika_exam_session.webp",
+                "caption": "Timed exam session"
+            },
+            {
+                "src": "/assets/images/works/sanjika/sanjika_exam_analysis.webp",
+                "caption": "Post-exam analysis"
+            },
+            {
+                "src": "/assets/images/works/sanjika/sanjika_membership_plans.webp",
+                "caption": "Membership plans"
+            },
+            {
+                "src": "/assets/images/works/sanjika/sanjika_admin_plans_list.webp",
+                "caption": "Admin plans list"
+            },
+            {
+                "src": "/assets/images/works/sanjika/sanjika_admin_create_plan.webp",
+                "caption": "Admin create-plan modal"
+            },
+            {
+                "src": "/assets/images/works/sanjika/sanjika_site_home.webp",
+                "caption": "Marketing website homepage"
+            },
+            {
+                "src": "/assets/images/works/sanjika/sanjika_site_exam_tabs.webp",
+                "caption": "Exam tabs on the marketing website"
+            },
+            {
+                "src": "/assets/images/works/sanjika/sanjika_site_exam_category.webp",
+                "caption": "Exam archive with search and filters"
+            }
+        ],
+        "technologies": [
+            "Node.js",
+            "React",
+            "PostgreSQL",
+            "Redis",
+            "Docker",
+            "SCSS",
+            "Vite",
+            "Ant Design",
+            "WordPress",
+            "PHP",
+            "Bootstrap",
+            "JQuery",
+            "PWA"
+        ]
+    },
+    {
+        "title": "His Admin Dialysis Center Management Platform",
+        "startDate": "2024",
+        "endDate": "2026",
+        "url": "https://admin.asinf.ir",
+        "description": "Developed the central admin platform for the Rayehe Sepehr Salam dialysis center network, aggregating data from remote center HIS servers. The Persian, RTL React panel provides a dashboard, center management, health and financial business intelligence with charts and an Iran map, invoice reports, and SMS messaging. Access is enforced by a multi-layer role-based access control system with a permission-matrix UI.",
+        "images": [
+            {
+                "src": "/assets/images/works/his_admin/his_admin_dashboard.webp",
+                "caption": "Dashboard after login"
+            },
+            {
+                "src": "/assets/images/works/his_admin/his_admin_health_bi.webp",
+                "caption": "Health BI analytics"
+            },
+            {
+                "src": "/assets/images/works/his_admin/his_admin_financial_bi.webp",
+                "caption": "Financial BI report"
+            },
+            {
+                "src": "/assets/images/works/his_admin/his_admin_messages.webp",
+                "caption": "SMS composer"
+            }
+        ],
+        "technologies": [
+            "Node.js",
+            "React",
+            "PostgreSQL",
+            "Redis",
+            "WebSocket",
+            "Vite",
+            "Ant Design",
+            "SCSS",
+            "Docker"
+        ]
+    },
+    {
         "title": "VectorMind: Semantic Document Search & Ingestion System",
         "date": "2025",
         "description": "Developed a scalable, microservices-based platform enabling semantic search across technical documents. The system is composed of several specialized services, each responsible for a distinct function in the ingestion and retrieval pipeline. Retrieved semantic chunks are ranked and then fed into the Gemma-3B language model to generate final answers, forming a complete Retrieval-Augmented Generation",
@@ -87,7 +283,7 @@
                 "caption": "Timeline view of network activity for each dialysis center"
             },
             {
-                "src": "/assets/images/works/monitoring/monitoring_zabbix_3.png",
+                "src": "/assets/images/works/monitoring/monitoring_zabbix_3.webp",
                 "caption": "Docker containers running Zabbix agents for each center"
             }
         ],
@@ -190,14 +386,14 @@
         ]
     },
     {
-        "title": "Digital Systems and Data Mining Laboratory Website – Amir Kabir University",
+        "title": "Digital Systems and Data Mining Laboratory Website â€“ Amir Kabir University",
         "date": "2023",
         "description": "Developed an academic showcase website for the Digital Systems and Data Mining Laboratory at Amir Kabir University's Electrical Engineering Department. The site features research group profiles and allows admin-controlled updates and management.",
         "url": "https://ssail.aut.ac.ir/",
         "images": [],
         "technologies": [
             "PHP",
-            "Wordpress",
+            "WordPress",
             "Bootstrap",
             "JQuery",
             "Linux"
@@ -375,7 +571,7 @@
         "title": "Console-Based Course Projects",
         "startDate": "2009",
         "endDate": "2014",
-        "description": "Developed console-based projects as part of coursework during a Bachelor’s degree in Mechanical Engineering at Tabriz University of Technology from 2009 to 2013, with activities continuing until 2014. During this time, I built a strong foundation in programming algorithms through a dedicated programming course and further enhanced my skills by completing Harvard University's renowned CS50 course, led by David J. Malan, on the edX platform.",
+        "description": "Developed console-based projects as part of coursework during a Bachelorâ€™s degree in Mechanical Engineering at Tabriz University of Technology from 2009 to 2013, with activities continuing until 2014. During this time, I built a strong foundation in programming algorithms through a dedicated programming course and further enhanced my skills by completing Harvard University's renowned CS50 course, led by David J. Malan, on the edX platform.",
         "url": "",
         "images": [],
         "technologies": [
@@ -386,7 +582,7 @@
     {
         "title": "Android Application Development: Mini Projects",
         "date": "2010",
-        "description": "During the summers of my Bachelor’s degree in Mechanical Engineering at Tabriz University of Technology, I explored Android development and created two mini projects: a 'Guess the Number' game and a Salavat Counter application. This experience allowed me to delve into mobile programming using Java and Android, showcasing my eagerness to learn and innovate during my academic years.",
+        "description": "During the summers of my Bachelorâ€™s degree in Mechanical Engineering at Tabriz University of Technology, I explored Android development and created two mini projects: a 'Guess the Number' game and a Salavat Counter application. This experience allowed me to delve into mobile programming using Java and Android, showcasing my eagerness to learn and innovate during my academic years.",
         "url": "",
         "images": [
             {
