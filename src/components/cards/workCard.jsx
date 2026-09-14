@@ -203,7 +203,7 @@ const WorkCard = ({ item, onOpenAlbum }) => {
 							)}
 							{item.url && (
 								<Button
-									variant="contained"
+									variant="outlined"
 									href={item.url}
 									target="_blank"
 									rel="noopener noreferrer"
