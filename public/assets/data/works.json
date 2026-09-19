@@ -12,8 +12,8 @@
             }
         ],
         "technologies": [
-            "Python",
             "Django",
+            "Python",
             "Docker",
             "Linux"
         ]
@@ -523,8 +523,8 @@
         "url": "",
         "images": [],
         "technologies": [
-            "Python",
             "Django",
+            "Python",
             "REST",
             "WordPress"
         ]
