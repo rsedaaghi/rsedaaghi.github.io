@@ -1,5 +1,35 @@
 [
     {
+        "title": "IIS Player Health Monitoring System – Monitoring, Reports and Dashboard Features",
+        "startDate": "2025",
+        "endDate": "2026",
+        "description": "Provided development and technical support for IIS, a player health monitoring system built by Kajdom for the Iran Football League Organization (IFMARK), which administers the country's professional football leagues. Monitoring capabilities, report generation, and graphical health-status charts were added to the administration panel, and a range of bugs in the players' app were fixed. The platform is made up of a Next.js backend, a React admin panel, and a React PWA used by players, with work ongoing since 2025.",
+        "url": "https://iis.kjdm.ir",
+        "images": [
+            {
+                "src": "/assets/images/works/kjdm/kjdm_monitoring_health_submissions.webp",
+                "caption": "Monitoring page showing health submissions and the players' injury and illness list"
+            },
+            {
+                "src": "/assets/images/works/kjdm/kjdm_reports_injury_incidence.webp",
+                "caption": "Reports page with the injury incidence plot"
+            },
+            {
+                "src": "/assets/images/works/kjdm/kjdm_reports_injury_matrix.webp",
+                "caption": "Reports page with the injury matrix heatmap"
+            },
+            {
+                "src": "/assets/images/works/kjdm/kjdm_reports_insights_stats.webp",
+                "caption": "Reports page with player match insights and statistics"
+            }
+        ],
+        "technologies": [
+            "Next.js",
+            "React",
+            "PWA"
+        ]
+    },
+    {
         "title": "SharifStar Entrepreneurship Academy – Full Technical Support",
         "startDate": "2025",
         "endDate": "2026",
