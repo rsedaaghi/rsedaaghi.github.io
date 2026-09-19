@@ -6,8 +6,8 @@
 
 Hi, I'm Reza Sedaaghi (known as Parham), a Software Developer specializing in Python, Node.js, React, PostgreSQL, Docker, and CI/CD pipelines. From data processing and automation to scalable backends and modern frontends, I design and build efficient solutions that stand up to real-world traffic and complexity.
 
-- Projects showcased: 28+
-- Technologies in use: 35+
+- Projects showcased: 30+
+- Technologies in use: 37+
 - Years of programming: 15+ (since 2011)
 - Years of web development: 5+ (since 2021)
 
@@ -29,6 +29,11 @@ Technologies: Node.js, Next.js, React, PostgreSQL, Redis, Docker, Vite, Ant Desi
 Link: https://persianshin.ir
 Developed a wholesale commerce platform for managing a shampoo and car-care products distribution business.
 Technologies: Node.js, Next.js, React, PostgreSQL, Redis, Docker, Ant Design, SCSS
+
+### SharifStar Entrepreneurship Academy – Full Technical Support (2025 - 2026)
+Link: https://lms.sharifstar.com
+Provided full technical support for SharifStar, the entrepreneurship and business-skills education platform of Sharif University of Technology.
+Technologies: Django, Python, Docker, Linux
 
 ### Sanjika Mock Exam & Study Platform (2025 - 2026)
 Link: https://sanjika.ir
@@ -103,6 +108,10 @@ Technologies: Node.js, Redis, PostgreSQL, Docker
 ### Technical Support, Supervision, and Monitoring of HIS Software (2022)
 Monitored and maintained HIS software across dialysis centers and supported the launch of HIS in new centers at Rayehe Sepehr Salam Co., a healthcare services company..
 Technologies: Zabbix, Linux, Docker
+
+### Development of a Backend System for International Cargo Transfer Cost Estimation (2021)
+Developed a backend system for estimating the cost of international cargo transfer, covering pricing management, registration of transfer requests, and tracking the cargo's location..
+Technologies: Django, Python, REST, WordPress
 
 ### Development of a Fare Estimation System for International Freight Shipping (2021)
 Built a web-based system providing freight information, consultation, price estimates, and online bidding for international cargo transportation..
