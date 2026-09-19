@@ -6,7 +6,7 @@
 
 Hi, I'm Reza Sedaaghi (known as Parham), a Software Developer specializing in Python, Node.js, React, PostgreSQL, Docker, and CI/CD pipelines. From data processing and automation to scalable backends and modern frontends, I design and build efficient solutions that stand up to real-world traffic and complexity.
 
-- Projects showcased: 30+
+- Projects showcased: 31+
 - Technologies in use: 37+
 - Years of programming: 15+ (since 2011)
 - Years of web development: 5+ (since 2021)
@@ -29,6 +29,11 @@ Technologies: Node.js, Next.js, React, PostgreSQL, Redis, Docker, Vite, Ant Desi
 Link: https://persianshin.ir
 Developed a wholesale commerce platform for managing a shampoo and car-care products distribution business.
 Technologies: Node.js, Next.js, React, PostgreSQL, Redis, Docker, Ant Design, SCSS
+
+### IIS Player Health Monitoring System – Monitoring, Reports and Dashboard Features (2025 - 2026)
+Link: https://iis.kjdm.ir
+Provided development and technical support for IIS, a player health monitoring system built by Kajdom for the Iran Football League Organization (IFMARK), which administers the country's professional ….
+Technologies: Next.js, React, PWA
 
 ### SharifStar Entrepreneurship Academy – Full Technical Support (2025 - 2026)
 Link: https://lms.sharifstar.com
