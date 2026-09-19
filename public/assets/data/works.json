@@ -1,5 +1,24 @@
 [
     {
+        "title": "SharifStar Entrepreneurship Academy – Full Technical Support",
+        "startDate": "2025",
+        "endDate": "2026",
+        "description": "Provided full technical support for SharifStar, the entrepreneurship and business-skills education platform of Sharif University of Technology. The platform offers structured learning paths for teenagers, young adults, startup founders, and organizations, supported by talent assessment, internships, mentorship, and startup-funding services, with courses delivered through an online learning system at lms.sharifstar.com built on the Django framework. The legacy system was fully migrated to new server infrastructure, the application itself was upgraded, and a long list of platform bugs was resolved; ongoing backend development and DevOps support keep the platform stable and up to date.",
+        "url": "https://lms.sharifstar.com",
+        "images": [
+            {
+                "src": "/assets/images/works/sharifstar/lms_sharifstar.webp",
+                "caption": "Course page inside the SharifStar online learning system"
+            }
+        ],
+        "technologies": [
+            "Python",
+            "Django",
+            "Docker",
+            "Linux"
+        ]
+    },
+    {
         "title": "DanX Smart LMS",
         "date": "2026",
         "description": "Developed a learning management system (LMS) for schools, institutes, and companies, covering organizations, courses, enrollments, and academic progress. It combines a Node.js/Express REST API with a Next.js web app (server-side rendered for SEO) for the public course catalog and admin portals, plus a Windows Electron app where learners download course packages and study offline with narrated audio. Content is delivered as interactive units with quizzes and game-style level unlocking, and offline progress syncs back to the server.",
@@ -495,6 +514,19 @@
             "Zabbix",
             "Linux",
             "Docker"
+        ]
+    },
+    {
+        "title": "Development of a Backend System for International Cargo Transfer Cost Estimation",
+        "date": "2021",
+        "description": "Developed a backend system for estimating the cost of international cargo transfer, covering pricing management, registration of transfer requests, and tracking the cargo's location.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "Python",
+            "Django",
+            "REST",
+            "WordPress"
         ]
     },
     {
