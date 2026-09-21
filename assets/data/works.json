@@ -1,54 +1,5 @@
 [
     {
-        "title": "IIS Player Health Monitoring System – Monitoring, Reports and Dashboard Features",
-        "startDate": "2025",
-        "endDate": "2026",
-        "description": "Provided development and technical support for IIS, a player health monitoring system built by Kajdom for the Iran Football League Organization (IFMARK), which administers the country's professional football leagues. Monitoring capabilities, report generation, and graphical health-status charts were added to the administration panel, and a range of bugs in the players' app were fixed. The platform is made up of a Next.js backend, a React admin panel, and a React PWA used by players, with work ongoing since 2025.",
-        "url": "https://iis.kjdm.ir",
-        "images": [
-            {
-                "src": "/assets/images/works/kjdm/kjdm_monitoring_health_submissions.webp",
-                "caption": "Monitoring page showing health submissions and the players' injury and illness list"
-            },
-            {
-                "src": "/assets/images/works/kjdm/kjdm_reports_injury_incidence.webp",
-                "caption": "Reports page with the injury incidence plot"
-            },
-            {
-                "src": "/assets/images/works/kjdm/kjdm_reports_injury_matrix.webp",
-                "caption": "Reports page with the injury matrix heatmap"
-            },
-            {
-                "src": "/assets/images/works/kjdm/kjdm_reports_insights_stats.webp",
-                "caption": "Reports page with player match insights and statistics"
-            }
-        ],
-        "technologies": [
-            "Next.js",
-            "React",
-            "PWA"
-        ]
-    },
-    {
-        "title": "SharifStar Entrepreneurship Academy – Full Technical Support",
-        "startDate": "2025",
-        "endDate": "2026",
-        "description": "Provided full technical support for SharifStar, the entrepreneurship and business-skills education platform of Sharif University of Technology. The platform offers structured learning paths for teenagers, young adults, startup founders, and organizations, supported by talent assessment, internships, mentorship, and startup-funding services, with courses delivered through an online learning system at lms.sharifstar.com built on the Django framework. The legacy system was fully migrated to new server infrastructure, the application itself was upgraded, and a long list of platform bugs was resolved; ongoing backend development and DevOps support keep the platform stable and up to date.",
-        "url": "https://lms.sharifstar.com",
-        "images": [
-            {
-                "src": "/assets/images/works/sharifstar/lms_sharifstar.webp",
-                "caption": "Course page inside the SharifStar online learning system"
-            }
-        ],
-        "technologies": [
-            "Django",
-            "Python",
-            "Docker",
-            "Linux"
-        ]
-    },
-    {
         "title": "DanX Smart LMS",
         "date": "2026",
         "description": "Developed a learning management system (LMS) for schools, institutes, and companies, covering organizations, courses, enrollments, and academic progress. It combines a Node.js/Express REST API with a Next.js web app (server-side rendered for SEO) for the public course catalog and admin portals, plus a Windows Electron app where learners download course packages and study offline with narrated audio. Content is delivered as interactive units with quizzes and game-style level unlocking, and offline progress syncs back to the server.",
@@ -137,6 +88,55 @@
         ]
     },
     {
+        "title": "IIS Player Health Monitoring System – Monitoring, Reports and Dashboard Features",
+        "startDate": "2025",
+        "endDate": "2026",
+        "description": "Provided development and technical support for IIS, a player health monitoring system built by Kajdom for the Iran Football League Organization (IFMARK), which administers the country's professional football leagues. Monitoring capabilities, report generation, and graphical health-status charts were added to the administration panel, and a range of bugs in the players' app were fixed. The platform is made up of a Next.js backend, a React admin panel, and a React PWA used by players, with work ongoing since 2025.",
+        "url": "https://iis.kjdm.ir",
+        "images": [
+            {
+                "src": "/assets/images/works/kjdm/kjdm_monitoring_health_submissions.webp",
+                "caption": "Monitoring page showing health submissions and the players' injury and illness list"
+            },
+            {
+                "src": "/assets/images/works/kjdm/kjdm_reports_injury_incidence.webp",
+                "caption": "Reports page with the injury incidence plot"
+            },
+            {
+                "src": "/assets/images/works/kjdm/kjdm_reports_injury_matrix.webp",
+                "caption": "Reports page with the injury matrix heatmap"
+            },
+            {
+                "src": "/assets/images/works/kjdm/kjdm_reports_insights_stats.webp",
+                "caption": "Reports page with player match insights and statistics"
+            }
+        ],
+        "technologies": [
+            "Next.js",
+            "React",
+            "PWA"
+        ]
+    },
+    {
+        "title": "SharifStar Entrepreneurship Academy – Full Technical Support",
+        "startDate": "2025",
+        "endDate": "2026",
+        "description": "Provided full technical support for SharifStar, the entrepreneurship and business-skills education platform of Sharif University of Technology. The platform offers structured learning paths for teenagers, young adults, startup founders, and organizations, supported by talent assessment, internships, mentorship, and startup-funding services, with courses delivered through an online learning system at lms.sharifstar.com built on the Django framework. The legacy system was fully migrated to new server infrastructure, the application itself was upgraded, and a long list of platform bugs was resolved; ongoing backend development and DevOps support keep the platform stable and up to date.",
+        "url": "https://lms.sharifstar.com",
+        "images": [
+            {
+                "src": "/assets/images/works/sharifstar/lms_sharifstar.webp",
+                "caption": "Course page inside the SharifStar online learning system"
+            }
+        ],
+        "technologies": [
+            "Django",
+            "Python",
+            "Docker",
+            "Linux"
+        ]
+    },
+    {
         "title": "Sanjika Mock Exam & Study Platform",
         "startDate": "2025",
         "endDate": "2026",
@@ -206,42 +206,6 @@
             "Bootstrap",
             "JQuery",
             "PWA"
-        ]
-    },
-    {
-        "title": "His Admin Dialysis Center Management Platform",
-        "startDate": "2024",
-        "endDate": "2026",
-        "url": "https://admin.asinf.ir",
-        "description": "Developed the central admin platform for the Rayehe Sepehr Salam dialysis center network, aggregating data from remote center HIS servers. The Persian, RTL React panel provides a dashboard, center management, health and financial business intelligence with charts and an Iran map, invoice reports, and SMS messaging. Access is enforced by a multi-layer role-based access control system with a permission-matrix UI.",
-        "images": [
-            {
-                "src": "/assets/images/works/his_admin/his_admin_dashboard.webp",
-                "caption": "Dashboard after login"
-            },
-            {
-                "src": "/assets/images/works/his_admin/his_admin_health_bi.webp",
-                "caption": "Health BI analytics"
-            },
-            {
-                "src": "/assets/images/works/his_admin/his_admin_financial_bi.webp",
-                "caption": "Financial BI report"
-            },
-            {
-                "src": "/assets/images/works/his_admin/his_admin_messages.webp",
-                "caption": "SMS composer"
-            }
-        ],
-        "technologies": [
-            "Node.js",
-            "React",
-            "PostgreSQL",
-            "Redis",
-            "WebSocket",
-            "Vite",
-            "Ant Design",
-            "SCSS",
-            "Docker"
         ]
     },
     {
@@ -318,9 +282,45 @@
         ]
     },
     {
+        "title": "His Admin Dialysis Center Management Platform",
+        "startDate": "2024",
+        "endDate": "2026",
+        "url": "https://admin.asinf.ir",
+        "description": "Developed the central admin platform for the Rayehe Sepehr Salam dialysis center network, aggregating data from remote center HIS servers. The Persian, RTL React panel provides a dashboard, center management, health and financial business intelligence with charts and an Iran map, invoice reports, and SMS messaging. Access is enforced by a multi-layer role-based access control system with a permission-matrix UI.",
+        "images": [
+            {
+                "src": "/assets/images/works/his_admin/his_admin_dashboard.webp",
+                "caption": "Dashboard after login"
+            },
+            {
+                "src": "/assets/images/works/his_admin/his_admin_health_bi.webp",
+                "caption": "Health BI analytics"
+            },
+            {
+                "src": "/assets/images/works/his_admin/his_admin_financial_bi.webp",
+                "caption": "Financial BI report"
+            },
+            {
+                "src": "/assets/images/works/his_admin/his_admin_messages.webp",
+                "caption": "SMS composer"
+            }
+        ],
+        "technologies": [
+            "Node.js",
+            "React",
+            "PostgreSQL",
+            "Redis",
+            "WebSocket",
+            "Vite",
+            "Ant Design",
+            "SCSS",
+            "Docker"
+        ]
+    },
+    {
         "title": "Implementation and Configuration of the Monitoring System for Rayehe Sepehr Salam Co. Dialysis Centers",
         "date": "2024",
-        "description": "Hospital Information System (HIS) at Aria Teb Firouz. HIS is a comprehensive, integrated information system consisting of modules for managing patient appointments, medical, administrative, financial, and inventory services.",
+        "description": "Implemented and configured a Zabbix-based monitoring system that tracks the Hospital Information System (HIS) applications and servers of Rayehe Sepehr Salam Co., a healthcare services company operating multiple hemodialysis centers across several cities. Zabbix agents run as Docker containers at each site, giving a live view of HIS software health, network connectivity, and server status for every center on central dashboards showing operational status and network topology.",
         "url": "",
         "images": [
             {
@@ -337,10 +337,10 @@
             }
         ],
         "technologies": [
-            "Node.js",
-            "Redis",
-            "PostgreSQL",
-            "Docker"
+            "Zabbix",
+            "Docker",
+            "Linux",
+            "DevOps"
         ]
     },
     {
@@ -630,18 +630,6 @@
         ]
     },
     {
-        "title": "Console-Based Course Projects",
-        "startDate": "2009",
-        "endDate": "2014",
-        "description": "Developed console-based projects as part of coursework during a Bachelorâ€™s degree in Mechanical Engineering at Tabriz University of Technology from 2009 to 2013, with activities continuing until 2014. During this time, I built a strong foundation in programming algorithms through a dedicated programming course and further enhanced my skills by completing Harvard University's renowned CS50 course, led by David J. Malan, on the edX platform.",
-        "url": "",
-        "images": [],
-        "technologies": [
-            "C",
-            "Fortran"
-        ]
-    },
-    {
         "title": "Android Application Development: Mini Projects",
         "date": "2010",
         "description": "During the summers of my Bachelorâ€™s degree in Mechanical Engineering at Tabriz University of Technology, I explored Android development and created two mini projects: a 'Guess the Number' game and a Salavat Counter application. This experience allowed me to delve into mobile programming using Java and Android, showcasing my eagerness to learn and innovate during my academic years.",
@@ -687,6 +675,18 @@
         "technologies": [
             "Android",
             "Java"
+        ]
+    },
+    {
+        "title": "Console-Based Course Projects",
+        "startDate": "2009",
+        "endDate": "2014",
+        "description": "Developed console-based projects as part of coursework during a Bachelorâ€™s degree in Mechanical Engineering at Tabriz University of Technology from 2009 to 2013, with activities continuing until 2014. During this time, I built a strong foundation in programming algorithms through a dedicated programming course and further enhanced my skills by completing Harvard University's renowned CS50 course, led by David J. Malan, on the edX platform.",
+        "url": "",
+        "images": [],
+        "technologies": [
+            "C",
+            "Fortran"
         ]
     },
     {

@@ -7,7 +7,7 @@
 Hi, I'm Reza Sedaaghi (known as Parham), a Software Developer specializing in Python, Node.js, React, PostgreSQL, Docker, and CI/CD pipelines. From data processing and automation to scalable backends and modern frontends, I design and build efficient solutions that stand up to real-world traffic and complexity.
 
 - Projects showcased: 31+
-- Technologies in use: 37+
+- Technologies in use: 38+
 - Years of programming: 15+ (since 2011)
 - Years of web development: 5+ (since 2021)
 
@@ -65,8 +65,8 @@ Developed the central admin platform for the Rayehe Sepehr Salam dialysis center
 Technologies: Node.js, React, PostgreSQL, Redis, WebSocket, Vite, Ant Design, SCSS, Docker
 
 ### Implementation and Configuration of the Monitoring System for Rayehe Sepehr Salam Co. Dialysis Centers (2024)
-Hospital Information System (HIS) at Aria Teb Firouz.
-Technologies: Node.js, Redis, PostgreSQL, Docker
+Implemented and configured a Zabbix-based monitoring system that tracks the Hospital Information System (HIS) applications and servers of Rayehe Sepehr Salam Co., a healthcare services company operat….
+Technologies: Zabbix, Docker, Linux, DevOps
 
 ### Technical Support and Backend Development for the Electronic data capture (EDC) System (2023)
 Provided technical support and backend development for the EDC system at Aria Teb Firouz.
