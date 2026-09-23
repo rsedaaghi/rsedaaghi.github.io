@@ -46,7 +46,7 @@ Developed and shipped an online mock exam and study platform, currently focused 
 Technologies: Node.js, React, PostgreSQL, Redis, Docker, SCSS, Vite, Ant Design, WordPress, PHP, Bootstrap, JQuery, PWA
 
 ### VectorMind: Semantic Document Search & Ingestion System (2025)
-Developed a scalable, microservices-based platform enabling semantic search across technical documents.
+Developed a scalable, microservices-based Retrieval-Augmented Generation (RAG) platform enabling semantic search across technical documents.
 Technologies: Node.js, Python, React, PostgreSQL, RabbitMQ, Docker, llama, Material-UI
 
 ### Personal Portfolio Website (2025)
