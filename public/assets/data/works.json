@@ -3,36 +3,36 @@
         "title": "DanX Smart LMS",
         "date": "2026",
         "description": "Developed a learning management system (LMS) for schools, institutes, and companies, covering organizations, courses, enrollments, and academic progress. It combines a Node.js/Express REST API with a Next.js web app (server-side rendered for SEO) for the public course catalog and admin portals, plus a Windows Electron app where learners download course packages and study offline with narrated audio. Content is delivered as interactive units with quizzes and game-style level unlocking, and offline progress syncs back to the server.",
-        "images": [
-            {
-                "src": "/assets/images/works/danx/danx_main.webp",
-                "caption": "Course catalog"
-            },
-            {
-                "src": "/assets/images/works/danx/danx_login.webp",
-                "caption": "Login"
-            },
-            {
-                "src": "/assets/images/works/danx/danx_panel_dashboard.webp",
-                "caption": "Admin dashboard"
-            },
-            {
-                "src": "/assets/images/works/danx/danx_panel_courses.webp",
-                "caption": "Course management"
-            },
-            {
-                "src": "/assets/images/works/danx/danx_panel_finance.webp",
-                "caption": "Finance ledger"
-            },
-            {
-                "src": "/assets/images/works/danx/danx_panel_organizations.webp",
-                "caption": "Organizations"
-            },
-            {
-                "src": "/assets/images/works/danx/danx_mobile.webp",
-                "caption": "Mobile catalog"
-            }
-        ],
+"images": [
+        {
+            "src": "/assets/images/works/danx/landing_hero.webp",
+            "caption": "The DanX LMS marketing page hero: product tagline and a \"start learning\" call to action."
+        },
+        {
+            "src": "/assets/images/works/danx/landing_faq.webp",
+            "caption": "FAQ section: common questions about downloading, licensing, and offline learning."
+        },
+        {
+            "src": "/assets/images/works/danx/landing_download_page.webp",
+            "caption": "Course download landing page: records a course and links install of the Windows app."
+        },
+        {
+            "src": "/assets/images/works/danx/app_dashboard.webp",
+            "caption": "The Electron app home grid: installed course cards with progress bars and live download rings."
+        },
+        {
+            "src": "/assets/images/works/danx/app_login.webp",
+            "caption": "Desktop sign-in window — the Electron app login flow."
+        },
+        {
+            "src": "/assets/images/works/danx/app_course_detail_page.webp",
+            "caption": "Course detail screen: about the course, instructor and enrollment metadata."
+        },
+        {
+            "src": "/assets/images/works/danx/app_player_page.webp",
+            "caption": "Offline player: an LMS section with per-slide narrator audio and a quiz."
+        }
+    ],
         "technologies": [
             "Node.js",
             "Next.js",
@@ -211,7 +211,7 @@
     {
         "title": "VectorMind: Semantic Document Search & Ingestion System",
         "date": "2025",
-        "description": "Developed a scalable, microservices-based platform enabling semantic search across technical documents. The system is composed of several specialized services, each responsible for a distinct function in the ingestion and retrieval pipeline. Retrieved semantic chunks are ranked and then fed into the Gemma-3B language model to generate final answers, forming a complete Retrieval-Augmented Generation",
+        "description": "Developed a scalable, microservices-based Retrieval-Augmented Generation (RAG) platform enabling semantic search across technical documents. The system is composed of several specialized services, each responsible for a distinct function in the ingestion and retrieval pipeline. Retrieved semantic chunks are ranked and then fed into the Gemma-3B language model to generate final answers, forming a complete RAG pipeline.",
         "url": "",
         "images": [
             {
